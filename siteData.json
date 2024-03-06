@@ -117,6 +117,7 @@
         "locating-people-by-tag-tagfind": "Locating people by tag : tagfind",
         "deleting-a-person-delete": "Deleting a person : delete",
         "viewing-the-detailed-profile-a-person-select": "Viewing the detailed profile a person : select",
+        "tag-a-client-s-profile-as-last-contacted-lastcontact": "Tag a client's profile as last contacted : lastcontact",
         "clearing-all-entries-clear": "Clearing all entries : clear",
         "exiting-the-program-exit": "Exiting the program : exit",
         "saving-the-data": "Saving the data",
