@@ -293,7 +293,7 @@ with(this){return _c('p',[_c('strong',[_v("Use case: Adding a client")])])}
 with(this){return _c('p',[_c('strong',[_v("MSS")])])}
 },function anonymous(
 ) {
-with(this){return _c('ol',[_c('li',[_v("User add a new client by providing the necessary information including the person's name, phone number, email, address, and optional tags.")]),_v(" "),_c('li',[_v("FAPro validates the provided information and adds the person to the address book.")]),_v(" "),_c('li',[_v("FAPro shows the client information in the list.\nUse case ends.")])])}
+with(this){return _c('ol',[_c('li',[_v("User add a new client by providing the necessary information including the person's name, phone number, email, address, optional tags, optional upcoming and optional upcoming.")]),_v(" "),_c('li',[_v("FAPro validates the provided information and adds the person to the address book.")]),_v(" "),_c('li',[_v("FAPro shows the client information in the list.\nUse case ends.")])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("Use case: Edit a client's info")])])}
@@ -422,7 +422,7 @@ with(this){return _c('p',[_c('strong',[_v("Use case: Finding all upcoming contac
 with(this){return _c('p',[_c('strong',[_v("MSS")])])}
 },function anonymous(
 ) {
-with(this){return _c('ol',[_c('li',[_v("User requests to find people containing an upcoming appointment.")]),_v(" "),_c('li',[_v("AddressBook retrieves a list of people who have upcoming appointments.")]),_v(" "),_c('li',[_v("AddressBook shows the list of people to the user.")])])}
+with(this){return _c('ol',[_c('li',[_v("User requests to find people containing an upcoming appointment.")]),_v(" "),_c('li',[_v("AddressBook shows the list of people, ordering them from the nearest to the farthest upcoming appointment based on date.")])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("Extensions")])])}
@@ -467,6 +467,6 @@ with(this){return _c('h3',{attrs:{"id":"saving-data"}},[_v("Saving data"),_c('a'
 with(this){return _c('ol',[_c('li',[_c('p',[_v("Dealing with missing/corrupted data files")]),_v(" "),_c('ol',[_c('li',[_c('em',[_v("{explain how to simulate a missing/corrupted file, and the expected behavior}")])])])]),_v(" "),_c('li',[_c('p',[_c('em',[_v("{ more test cases …​ }")])])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.3.0")]),_v(", generated on Tue, 26 Mar 2024, 10:47:16 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.3.0")]),_v(", generated on Tue, 26 Mar 2024, 17:24:36 GMT+8]")])])])}
 }];
   
