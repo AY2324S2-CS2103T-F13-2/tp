@@ -49,9 +49,9 @@ class LastContactTest {
 
     @Test
     void compareTo() {
-        LastContact lastcontact1 = new LastContact("05-12-2024 0600");
-        LastContact lastcontact2 = new LastContact("05-12-2024 0600");
-        LastContact lastcontact3 = new LastContact("05-12-2024 0500");
+        LastContact lastcontact1 = new LastContact("05-03-2024 0600");
+        LastContact lastcontact2 = new LastContact("05-03-2024 0600");
+        LastContact lastcontact3 = new LastContact("05-03-2024 0500");
         assertEquals(0, lastcontact1.compareTo(lastcontact2));
         assertEquals(1, lastcontact1.compareTo(lastcontact3));
     }

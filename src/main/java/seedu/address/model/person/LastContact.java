@@ -29,7 +29,7 @@ public class LastContact implements Comparable<LastContact> {
      */
     public LastContact(String dateTime) {
         requireNonNull(dateTime);
-        checkArgument(isValidDateTime(dateTime), String.format(MESSAGE_CONSTRAINTS, dateTime));
+        checkArgument(isValidDateTime(dateTime), MESSAGE_CONSTRAINTS);
 
         if (dateTime.isEmpty()) {
             this.hasLastContact = false;
