@@ -8,6 +8,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
+import java.time.DateTimeException;
+
 class LastContactTest {
 
     @Test
@@ -42,6 +44,7 @@ class LastContactTest {
         assertFalse(LastContact.isValidDateTime("31-02-2020 2400")); // Invalid date and time
         assertFalse(LastContact.isValidDateTime("05-13-2024 0600")); // Invalid month
         assertTrue(LastContact.isValidDateTime("")); // Empty string
+        assertThrows(IllegalArgumentException.class, () -> new LastContact("30-12-2024 2359"));
 
         // Valid date format
         assertTrue(LastContact.isValidDateTime("05-03-2024 0600")); // Valid date and time
