@@ -14,7 +14,7 @@ import java.time.format.ResolverStyle;
 public class LastContact implements Comparable<LastContact> {
 
     public static final String MESSAGE_CONSTRAINTS = "Invalid input/date. Please follow the date format: "
-            + "DD-MM-YYYY HHmm and ensure that the date is valid.";
+            + "DD-MM-YYYY HHmm, ensure that the date is valid and not in the future.";
     public static final String MESSAGE_EDIT_EMPTY_STRING_EXCEPTION = "Last contacted can only take DD-MM-YYYY HHmm "
             + "dateTime format, and it should not be blank";
     public static final DateTimeFormatter DATETIME_FORMATTER = DateTimeFormatter.ofPattern("dd-MM-uuuu HHmm")
@@ -51,13 +51,20 @@ public class LastContact implements Comparable<LastContact> {
         }
         String trimmedDateTime = dateTime.trim();
         try {
-            LocalDateTime.parse(trimmedDateTime, DATETIME_FORMATTER);
-            return true; // Successfully parsed, input matches the format
+            LocalDateTime parsedDateTime = LocalDateTime.parse(trimmedDateTime, DATETIME_FORMATTER);
+            return !parsedDateTime.isAfter(LocalDateTime.now()); // Successfully parsed, input matches the format
         } catch (DateTimeParseException e) {
             return false; // Parsing failed, input does not match the format
         }
+
+
     }
 
+    /**
+     * Returns true if the person has a last contacted field. False otherwise.
+     *
+     * @return true if person has last contacted. False otherwise.
+     */
     public boolean hasLastContacted() {
         return this.hasLastContact;
     }
