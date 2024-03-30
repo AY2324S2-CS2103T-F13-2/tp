@@ -169,8 +169,9 @@ public class AddCommandTest {
             throw new AssertionError("This method should not be called.");
         }
 
+        @Override
         public void sortFilteredPersonList(Comparator<Person> comparator) {
-            throw new AssertionError("This method should not be called.");
+            // Do nothing
         }
 
         @Override

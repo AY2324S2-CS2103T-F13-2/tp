@@ -42,6 +42,7 @@ class LastContactTest {
         assertFalse(LastContact.isValidDateTime("31-02-2020 2400")); // Invalid date and time
         assertFalse(LastContact.isValidDateTime("05-13-2024 0600")); // Invalid month
         assertTrue(LastContact.isValidDateTime("")); // Empty string
+        assertThrows(IllegalArgumentException.class, () -> new LastContact("30-12-2024 2359"));
 
         // Valid date format
         assertTrue(LastContact.isValidDateTime("05-03-2024 0600")); // Valid date and time
@@ -49,9 +50,9 @@ class LastContactTest {
 
     @Test
     void compareTo() {
-        LastContact lastcontact1 = new LastContact("05-12-2024 0600");
-        LastContact lastcontact2 = new LastContact("05-12-2024 0600");
-        LastContact lastcontact3 = new LastContact("05-12-2024 0500");
+        LastContact lastcontact1 = new LastContact("05-03-2024 0600");
+        LastContact lastcontact2 = new LastContact("05-03-2024 0600");
+        LastContact lastcontact3 = new LastContact("05-03-2024 0500");
         assertEquals(0, lastcontact1.compareTo(lastcontact2));
         assertEquals(1, lastcontact1.compareTo(lastcontact3));
     }
