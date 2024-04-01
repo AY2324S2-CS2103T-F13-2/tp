@@ -49,6 +49,7 @@ public class LastContactCommand extends Command {
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
+        model.sortFilteredPersonList(null); // Resetting the sort order
         model.updateFilteredPersonList(HAS_LAST_CONTACTED_PREDICATE);
         model.sortFilteredPersonList(SORT_COMPARATOR);
 
