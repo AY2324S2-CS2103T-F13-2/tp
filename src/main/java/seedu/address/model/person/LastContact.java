@@ -52,7 +52,7 @@ public class LastContact implements Comparable<LastContact> {
         String trimmedDateTime = dateTime.trim();
         try {
             LocalDateTime parsedDateTime = LocalDateTime.parse(trimmedDateTime, DATETIME_FORMATTER);
-            return !parsedDateTime.isAfter(LocalDateTime.now()); // Successfully parsed, input matches the format
+            return parsedDateTime.isBefore(LocalDateTime.now()); // Successfully parsed, input matches the format
         } catch (DateTimeParseException e) {
             return false; // Parsing failed, input does not match the format
         }

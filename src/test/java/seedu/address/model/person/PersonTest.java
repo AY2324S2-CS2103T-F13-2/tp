@@ -160,7 +160,7 @@ public class PersonTest {
         assertNotEquals(ALICE.hashCode(), editedAlice.hashCode());
 
         // different upcoming -> different hash code
-        editedAlice = new PersonBuilder(ALICE).withUpcoming("01-01-2024 1200").build();
+        editedAlice = new PersonBuilder(ALICE).withUpcoming("01-01-2025 1200").build();
         assertNotEquals(ALICE.hashCode(), editedAlice.hashCode());
 
         // different lastcontact -> same hash code (lastcontact not included in hashCode)
