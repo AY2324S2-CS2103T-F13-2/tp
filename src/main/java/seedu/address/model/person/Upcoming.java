@@ -60,8 +60,8 @@ public class Upcoming implements Comparable<Upcoming> {
             return true;
         }
         try {
-            LocalDateTime.parse(dateTimeStr, DATETIME_FORMATTER);
-            return true;
+            LocalDateTime parsedDateTime = LocalDateTime.parse(dateTimeStr, DATETIME_FORMATTER);
+            return parsedDateTime.isAfter(LocalDateTime.now());
         } catch (DateTimeParseException e) {
             return false;
         }
