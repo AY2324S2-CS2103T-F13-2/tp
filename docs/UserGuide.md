@@ -238,6 +238,7 @@ Format: `lastcontact`
 
 Example:
 * `lastcontact` would filter the contacts and show all contacts that has last contacted date time.
+![result for `lastcontact`](images/lastcontactResult.png)
 
 ### Clearing all entries : `clear`
 
@@ -285,10 +286,10 @@ Furthermore, certain edits can cause FAPro to behave in unexpected ways (e.g., i
 
 Action     | Format, Examples
 -----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-**Add**    | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​` <br> e.g. `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague`
+**Add**    | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]… [lc/DATETIME] [u/DATETIME]` <br> e.g. `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague`
 **Clear**  | `clear`
 **Delete** | `delete INDEX`<br> e.g. `delete 3`
-**Edit**   | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.`edit 2 n/James Lee e/jameslee@example.com`
+**Edit**   | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]… [lc/DATETIME] [u/DATETIME]`<br> e.g.`edit 2 n/James Lee e/jameslee@example.com`
 **Find**   | `find KEYWORD [MORE_KEYWORDS]`<br> e.g. `find James Jake`
 **TagFind**| `tagfind TAG` <br> e.g. `tagfind car`
 **Lastcontact**| `lastcontact`
