@@ -4,16 +4,16 @@
   pageNav: 3
 ---
 
-# FAPro User Guide
+# FApro User Guide
 
-FAPro is a **desktop app for managing clients' contacts, optimized for use via a Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI).
+FApro is a **desktop app for managing clients' contacts, optimized for use via a Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI).
 
 If you
 * are a financial advisor,
 * can type fast,
 * have more than 50 clients,
 
-FAPro can get your client management tasks done faster than traditional GUI apps.
+FApro can get your client management tasks done faster than traditional GUI apps.
 
 <!-- * Table of Contents -->
 <page-nav-print />
@@ -26,7 +26,7 @@ FAPro can get your client management tasks done faster than traditional GUI apps
 
 1. Download the latest `fapro.jar` from [here](https://github.com/AY2324S2-CS2103T-F13-2/tp/releases).
 
-1. Copy the file to the folder you want to use as the _home folder_ for your FAPro.
+1. Copy the file to the folder you want to use as the _home folder_ for your FApro.
 
 1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar fapro.jar` command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
@@ -37,7 +37,7 @@ FAPro can get your client management tasks done faster than traditional GUI apps
 
    * `list` : Lists all contacts.
 
-   * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` : Adds a contact named `John Doe` to FAPro.
+   * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` : Adds a contact named `John Doe` to FApro.
 
    * `delete 3` : Deletes the 3rd contact shown in the current list.
 
@@ -85,9 +85,11 @@ Format: `help`
 
 ### Adding a client : `add`
 
-Adds a client to FAPro.
+Adds a client to FApro.
 
 Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​ [lc/DATETIME]`
+
+* Last contacted `lc/` should not have a future `DATETIME` and must be valid.
 
 <box type="tip" seamless>
 
@@ -103,23 +105,23 @@ Examples:
 
 ### Listing all clients : `list`
 
-Shows a list of all clients in FAPro.
+Shows a list of all clients in FApro.
 
 Format: `list`
 
 ### Editing a client : `edit`
 
-Edits an existing client in FAPro.
+Edits an existing client in FApro.
 
 Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]... [lc/DATETIME]`
 
 * Edits the client at the specified `INDEX`. The index refers to the index number shown in the displayed client list. The index **must be a positive integer** 1, 2, 3, …​
 * At least one of the optional fields must be provided.
 * Existing values will be updated to the input values.
-* When editing tags, the existing tags of the client will be removed i.e adding of tags is not cumulative.
+* When editing tags, the existing tags of the client will be removed i.e. adding of tags is not cumulative.
 * You can remove all the client’s tags by typing `t/` without
     specifying any tags after it.
-* Last contacted `lc/` should not have future `DATETIME` and must be valid. 
+* Last contacted `lc/` should not have a future `DATETIME` and must be valid. 
 
 Examples:
 *  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st client to be `91234567` and `johndoe@example.com` respectively.
@@ -141,7 +143,8 @@ Format: `find KEYWORD [MORE_KEYWORDS]`
 Examples:
 * `find John` returns `john` and `John Doe`
 * `find alex david` returns `Alex Yeoh`, `David Li`<br>
-  ![result for 'find alex david'](images/findAlexDavidResult.png)
+
+![result for 'find alex david'](images/findAlexDavidResult.png)
 
 ### Locating clients by tag : `findtagsor`
 
@@ -188,7 +191,7 @@ Examples:
 
 ### Deleting a client : `delete`
 
-Deletes the specified client from FAPro.
+Deletes the specified client from FApro.
 
 Format: `delete INDEX`
 
@@ -197,12 +200,12 @@ Format: `delete INDEX`
 * The index **must be a positive integer** 1, 2, 3, …​
 
 Examples:
-* `list` followed by `delete 2` deletes the 2nd client in FAPro.
+* `list` followed by `delete 2` deletes the 2nd client in FApro.
 * `find Betsy` followed by `delete 1` deletes the 1st client in the results of the `find` command.
 
 ### Viewing the detailed profile a client : `select`
 
-View a more detailed profile of the specified client from FAPro.
+View a more detailed profile of the specified client from FApro.
 
 Format: `select INDEX`
 
@@ -211,9 +214,10 @@ Format: `select INDEX`
 * The index **must be a positive integer** 1, 2, 3, …​
 
 Examples:
-* `list` followed by `select 2` shows the detailed profile of the 2nd client in FAPro.
+* `list` followed by `select 2` shows the detailed profile of the 2nd client in FApro.
 * `find bernice` followed by `select 1` shows the detailed profile of the 1st client in the results of the `find` command.
-  ![result for 'select 2'](images/select1Result.png)
+
+![result for 'select 2'](images/select1Result.png)
 
 
 
@@ -241,7 +245,7 @@ Example:
 
 ### Clearing all entries : `clear`
 
-Clears all entries from FAPro.
+Clears all entries from FApro.
 
 Format: `clear`
 
@@ -253,17 +257,17 @@ Format: `exit`
 
 ### Saving the data
 
-FAPro data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
+FApro data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
 
 ### Editing the data file
 
-FAPro data are saved automatically as a JSON file `[JAR file location]/data/addressbook.json`. Advanced users are welcome to update data directly by editing that data file.
+FApro data are saved automatically as a JSON file `[JAR file location]/data/addressbook.json`. Advanced users are welcome to update data directly by editing that data file.
 
 <box type="warning" seamless>
 
 **Caution:**
-If your changes to the data file makes its format invalid, FAPro will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
-Furthermore, certain edits can cause FAPro to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
+If your changes to the data file makes its format invalid, FApro will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
+Furthermore, certain edits can cause FApro to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 </box>
 
 --------------------------------------------------------------------------------------------------------------------
@@ -271,7 +275,7 @@ Furthermore, certain edits can cause FAPro to behave in unexpected ways (e.g., i
 ## FAQ
 
 **Q**: How do I transfer my data to another Computer?<br>
-**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous FAPro home folder.
+**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous FApro home folder.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -290,7 +294,9 @@ Action     | Format, Examples
 **Delete** | `delete INDEX`<br> e.g. `delete 3`
 **Edit**   | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.`edit 2 n/James Lee e/jameslee@example.com`
 **Find**   | `find KEYWORD [MORE_KEYWORDS]`<br> e.g. `find James Jake`
-**TagFind**| `tagfind TAG` <br> e.g. `tagfind car`
+**FindTagsOr**| `findtagsor TAG [MORE_TAGS]…​` <br> e.g. `findtagsor car health`
+**FindTagsAnd**| `findtagsand TAG [MORE_TAGS]…​` <br> e.g. `findtagsand car housing`
+**AddTags**| `addtags INDEX t/TAG [t/MORE_TAGS]…​` <br> e.g. `addtags 1 car housing`
 **Lastcontact**| `lastcontact`
 **Upcoming**| `upcoming`
 **List**   | `list`
