@@ -1,7 +1,7 @@
 ---
   layout: default.md
   title: "User Guide"
-  pageNav: 3
+  pageNav****: 3
 ---
 
 # FApro User Guide
@@ -30,18 +30,18 @@ FApro can get your client management tasks done faster than traditional GUI apps
 
 1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar fapro.jar` command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
-   ![Ui](images/Ui.png)
+   ![Ui](images/UiWithSampleData.png)
 
 1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
-   * `list` : Lists all contacts.
+   * `list` : Lists all clients' contacts.
 
-   * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` : Adds a contact named `John Doe` to FApro.
+   * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 u/16-03-2023 0800 lc/16-03-2025 0800` : Adds a contact named `John Doe` to FApro.
 
-   * `delete 3` : Deletes the 3rd contact shown in the current list.
+   * `delete 3` : Deletes the 3rd client's contact shown in the current list.
 
-   * `clear` : Deletes all contacts.
+   * `clear` : Deletes all clients' contacts.
 
    * `exit` : Exits the app.
 
@@ -90,7 +90,7 @@ Adds a client to FApro.
 Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​ [lc/DATETIME] [u/DATETIME]`
 
 * Last contacted `lc/` should not have a future `DATETIME` and must be valid.
-* Upcoming  `u/` should not have a past DATETIME and must be valid
+* Upcoming  `u/` should not have a past `DATETIME` and must be valid
 
 <box type="tip" seamless>
 
@@ -102,8 +102,8 @@ Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​ [lc/DATETIME]
 
 Examples:
 * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 lc/16-03-2024 0800`
-* `add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal`
-* `add n/Bobby Tan t/funny e/amk@gmail.com a/ang mo kio ave 3 u/01-01-2025 1300 p/88392302`
+* `add n/Betsy Crowe e/betsycrowe@example.com a/Newgate Prison p/1234567 t/health`
+* `add n/Bobby Tan t/investment e/amk@gmail.com a/ang mo kio ave 3 u/01-01-2025 1300 p/88392302`
 
 ### Listing all clients : `list`
 
@@ -222,8 +222,6 @@ Examples:
 
 ![result for 'select 2'](images/select1Result.png)
 
-
-
 ### View contacts of all upcoming appointments : `upcoming`
 
 View all the contacts of all upcoming appointments ordered by date (earliest to latest).
@@ -234,7 +232,7 @@ Format: `upcoming`
 
 Examples:
 * `upcoming` would show the 3 contacts if there are 3 contacts with upcoming appointments.
-![result for `upcoming`](images/upcoming.png)
+![result for `upcoming`](images/upcomingResult.png)
 
 ### View contacts of all last contacted clients : `lastcontact`
 
@@ -247,7 +245,23 @@ Format: `lastcontact`
 Example:
 * `lastcontact` would filter the contacts and show all contacts that has last contacted date time.
 ![result for `lastcontact`](images/lastcontactResult.png)
-![result for `upcoming`](images/upcoming.png)
+
+### (_Coming Soon_) Uploading photo for a client : `image`
+
+Adds a profile photo for a specified client in FApro.
+
+Format: `image INDEX PATH`
+
+* Adds the profile photo for the client at the specified `INDEX` with the image found at `PATH`.
+* The index refers to the index number shown in the displayed client list.
+* The index **must be a positive integer** 1, 2, 3, …​
+* The path refers to the relative path of the image to the main repository.
+* If there is no photo uploaded, the profile photo will be the default one.
+
+Examples:
+* `list` followed by `image 3 profiles/charlotte.png` shows the detailed profile of the 2nd client in FApro.
+* `find david` followed by `image 1 profiles/david.png` shows the detailed profile of the 1st client in the results of the `find` command.
+
 ### Clearing all entries : `clear`
 
 Clears all entries from FApro.
