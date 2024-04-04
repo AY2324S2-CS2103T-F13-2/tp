@@ -245,6 +245,23 @@ Format: `lastcontact`
 Example:
 * `lastcontact` would filter the contacts and show all contacts that has last contacted date time.
 ![result for `lastcontact`](images/lastcontactResult.png)
+
+### (_Coming Soon_) Uploading photo for a client : `image`
+
+Adds a profile photo for a specified client in FApro.
+
+Format: `image INDEX PATH`
+
+* Adds the profile photo for the client at the specified `INDEX` with the image found at `PATH`.
+* The index refers to the index number shown in the displayed client list.
+* The index **must be a positive integer** 1, 2, 3, …​
+* The path refers to the relative path of the image to the main repository.
+* If there is no photo uploaded, the profile photo will be the default one.
+
+Examples:
+* `list` followed by `image 3 profiles/charlotte.png` shows the detailed profile of the 2nd client in FApro.
+* `find david` followed by `image 1 profiles/david.png` shows the detailed profile of the 1st client in the results of the `find` command.
+
 ### Clearing all entries : `clear`
 
 Clears all entries from FApro.
@@ -256,8 +273,6 @@ Format: `clear`
 Exits the program.
 
 Format: `exit`
-
-
 
 ### Saving the data
 
