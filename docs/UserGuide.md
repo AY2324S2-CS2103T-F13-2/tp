@@ -87,21 +87,23 @@ Format: `help`
 
 Adds a client to FApro.
 
-Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​ [lc/DATETIME]`
+Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​ [lc/DATETIME] [u/DATETIME]`
 
 * Last contacted `lc/` should not have a future `DATETIME` and must be valid.
+* Upcoming  `u/` should not have a past DATETIME and must be valid
 
 <box type="tip" seamless>
 
 **Tip:** A client can have any number of tags (including 0)
 </box>
 
-**Note:** t/ and lc/ : tag and last contacted field is optional.
+**Note:** t/ , lc/ and u/ : tag, last contacted and upcoming fields are optional.
 
 
 Examples:
 * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 lc/16-03-2024 0800`
 * `add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal`
+* `add n/Bobby Tan t/funny e/amk@gmail.com a/ang mo kio ave 3 u/01-01-2025 1300`
 
 ### Listing all clients : `list`
 
@@ -113,7 +115,7 @@ Format: `list`
 
 Edits an existing client in FApro.
 
-Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]... [lc/DATETIME]`
+Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]... [lc/DATETIME] [u/DATETIME]`
 
 * Edits the client at the specified `INDEX`. The index refers to the index number shown in the displayed client list. The index **must be a positive integer** 1, 2, 3, …​
 * At least one of the optional fields must be provided.
@@ -122,6 +124,7 @@ Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]... [lc/DATE
 * You can remove all the client’s tags by typing `t/` without
     specifying any tags after it.
 * Last contacted `lc/` should not have a future `DATETIME` and must be valid. 
+* Upcoming `u/` should not have a past `DATETIME` and must be valid. 
 
 Examples:
 *  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st client to be `91234567` and `johndoe@example.com` respectively.
@@ -231,6 +234,7 @@ Format: `upcoming`
 
 Examples:
 * `upcoming` would show the 3 contacts if there are 3 contacts with upcoming appointments.
+![result for `upcoming`](images/upcoming.png)
 
 ### View contacts of all last contacted clients : `lastcontact`
 
