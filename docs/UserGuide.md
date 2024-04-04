@@ -222,8 +222,6 @@ Examples:
 
 ![result for 'select 2'](images/select1Result.png)
 
-
-
 ### View contacts of all upcoming appointments : `upcoming`
 
 View all the contacts of all upcoming appointments ordered by date (earliest to latest).
@@ -234,7 +232,7 @@ Format: `upcoming`
 
 Examples:
 * `upcoming` would show the 3 contacts if there are 3 contacts with upcoming appointments.
-![result for `upcoming`](images/upcoming.png)
+![result for `upcoming`](images/upcomingResult.png)
 
 ### View contacts of all last contacted clients : `lastcontact`
 
@@ -247,7 +245,6 @@ Format: `lastcontact`
 Example:
 * `lastcontact` would filter the contacts and show all contacts that has last contacted date time.
 ![result for `lastcontact`](images/lastcontactResult.png)
-![result for `upcoming`](images/upcoming.png)
 ### Clearing all entries : `clear`
 
 Clears all entries from FApro.
@@ -259,6 +256,8 @@ Format: `clear`
 Exits the program.
 
 Format: `exit`
+
+
 
 ### Saving the data
 
