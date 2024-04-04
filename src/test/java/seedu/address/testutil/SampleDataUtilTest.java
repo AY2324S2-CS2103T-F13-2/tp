@@ -9,7 +9,9 @@ import java.util.Set;
 import org.junit.jupiter.api.Test;
 
 import seedu.address.model.ReadOnlyAddressBook;
+import seedu.address.model.person.LastContact;
 import seedu.address.model.person.Person;
+import seedu.address.model.person.Upcoming;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.util.SampleDataUtil;
 
@@ -27,8 +29,9 @@ public class SampleDataUtilTest {
         assertEquals("87438807", firstPerson.getPhone().toString());
         assertEquals("alexyeoh@example.com", firstPerson.getEmail().toString());
         assertEquals("Blk 30 Geylang Street 29, #06-40", firstPerson.getAddress().toString());
-        assertTrue(firstPerson.getTags().contains(new Tag("friends")));
-        assertEquals(SampleDataUtil.DUMMY_LASTCONTACT, firstPerson.getLastcontact());
+        assertTrue(firstPerson.getTags().contains(new Tag("savings")));
+        assertEquals(new Upcoming("23-08-2025 1500"), firstPerson.getUpcoming());
+        assertEquals(new LastContact("23-08-2023 1500"), firstPerson.getLastcontact());
     }
 
     @Test
@@ -45,16 +48,17 @@ public class SampleDataUtilTest {
         assertEquals("87438807", firstPersonInAddressBook.getPhone().toString());
         assertEquals("alexyeoh@example.com", firstPersonInAddressBook.getEmail().toString());
         assertEquals("Blk 30 Geylang Street 29, #06-40", firstPersonInAddressBook.getAddress().toString());
-        assertTrue(firstPersonInAddressBook.getTags().contains(new Tag("friends")));
-        assertEquals(SampleDataUtil.DUMMY_LASTCONTACT, firstPersonInAddressBook.getLastcontact());
+        assertTrue(firstPersonInAddressBook.getTags().contains(new Tag("savings")));
+        assertEquals(new Upcoming("23-08-2025 1500"), firstPersonInAddressBook.getUpcoming());
+        assertEquals(new LastContact("23-08-2023 1500"), firstPersonInAddressBook.getLastcontact());
     }
 
     @Test
     public void getTagSet_createsCorrectTagSet() {
-        Set<Tag> tags = SampleDataUtil.getTagSet("friends", "colleagues");
+        Set<Tag> tags = SampleDataUtil.getTagSet("investment", "savings");
         assertNotNull(tags);
         assertEquals(2, tags.size());
-        assertTrue(tags.contains(new Tag("friends")));
-        assertTrue(tags.contains(new Tag("colleagues")));
+        assertTrue(tags.contains(new Tag("investment")));
+        assertTrue(tags.contains(new Tag("savings")));
     }
 }
