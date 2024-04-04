@@ -1,7 +1,7 @@
 ---
   layout: default.md
   title: "User Guide"
-  pageNav: 3
+  pageNav****: 3
 ---
 
 # FApro User Guide
@@ -30,18 +30,18 @@ FApro can get your client management tasks done faster than traditional GUI apps
 
 1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar fapro.jar` command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
-   ![Ui](images/Ui.png)
+   ![Ui](images/UiWithSampleData.png)
 
 1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
-   * `list` : Lists all contacts.
+   * `list` : Lists all clients' contacts.
 
-   * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` : Adds a contact named `John Doe` to FApro.
+   * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 u/16-03-2023 0800 lc/16-03-2025 0800` : Adds a contact named `John Doe` to FApro.
 
-   * `delete 3` : Deletes the 3rd contact shown in the current list.
+   * `delete 3` : Deletes the 3rd client's contact shown in the current list.
 
-   * `clear` : Deletes all contacts.
+   * `clear` : Deletes all clients' contacts.
 
    * `exit` : Exits the app.
 

@@ -16,7 +16,7 @@ import java.time.format.ResolverStyle;
 public class Upcoming implements Comparable<Upcoming> {
 
     public static final String MESSAGE_CONSTRAINTS = "Invalid input/date. Please follow the date format: "
-            + "DD-MM-YYYY HHmm and ensure that the date is valid.";
+            + "DD-MM-YYYY HHmm and ensure that the date is valid not in the past.";
     public static final String MESSAGE_EDIT_EMPTY_STRING_EXCEPTION = "Upcoming can only take DD-MM-YYYY HHmm "
             + "dateTime format, and it should not be blank";
     private static final String DATETIME_FORMAT = "dd-MM-uuuu HHmm";
