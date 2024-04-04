@@ -53,14 +53,14 @@ public class SampleDataUtil {
                     new Phone("92492021"),
                     new Email("irfan@example.com"),
                     new Address("Blk 47 Tampines Street 20, #17-35"),
-                    getTagSet("classmates"),
+                    getTagSet("health"),
                     new Upcoming(""),
                     new LastContact("12-12-2023 1800")),
             new Person(new Name("Roy Balakrishnan"),
                     new Phone("92624417"),
                     new Email("royb@example.com"),
                     new Address("Blk 45 Aljunied Street 85, #11-31"),
-                    getTagSet("colleagues"),
+                    getTagSet("car"),
                     new Upcoming(""),
                     new LastContact(""))
         };
