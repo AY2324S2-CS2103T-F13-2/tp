@@ -90,7 +90,7 @@ Adds a client to FApro.
 Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​ [lc/DATETIME] [u/DATETIME]`
 
 * Last contacted `lc/` should not have a future `DATETIME` and must be valid.
-* Upcoming  `u/` should not have a past DATETIME and must be valid
+* Upcoming  `u/` should not have a past `DATETIME` and must be valid
 
 <box type="tip" seamless>
 
@@ -102,8 +102,8 @@ Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​ [lc/DATETIME]
 
 Examples:
 * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 lc/16-03-2024 0800`
-* `add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal`
-* `add n/Bobby Tan t/funny e/amk@gmail.com a/ang mo kio ave 3 u/01-01-2025 1300`
+* `add n/Betsy Crowe e/betsycrowe@example.com a/Newgate Prison p/1234567 t/health`
+* `add n/Bobby Tan e/amk@gmail.com a/ang mo kio ave 3 u/01-01-2025 1300 t/investment`
 
 ### Listing all clients : `list`
 
