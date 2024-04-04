@@ -27,6 +27,7 @@ public class UpcomingCommand extends Command {
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
+        model.sortFilteredPersonList(null);
         model.updateFilteredPersonList(HAS_UPCOMING_PREDICATE);
         model.sortFilteredPersonList(new UpcomingComparator());
         return new CommandResult(MESSAGE_SUCCESS);
