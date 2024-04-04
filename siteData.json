@@ -105,8 +105,8 @@
     },
     {
       "src": "UserGuide.md",
-      "title": "User Guide",
       "headings": {
+        "layout-default-md-title-and-quot-user-guide-and-quot-pagenav-3": "layout: default.md\ntitle: &quot;User Guide&quot;\npageNav****: 3",
         "fapro-user-guide": "FApro User Guide",
         "quick-start": "Quick start",
         "features": "Features",
@@ -122,6 +122,7 @@
         "viewing-the-detailed-profile-a-client-select": "Viewing the detailed profile a client : select",
         "view-contacts-of-all-upcoming-appointments-upcoming": "View contacts of all upcoming appointments : upcoming",
         "view-contacts-of-all-last-contacted-clients-lastcontact": "View contacts of all last contacted clients : lastcontact",
+        "coming-soon-uploading-photo-for-a-client-image": "(Coming Soon) Uploading photo for a client : image",
         "clearing-all-entries-clear": "Clearing all entries : clear",
         "exiting-the-program-exit": "Exiting the program : exit",
         "saving-the-data": "Saving the data",
