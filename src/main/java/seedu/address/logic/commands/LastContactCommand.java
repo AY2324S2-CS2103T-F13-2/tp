@@ -37,11 +37,11 @@ public class LastContactCommand extends Command {
 
     public static final String COMMAND_WORD = "lastcontact";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Show a list of last contacted clients "
-            + "sorted according to dateTime";
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Shows a list of last contacted clients "
+            + "sorted according to dateTime.";
 
     public static final String MESSAGE_SUCCESS = "Listed all clients with last contact dates,"
-            + " starting with the oldest date";
+            + " starting with the oldest date.";
 
     private static final HasLastContactedPredicate HAS_LAST_CONTACTED_PREDICATE = new HasLastContactedPredicate();
 
