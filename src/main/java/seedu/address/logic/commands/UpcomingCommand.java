@@ -16,10 +16,10 @@ public class UpcomingCommand extends Command {
 
     public static final String COMMAND_WORD = "upcoming";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD
-            + ": Sorts all persons by upcoming dates.\n";
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Shows a list of clients with upcoming meetings "
+            + "sorted according to dateTime.";
 
-    public static final String MESSAGE_SUCCESS = "Sorted all persons by upcoming dates,"
+    public static final String MESSAGE_SUCCESS = "Listed all clients with upcoming dates,"
             + " starting with the earliest date.";
 
     private static final HasUpcomingPredicate HAS_UPCOMING_PREDICATE = new HasUpcomingPredicate();
