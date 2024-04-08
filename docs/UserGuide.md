@@ -248,7 +248,7 @@ Examples:
 
 Add tags to specified client.
 
-Format: `addtags INDEX t/TAG [t/MORE_TAGS]`
+Format: `addtags INDEX t/TAG [t/MORE_TAGS]...`
 
 * Add tags to the client at the specified `INDEX`. The index refers to the index number shown in the displayed client list. The index **must be a positive integer** 1, 2, 3, …​
 * At least one tag must be provided.
