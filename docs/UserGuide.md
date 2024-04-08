@@ -11,7 +11,7 @@
 
 ## Welcome Note
 
-Greetings financial advisors, hope you are doing well! We would like to thank you for your services all these years. Your hard work has not gone unnoticed! Particularly, we have observed that you may be be facing issues in the following aspects:
+Greetings financial advisors, hope you are doing well! We would like to thank you for your services all these years. Your hard work has not gone unnoticed! Particularly, we have observed that you may be facing issues in the following aspects:
 * **Client Engagement Tracking**: Difficulty in monitoring the service history of a large, diverse client base to ensure satisfaction.
 * **Appointment Management**: Significant time and effort spent on scheduling and remembering appointments.
 * **Document Accessibility**: Challenges in promptly recalling or locating specific customer portfolio documents.
@@ -24,7 +24,7 @@ You may refer to the [Product Information](#product-information) section to find
 
 ## Purpose of this User Guide
 
-Dear financial advisors, this User Guide will aid you in your journey when navigating _FApro_. We have included beginner-friendly instructions to help you get started, familiarise yourself with our various features. Additionally, we also have some examples to let you test out the product and tips to help you fully utilize our product. We hope you have an amazing time using our product!
+This User Guide will aid you in your journey when navigating _FApro_. We have included beginner-friendly instructions to help you get started, familiarise yourself with our various features. Additionally, we've included examples and tips to enhance your experience with our product. We hope you enjoy using it to its fullest potential!
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -37,7 +37,7 @@ Thus, if you
 * have more than 50 clients,
 * wants to save time,
 
-then, this is the app for you!
+then, this is the ultimate all-in-one app for you!
 
 _FApro_ can get your client management tasks done faster than traditional GUI apps enabling you to **maximize personal touch**, **maximize productivity**, and **maximize workflow efficiency**.
 
@@ -368,9 +368,9 @@ Examples:
 Adds note for a specified client in FApro. This feature can be used
 * during preparation for appointment: to take note of what to say during it
 * during the appointmeent: to take note of what the client is saying
-* after the appointment: to take not of the follow-up actions
+* after the appointment: to take note of the follow-up actions
 
-Format: `addnotes INDEX note/NOTE [note/NOTE]`
+Format: `addnote INDEX note/NOTE [note/MORE_NOTES]`
 
 * Adds `NOTE` for the client at the specified `INDEX`.
 * The index refers to the index number shown in the displayed client list.
@@ -380,7 +380,7 @@ Format: `addnotes INDEX note/NOTE [note/NOTE]`
 * The `NOTE` can only be viewed in the [detailed profile](#viewing-the-detailed-profile-a-client--select).
 
 Examples:
-* `list` followed by `addnote 3 note/remind her to check her yearly coupon note/wants to retrieve her money from her savings plan` adds a note to the 3rd client in FApro.
+* `list` followed by `addnote 3 note/remind her to check her yearly coupon note/wants to retrieve her money from her savings plan` adds 2 note to the 3rd client in FApro.
 * `find david` followed by `addnote 1 note/looking for insurance plans` adds a note to the 1st client in the results of the `find` command.
 
 --------------------------------------------------------------------------------------------------------------------
@@ -418,4 +418,4 @@ Action     | Format, Examples
 **Help**   | `help`
 **Exit**   | `exit`
 **_(Coming soon)_ image**   | `image INDEX i/PATH`<br> e.g. `image 1 i/profiles/david.png`
-**_(Coming soon)_ addnote**   | `addnote INDEX note/NOTE [note/NOTE]`<br> e.g. `addnote 3 note/remind her to check her yearly coupon note/wants to retrieve her money from her savings plan`
+**_(Coming soon)_ addnote**   | `addnote INDEX note/NOTE [note/MORE_NOTES]`<br> e.g. `addnote 3 note/remind her to check her yearly coupon note/wants to retrieve her money from her savings plan`
