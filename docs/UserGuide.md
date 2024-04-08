@@ -6,6 +6,12 @@
 
 # FApro User Guide
 
+<!-- * Table of Contents -->
+<page-nav-print />
+
+## Welcome Note
+
+Greetings financial advisors
 FApro is a **desktop app for managing clients' contacts, optimized for use via a Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI).
 
 If you
@@ -15,20 +21,17 @@ If you
 
 FApro can get your client management tasks done faster than traditional GUI apps.
 
-<!-- * Table of Contents -->
-<page-nav-print />
-
 --------------------------------------------------------------------------------------------------------------------
 
 ## Quick start
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
-1. Download the latest `fapro.jar` from [here](https://github.com/AY2324S2-CS2103T-F13-2/tp/releases).
+2. Download the latest `fapro.jar` from [here](https://github.com/AY2324S2-CS2103T-F13-2/tp/releases).
 
-1. Copy the file to the folder you want to use as the _home folder_ for your FApro.
+3. Copy the file to the folder you want to use as the _home folder_ for your FApro.
 
-1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar fapro.jar` command to run the application.<br>
+4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar fapro.jar` command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/UiWithSampleData.png)
 
