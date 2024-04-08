@@ -275,7 +275,14 @@ Examples:
 
 ### Viewing the detailed profile a client : `select`
 
-View a more detailed profile of the specified client from FApro.
+View a more detailed profile of the specified client from FApro. The detailed profile currently includes the **contact information** and **existing plans**. In addition, we are also planning to include the following:
+* Profile image of the client: [Uploading a profile photo for a client](#coming-soon-uploading-photo-for-a-client--image)
+* Notes regarding the client: [Adding notes for a client](#coming-soon-adding-notes-for-a-client--addnote)
+
+This profile aims to aid financial advisors in the following ways:
+* retrieve vital information (existing financial plans, current financial status) during the preparation for an appointment
+* act as a reference notes during the appointment itself
+* take down important notes after the appointments (follow-up tasks)
 
 Format: `select INDEX`
 
@@ -340,21 +347,41 @@ If your changes to the data file makes its format invalid, FApro will discard al
 Furthermore, certain edits can cause FApro to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 </box>
 
-### (_Coming Soon_) Uploading photo for a client : `image`
+### (_Coming Soon_) Uploading a profile photo for a client : `image`
 
 Adds a profile photo for a specified client in FApro.
 
-Format: `image INDEX PATH`
+Format: `image INDEX i/PATH`
 
 * Adds the profile photo for the client at the specified `INDEX` with the image found at `PATH`.
 * The index refers to the index number shown in the displayed client list.
 * The index **must be a positive integer** 1, 2, 3, …​
 * The path refers to the relative path of the image to the main repository.
-* If there is no photo uploaded, the profile photo will be the default one.
+* If there is no photo uploaded, the profile photo section will display a placeholder profile photo.
 
 Examples:
-* `list` followed by `image 3 profiles/charlotte.png` shows the detailed profile of the 2nd client in FApro.
-* `find david` followed by `image 1 profiles/david.png` shows the detailed profile of the 1st client in the results of the `find` command.
+* `list` followed by `image 3 i/profiles/charlotte.png` adds a profile photo found at `profiles/charlotte.png` to the 3rd client in FApro.
+* `find david` followed by `image 1 i/profiles/david.png` adds a profile photo found at `profiles/david.png` to the 1st client in the results of the `find` command.
+
+### (_Coming Soon_) Adding notes for a client : `addnote`
+
+Adds note for a specified client in FApro. This feature can be used
+* during preparation for appointment: to take note of what to say during it
+* during the appointmeent: to take note of what the client is saying
+* after the appointment: to take not of the follow-up actions
+
+Format: `addnotes INDEX note/NOTE [note/NOTE]`
+
+* Adds `NOTE` for the client at the specified `INDEX`.
+* The index refers to the index number shown in the displayed client list.
+* The index **must be a positive integer** 1, 2, 3, …​
+* At least one `NOTE` must be provided.
+* There is no restriction to the length and format of the `NOTE`.
+* The `NOTE` can only be viewed in the [detailed profile](#viewing-the-detailed-profile-a-client--select).
+
+Examples:
+* `list` followed by `addnote 3 note/remind her to check her yearly coupon note/wants to retrieve her money from her savings plan` adds a note to the 3rd client in FApro.
+* `find david` followed by `addnote 1 note/looking for insurance plans` adds a note to the 1st client in the results of the `find` command.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -368,14 +395,14 @@ Examples:
 ## Known Issues
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
-2. **When the tags are too long**, there is no length restriction on the tags. However, when you add a tag that is too long, the last few characters will be cut off and will not be able to be seen in any window size. The remedy is to shorten the tag's name. We understand that this is not optimal, and we are currently looking at ways to accomodate tags with very long names.
+2. **When the tags are too long**, there is no length restriction on the tags. However, when you add a tag that is too long, the last few characters will be cut off and will not be able to be seen in any window size. The remedy is to shorten the tag's name. We understand that this is not optimal, and we are currently looking at ways to accommodate tags with very long names.
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## Command Summary
 
 Action     | Format, Examples
------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------
 **Add**    | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]… [lc/DATETIME] [u/DATETIME]` <br> e.g. `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague`
 **Clear**  | `clear`
 **Delete** | `delete INDEX`<br> e.g. `delete 3`
@@ -390,3 +417,5 @@ Action     | Format, Examples
 **Select** | `select INDEX`<br> e.g. `select 1`
 **Help**   | `help`
 **Exit**   | `exit`
+**_(Coming soon)_ image**   | `image INDEX i/PATH`<br> e.g. `image 1 i/profiles/david.png`
+**_(Coming soon)_ addnote**   | `addnote INDEX note/NOTE [note/NOTE]`<br> e.g. `addnote 3 note/remind her to check her yearly coupon note/wants to retrieve her money from her savings plan`
