@@ -31,7 +31,7 @@ Dear financial advisors, this User Guide will aid you in your journey when navig
 ## Product Information
 _FApro_ is a **desktop app for managing clients' contacts, optimized for use via a Command Line Interface** (CLI) which allows you to type commands while still having the benefits of a Graphical User Interface (GUI) which allows you to use your mouse to execute commands.
 
-Thus if you
+Thus, if you
 * are a financial advisor,
 * can type fast,
 * have more than 50 clients,
@@ -39,7 +39,7 @@ Thus if you
 
 then, this is the app for you!
 
-_FApro_ can get your client management tasks done faster than traditional GUI apps enabling you to **maximize personal touch**, **maximize productivity**, and **maximize workflow efficiency** :arrow_up: 
+_FApro_ can get your client management tasks done faster than traditional GUI apps enabling you to **maximize personal touch**, **maximize productivity**, and **maximize workflow efficiency**.
 
 We are able to achieve this by:
 * helping you to manage upcoming meetings
@@ -190,8 +190,8 @@ Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]... [lc/DATE
 * When editing tags, the existing tags of the client will be removed i.e. adding of tags is not cumulative.
 * You can remove all the client’s tags by typing `t/` without
     specifying any tags after it.
-* Last contacted `lc/` should not have a future `DATETIME` and must be valid. 
-* Upcoming `u/` should not have a past `DATETIME` and must be valid. 
+* Last contacted `lc/` should not have a future `DATETIME` and must be valid.
+* Upcoming `u/` should not have a past `DATETIME` and must be valid.
 
 Examples:
 *  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st client to be `91234567` and `johndoe@example.com` respectively.
@@ -256,7 +256,7 @@ Format: `addtags INDEX t/TAG [t/MORE_TAGS]`
 * Tags are case-insensitive. e.g. `cAr` and `car` are the same tags.
 
 Examples:
-* `addtags 1 t/car t/covid` adds `car` and `covid` tags to the 1st client. 
+* `addtags 1 t/car t/covid` adds `car` and `covid` tags to the 1st client.
 * `addtags 2 t/HOUSING` adds `housing` tag to the 2nd client.
 
 ### Deleting a client : `delete`

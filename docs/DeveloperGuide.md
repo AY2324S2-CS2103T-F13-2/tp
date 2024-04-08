@@ -517,7 +517,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **Extensions**
 * 1a. No clients with any upcoming info
   * 1ai. The system would show a blank list.
-    Use case resumes at step 1. 
+    Use case resumes at step 1.
 
 
 ### Non-Functional Requirements
