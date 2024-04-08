@@ -11,19 +11,46 @@
 
 ## Welcome Note
 
-Greetings financial advisors
-FApro is a **desktop app for managing clients' contacts, optimized for use via a Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI).
+Greetings financial advisors, hope you are doing well! We would like to thank you for your services all these years. Your hard work has not gone unnoticed! Particularly, we have observed that you may be be facing issues in the following aspects:
+* **Client Engagement Tracking**: Difficulty in monitoring the service history of a large, diverse client base to ensure satisfaction.
+* **Appointment Management**: Significant time and effort spent on scheduling and remembering appointments.
+* **Document Accessibility**: Challenges in promptly recalling or locating specific customer portfolio documents.
 
-If you
-* are a financial advisor,
-* can type fast,
-* have more than 50 clients,
+Thus, we have specially developed _FApro_ to aid you in your everyday tasks so that you are able to spend more time fostering **meaningful relationships** and providing **personalized service**.
 
-FApro can get your client management tasks done faster than traditional GUI apps.
+You may refer to the [Product Information](#product-information) section to find out more about _FApro_. If you are keen to use our product, we have a [Quick Start](#quick-start) dedicated to help you get started with ease. We hope you enjoy using _FApro_!
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Quick start
+## Purpose of this User Guide
+
+Dear financial advisors, this User Guide will aid you in your journey when navigating _FApro_. We have included beginner-friendly instructions to help you get started, familiarise yourself with our various features. Additionally, we also have some examples to let you test out the product and tips to help you fully utilize our product. We hope you have an amazing time using our product!
+
+--------------------------------------------------------------------------------------------------------------------
+
+## Product Information
+_FApro_ is a **desktop app for managing clients' contacts, optimized for use via a Command Line Interface** (CLI) which allows you to type commands while still having the benefits of a Graphical User Interface (GUI) which allows you to use your mouse to execute commands.
+
+Thus if you
+* are a financial advisor,
+* can type fast,
+* have more than 50 clients,
+* wants to save time,
+
+then, this is the app for you!
+
+_FApro_ can get your client management tasks done faster than traditional GUI apps enabling you to **maximize personal touch**, **maximize productivity**, and **maximize workflow efficiency** :arrow_up: 
+
+We are able to achieve this by:
+* helping you to manage upcoming meetings
+* helping you to identify clients to contact
+* helping you to retrieve vital information
+
+with **ease** and with **just our application**, nothing more.
+
+--------------------------------------------------------------------------------------------------------------------
+
+## Quick Start
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
@@ -31,16 +58,29 @@ FApro can get your client management tasks done faster than traditional GUI apps
 
 3. Copy the file to the folder you want to use as the _home folder_ for your FApro.
 
-4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar fapro.jar` command to run the application.<br>
+4. Open a command terminal, type in `cd` followed by the folder you put the jar file in.<br>
+
+<box type="info" seamless>
+
+**Info:** `cd` stands for _current directory_.
+This step is akin to clicking into folder, but instead we do it through the terminal by only typing.
+
+Example: `cd Documents\fapro`
+
+This is equivalent to (1) 'clicking' into the _Documents_ folder (2) then click into the _fapro_ folder inside the _Documents_ folder.
+</box>
+
+5. Type in the `java -jar fapro.jar` command to run the application.<br>
+
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/UiWithSampleData.png)
 
-1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
+6. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
    * `list` : Lists all clients' contacts.
 
-   * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 u/16-03-2023 0800 lc/16-03-2025 0800` : Adds a contact named `John Doe` to FApro.
+   * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 u/16-03-2025 0800 lc/16-03-2023 0800` : Adds a client named `John Doe` to FApro.
 
    * `delete 3` : Deletes the 3rd client's contact shown in the current list.
 
@@ -48,11 +88,11 @@ FApro can get your client management tasks done faster than traditional GUI apps
 
    * `exit` : Exits the app.
 
-1. Refer to the [Features](#features) below for details of each command.
+7. Refer to the [Features](#features) below for details of each command.
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Features
+## How to use the User Guide
 
 <box type="info" seamless>
 
@@ -70,12 +110,36 @@ FApro can get your client management tasks done faster than traditional GUI apps
 * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 
-* `DATETIME` format must be in `DD-MM-YYYY HHmm` format.
 * Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
+
+* `DATETIME` format must be in `DD-MM-YYYY HHmm` format.
 </box>
+
+If this is your **first time** using _FApro_ and wants to gain a better understanding of the product, you may
+1. Set up _FApro_ using the instructions given in the [Quick Start](#quick-start) section.
+2. Take a look at the [Command Summary](#command-summary) to see the list of commands _FApro_ has.
+3. Look through all the commands and try them out using the format and examples given (if any). Some simple commands do not have examples.
+4. Take note of the limitations of the product by taking a look at the [Known Issues](#known-issues) section.
+
+If this is your **first few time** using _FApro_ and wants to gain a better understanding of a particular command, you may
+1. Look for the command in the Table of Contents.
+2. Click on the command you are looking for, you will be directed to the command section in the User Guide
+2. Take a look at the purpose of this command to understand its capabilities and limitations.
+3. Take note of it's command format.
+4. Take note of any additional tips or notes.
+5. Try out the command on your desktop to familiarise yourself with it.
+
+If this is your **first few time** using _FApro_ and troubleshoot an error for a command, you may
+1. Look for the command in the Table of Contents.
+2. Click on the command you are looking for, you will be directed to the command section in the User Guide
+3. Take note of it's command format. Compare it with the command that you have entered to see if there is any difference.
+4. If you are able to spot the difference, proceed to rectify it. Else, you may refer to the [Known Issues](#known-issues) section to see if the error has not currently been resolved.
+
+
+## Features
 
 ### Viewing help : `help`
 
@@ -180,7 +244,7 @@ Examples:
 * `findtagsand car covid` returns all clients with `car` and `covid` tags.
 * `findtagsand HOUSING` returns all clients with a `housing` tag.
 
-### Add tags to a client : `addtags`
+### Adding tags to a client : `addtags`
 
 Add tags to specified client.
 
@@ -225,7 +289,7 @@ Examples:
 
 ![result for 'select 2'](images/select1Result.png)
 
-### View contacts of all upcoming appointments : `upcoming`
+### Viewing contacts of all upcoming appointments : `upcoming`
 
 View all the contacts of all upcoming appointments ordered by date (earliest to latest).
 
@@ -237,7 +301,7 @@ Examples:
 * `upcoming` would show the 3 contacts if there are 3 contacts with upcoming appointments.
 ![result for `upcoming`](images/upcomingResult.png)
 
-### View contacts of all last contacted clients : `lastcontact`
+### Viewing contacts of all last contacted clients : `lastcontact`
 
 View all the contacts that has last contacted date and time ordered by date (oldest to recent).
 
@@ -248,22 +312,6 @@ Format: `lastcontact`
 Example:
 * `lastcontact` would filter the contacts and show all contacts that has last contacted date time.
 ![result for `lastcontact`](images/lastcontactResult.png)
-
-### (_Coming Soon_) Uploading photo for a client : `image`
-
-Adds a profile photo for a specified client in FApro.
-
-Format: `image INDEX PATH`
-
-* Adds the profile photo for the client at the specified `INDEX` with the image found at `PATH`.
-* The index refers to the index number shown in the displayed client list.
-* The index **must be a positive integer** 1, 2, 3, …​
-* The path refers to the relative path of the image to the main repository.
-* If there is no photo uploaded, the profile photo will be the default one.
-
-Examples:
-* `list` followed by `image 3 profiles/charlotte.png` shows the detailed profile of the 2nd client in FApro.
-* `find david` followed by `image 1 profiles/david.png` shows the detailed profile of the 1st client in the results of the `find` command.
 
 ### Clearing all entries : `clear`
 
@@ -292,6 +340,22 @@ If your changes to the data file makes its format invalid, FApro will discard al
 Furthermore, certain edits can cause FApro to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 </box>
 
+### (_Coming Soon_) Uploading photo for a client : `image`
+
+Adds a profile photo for a specified client in FApro.
+
+Format: `image INDEX PATH`
+
+* Adds the profile photo for the client at the specified `INDEX` with the image found at `PATH`.
+* The index refers to the index number shown in the displayed client list.
+* The index **must be a positive integer** 1, 2, 3, …​
+* The path refers to the relative path of the image to the main repository.
+* If there is no photo uploaded, the profile photo will be the default one.
+
+Examples:
+* `list` followed by `image 3 profiles/charlotte.png` shows the detailed profile of the 2nd client in FApro.
+* `find david` followed by `image 1 profiles/david.png` shows the detailed profile of the 1st client in the results of the `find` command.
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## FAQ
@@ -301,13 +365,14 @@ Furthermore, certain edits can cause FApro to behave in unexpected ways (e.g., i
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Known issues
+## Known Issues
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
+2. **When the tags are too long**, there is no length restriction on the tags. However, when you add a tag that is too long, the last few characters will be cut off and will not be able to be seen in any window size. The remedy is to shorten the tag's name. We understand that this is not optimal, and we are currently looking at ways to accomodate tags with very long names.
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Command summary
+## Command Summary
 
 Action     | Format, Examples
 -----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -324,3 +389,4 @@ Action     | Format, Examples
 **List**   | `list`
 **Select** | `select INDEX`<br> e.g. `select 1`
 **Help**   | `help`
+**Exit**   | `exit`
