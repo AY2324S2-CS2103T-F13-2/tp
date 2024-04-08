@@ -372,7 +372,7 @@ Adds note for a specified client in FApro. This feature can be used
 * during the appointmeent: to take note of what the client is saying
 * after the appointment: to take note of the follow-up actions
 
-Format: `addnote INDEX note/NOTE [note/MORE_NOTES]`
+Format: `addnote INDEX note/NOTE [note/MORE_NOTES]...`
 
 * Adds `NOTE` for the client at the specified `INDEX`.
 * The index refers to the index number shown in the displayed client list.
@@ -420,4 +420,4 @@ Action     | Format, Examples
 **Help**   | `help`
 **Exit**   | `exit`
 **_(Coming soon)_ image**   | `image INDEX i/PATH`<br> e.g. `image 1 i/profiles/david.png`
-**_(Coming soon)_ addnote**   | `addnote INDEX note/NOTE [note/MORE_NOTES]`<br> e.g. `addnote 3 note/remind her to check her yearly coupon note/wants to retrieve her money from her savings plan`
+**_(Coming soon)_ addnote**   | `addnote INDEX note/NOTE [note/MORE_NOTES]...`<br> e.g. `addnote 3 note/remind her to check her yearly coupon note/wants to retrieve her money from her savings plan`
