@@ -410,7 +410,7 @@ Action     | Format, Examples
 **Find**   | `find KEYWORD [MORE_KEYWORDS]`<br> e.g. `find James Jake`
 **FindTagsOr**| `findtagsor TAG [MORE_TAGS]…​` <br> e.g. `findtagsor car health`
 **FindTagsAnd**| `findtagsand TAG [MORE_TAGS]…​` <br> e.g. `findtagsand car housing`
-**AddTags**| `addtags INDEX t/TAG [t/MORE_TAGS]…​` <br> e.g. `addtags 1 car housing`
+**AddTags**| `addtags INDEX t/TAG [t/MORE_TAGS]…​` <br> e.g. `addtags 1 t/car t/covid`
 **Lastcontact**| `lastcontact`
 **Upcoming**| `upcoming`
 **List**   | `list`
