@@ -136,7 +136,7 @@ If this is your **first few time** using _FApro_ and troubleshoot an error for a
 1. Look for the command in the Table of Contents.
 2. Click on the command you are looking for, you will be directed to the command section in the User Guide
 3. Take note of it's command format. Compare it with the command that you have entered to see if there is any difference.
-4. If you are able to spot the difference, proceed to rectify it. Else, you may refer to the [Known Issues](#known-issues) section to see if the error has not currently been resolved.
+4. If you are able to spot the difference, proceed to rectify it. Else, you may refer to the [Known Issues](#known-issues) section to check if if the error is a known issue.
 
 
 ## Features
@@ -289,6 +289,8 @@ Format: `select INDEX`
 * Displays the profile of the client at the specified `INDEX`.
 * The index refers to the index number shown in the displayed client list.
 * The index **must be a positive integer** 1, 2, 3, …​
+
+**Note**: The profile panel will auto-update when changes are made to a profile using the [edit command](#editing-a-client--edit). However, the changes will not be reflected when you add tags using the [addtags command](#adding-tags-to-a-client--addtags). The remedy would be to select the client again. We will be rectifying this in the next iteration.
 
 Examples:
 * `list` followed by `select 2` shows the detailed profile of the 2nd client in FApro.
