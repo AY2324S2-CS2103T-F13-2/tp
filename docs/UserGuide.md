@@ -6,38 +6,81 @@
 
 # FApro User Guide
 
-FApro is a **desktop app for managing clients' contacts, optimized for use via a Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI).
-
-If you
-* are a financial advisor,
-* can type fast,
-* have more than 50 clients,
-
-FApro can get your client management tasks done faster than traditional GUI apps.
-
 <!-- * Table of Contents -->
 <page-nav-print />
 
+## Welcome Note
+
+Greetings financial advisors, hope you are doing well! We would like to thank you for your services all these years. Your hard work has not gone unnoticed! Particularly, we have observed that you may be facing issues in the following aspects:
+* **Client Engagement Tracking**: Difficulty in monitoring the service history of a large, diverse client base to ensure satisfaction.
+* **Appointment Management**: Significant time and effort spent on scheduling and remembering appointments.
+* **Document Accessibility**: Challenges in promptly recalling or locating specific customer portfolio documents.
+
+Thus, we have specially developed _FApro_ to aid you in your everyday tasks so that you are able to spend more time fostering **meaningful relationships** and providing **personalized service**.
+
+You may refer to the [Product Information](#product-information) section to find out more about _FApro_. If you are keen to use our product, we have a [Quick Start](#quick-start) dedicated to help you get started with ease. We hope you enjoy using _FApro_!
+
 --------------------------------------------------------------------------------------------------------------------
 
-## Quick start
+## Purpose of this User Guide
+
+This User Guide will aid you in your journey when navigating _FApro_. We have included beginner-friendly instructions to help you get started, familiarise yourself with our various features. Additionally, we've included examples and tips to enhance your experience with our product. We hope you enjoy using it to its fullest potential!
+
+--------------------------------------------------------------------------------------------------------------------
+
+## Product Information
+_FApro_ is a **desktop app for managing clients' contacts, optimized for use via a Command Line Interface** (CLI) which allows you to type commands while still having the benefits of a Graphical User Interface (GUI) which allows you to use your mouse to execute commands.
+
+Thus, if you
+* are a financial advisor,
+* can type fast,
+* have more than 50 clients,
+* wants to save time,
+
+then, this is the ultimate all-in-one app for you!
+
+_FApro_ can get your client management tasks done faster than traditional GUI apps enabling you to **maximize personal touch**, **maximize productivity**, and **maximize workflow efficiency**.
+
+We are able to achieve this by:
+* helping you to manage upcoming meetings
+* helping you to identify clients to contact
+* helping you to retrieve vital information
+
+with **ease** and with **just our application**, nothing more.
+
+--------------------------------------------------------------------------------------------------------------------
+
+## Quick Start
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
-1. Download the latest `fapro.jar` from [here](https://github.com/AY2324S2-CS2103T-F13-2/tp/releases).
+2. Download the latest `fapro.jar` from [here](https://github.com/AY2324S2-CS2103T-F13-2/tp/releases).
 
-1. Copy the file to the folder you want to use as the _home folder_ for your FApro.
+3. Copy the file to the folder you want to use as the _home folder_ for your FApro.
 
-1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar fapro.jar` command to run the application.<br>
+4. Open a command terminal, type in `cd` followed by the folder you put the jar file in.<br>
+
+<box type="info" seamless>
+
+**Info:** `cd` stands for _current directory_.
+This step is akin to clicking into folder, but instead we do it through the terminal by only typing.
+
+Example: `cd Documents\fapro`
+
+This is equivalent to (1) 'clicking' into the _Documents_ folder (2) then click into the _fapro_ folder inside the _Documents_ folder.
+</box>
+
+5. Type in the `java -jar fapro.jar` command to run the application.<br>
+
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/UiWithSampleData.png)
 
-1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
+6. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
    * `list` : Lists all clients' contacts.
 
-   * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 u/16-03-2023 0800 lc/16-03-2025 0800` : Adds a contact named `John Doe` to FApro.
+   * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 u/16-03-2025 0800 lc/16-03-2023 0800` : Adds a client named `John Doe` to FApro.
 
    * `delete 3` : Deletes the 3rd client's contact shown in the current list.
 
@@ -45,11 +88,11 @@ FApro can get your client management tasks done faster than traditional GUI apps
 
    * `exit` : Exits the app.
 
-1. Refer to the [Features](#features) below for details of each command.
+7. Refer to the [Features](#features) below for details of each command.
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Features
+## How to use the User Guide
 
 <box type="info" seamless>
 
@@ -67,12 +110,36 @@ FApro can get your client management tasks done faster than traditional GUI apps
 * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 
-* `DATETIME` format must be in `DD-MM-YYYY HHmm` format.
 * Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
+
+* `DATETIME` format must be in `DD-MM-YYYY HHmm` format.
 </box>
+
+If this is your **first time** using _FApro_ and wants to gain a better understanding of the product, you may
+1. Set up _FApro_ using the instructions given in the [Quick Start](#quick-start) section.
+2. Take a look at the [Command Summary](#command-summary) to see the list of commands _FApro_ has.
+3. Look through all the commands and try them out using the format and examples given (if any). Some simple commands do not have examples.
+4. Take note of the limitations of the product by taking a look at the [Known Issues](#known-issues) section.
+
+If this is your **first few time** using _FApro_ and wants to gain a better understanding of a particular command, you may
+1. Look for the command in the Table of Contents.
+2. Click on the command you are looking for, you will be directed to the command section in the User Guide
+2. Take a look at the purpose of this command to understand its capabilities and limitations.
+3. Take note of it's command format.
+4. Take note of any additional tips or notes.
+5. Try out the command on your desktop to familiarise yourself with it.
+
+If this is your **first few time** using _FApro_ and troubleshoot an error for a command, you may
+1. Look for the command in the Table of Contents.
+2. Click on the command you are looking for, you will be directed to the command section in the User Guide
+3. Take note of it's command format. Compare it with the command that you have entered to see if there is any difference.
+4. If you are able to spot the difference, proceed to rectify it. Else, you may refer to the [Known Issues](#known-issues) section to check if if the error is a known issue.
+
+
+## Features
 
 ### Viewing help : `help`
 
@@ -123,8 +190,8 @@ Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]... [lc/DATE
 * When editing tags, the existing tags of the client will be removed i.e. adding of tags is not cumulative.
 * You can remove all the client’s tags by typing `t/` without
     specifying any tags after it.
-* Last contacted `lc/` should not have a future `DATETIME` and must be valid. 
-* Upcoming `u/` should not have a past `DATETIME` and must be valid. 
+* Last contacted `lc/` should not have a future `DATETIME` and must be valid.
+* Upcoming `u/` should not have a past `DATETIME` and must be valid.
 
 Examples:
 *  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st client to be `91234567` and `johndoe@example.com` respectively.
@@ -177,11 +244,11 @@ Examples:
 * `findtagsand car covid` returns all clients with `car` and `covid` tags.
 * `findtagsand HOUSING` returns all clients with a `housing` tag.
 
-### Add tags to a client : `addtags`
+### Adding tags to a client : `addtags`
 
 Add tags to specified client.
 
-Format: `addtags INDEX t/TAG [t/MORE_TAGS]`
+Format: `addtags INDEX t/TAG [t/MORE_TAGS]...`
 
 * Add tags to the client at the specified `INDEX`. The index refers to the index number shown in the displayed client list. The index **must be a positive integer** 1, 2, 3, …​
 * At least one tag must be provided.
@@ -189,7 +256,7 @@ Format: `addtags INDEX t/TAG [t/MORE_TAGS]`
 * Tags are case-insensitive. e.g. `cAr` and `car` are the same tags.
 
 Examples:
-* `addtags 1 t/car t/covid` adds `car` and `covid` tags to the 1st client. 
+* `addtags 1 t/car t/covid` adds `car` and `covid` tags to the 1st client.
 * `addtags 2 t/HOUSING` adds `housing` tag to the 2nd client.
 
 ### Deleting a client : `delete`
@@ -208,7 +275,14 @@ Examples:
 
 ### Viewing the detailed profile a client : `select`
 
-View a more detailed profile of the specified client from FApro.
+View a more detailed profile of the specified client from FApro. The detailed profile currently includes the **contact information** and **existing plans**. In addition, we are also planning to include the following:
+* Profile image of the client: [Uploading a profile photo for a client](#coming-soon-uploading-photo-for-a-client--image)
+* Notes regarding the client: [Adding notes for a client](#coming-soon-adding-notes-for-a-client--addnote)
+
+This profile aims to aid financial advisors in the following ways:
+* retrieve vital information (existing financial plans, current financial status) during the preparation for an appointment
+* act as a reference notes during the appointment itself
+* take down important notes after the appointments (follow-up tasks)
 
 Format: `select INDEX`
 
@@ -216,13 +290,15 @@ Format: `select INDEX`
 * The index refers to the index number shown in the displayed client list.
 * The index **must be a positive integer** 1, 2, 3, …​
 
+**Note**: The profile panel will auto-update when changes are made to a profile using the [edit command](#editing-a-client--edit). However, the changes will not be reflected when you add tags using the [addtags command](#adding-tags-to-a-client--addtags). The remedy would be to select the client again. We will be rectifying this in the next iteration.
+
 Examples:
 * `list` followed by `select 2` shows the detailed profile of the 2nd client in FApro.
 * `find bernice` followed by `select 1` shows the detailed profile of the 1st client in the results of the `find` command.
 
 ![result for 'select 2'](images/select1Result.png)
 
-### View contacts of all upcoming appointments : `upcoming`
+### Viewing contacts of all upcoming appointments : `upcoming`
 
 View all the contacts of all upcoming appointments ordered by date (earliest to latest).
 
@@ -234,7 +310,7 @@ Examples:
 * `upcoming` would show the 3 contacts if there are 3 contacts with upcoming appointments.
 ![result for `upcoming`](images/upcomingResult.png)
 
-### View contacts of all last contacted clients : `lastcontact`
+### Viewing contacts of all last contacted clients : `lastcontact`
 
 View all the contacts that has last contacted date and time ordered by date (oldest to recent).
 
@@ -245,22 +321,6 @@ Format: `lastcontact`
 Example:
 * `lastcontact` would filter the contacts and show all contacts that has last contacted date time.
 ![result for `lastcontact`](images/lastcontactResult.png)
-
-### (_Coming Soon_) Uploading photo for a client : `image`
-
-Adds a profile photo for a specified client in FApro.
-
-Format: `image INDEX PATH`
-
-* Adds the profile photo for the client at the specified `INDEX` with the image found at `PATH`.
-* The index refers to the index number shown in the displayed client list.
-* The index **must be a positive integer** 1, 2, 3, …​
-* The path refers to the relative path of the image to the main repository.
-* If there is no photo uploaded, the profile photo will be the default one.
-
-Examples:
-* `list` followed by `image 3 profiles/charlotte.png` shows the detailed profile of the 2nd client in FApro.
-* `find david` followed by `image 1 profiles/david.png` shows the detailed profile of the 1st client in the results of the `find` command.
 
 ### Clearing all entries : `clear`
 
@@ -289,6 +349,42 @@ If your changes to the data file makes its format invalid, FApro will discard al
 Furthermore, certain edits can cause FApro to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 </box>
 
+### (_Coming Soon_) Uploading a profile photo for a client : `image`
+
+Adds a profile photo for a specified client in FApro.
+
+Format: `image INDEX i/PATH`
+
+* Adds the profile photo for the client at the specified `INDEX` with the image found at `PATH`.
+* The index refers to the index number shown in the displayed client list.
+* The index **must be a positive integer** 1, 2, 3, …​
+* The path refers to the relative path of the image to the main repository.
+* If there is no photo uploaded, the profile photo section will display a placeholder profile photo.
+
+Examples:
+* `list` followed by `image 3 i/profiles/charlotte.png` adds a profile photo found at `profiles/charlotte.png` to the 3rd client in FApro.
+* `find david` followed by `image 1 i/profiles/david.png` adds a profile photo found at `profiles/david.png` to the 1st client in the results of the `find` command.
+
+### (_Coming Soon_) Adding notes for a client : `addnote`
+
+Adds note for a specified client in FApro. This feature can be used
+* during preparation for appointment: to take note of what to say during it
+* during the appointmeent: to take note of what the client is saying
+* after the appointment: to take note of the follow-up actions
+
+Format: `addnote INDEX note/NOTE [note/MORE_NOTES]...`
+
+* Adds `NOTE` for the client at the specified `INDEX`.
+* The index refers to the index number shown in the displayed client list.
+* The index **must be a positive integer** 1, 2, 3, …​
+* At least one `NOTE` must be provided.
+* There is no restriction to the length and format of the `NOTE`.
+* The `NOTE` can only be viewed in the [detailed profile](#viewing-the-detailed-profile-a-client--select).
+
+Examples:
+* `list` followed by `addnote 3 note/remind her to check her yearly coupon note/wants to retrieve her money from her savings plan` adds 2 note to the 3rd client in FApro.
+* `find david` followed by `addnote 1 note/looking for insurance plans` adds a note to the 1st client in the results of the `find` command.
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## FAQ
@@ -298,16 +394,17 @@ Furthermore, certain edits can cause FApro to behave in unexpected ways (e.g., i
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Known issues
+## Known Issues
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
+2. **When the tags are too long**, there is no length restriction on the tags. However, when you add a tag that is too long, the last few characters will be cut off and will not be able to be seen in any window size. The remedy is to shorten the tag's name. We understand that this is not optimal, and we are currently looking at ways to accommodate tags with very long names.
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Command summary
+## Command Summary
 
 Action     | Format, Examples
------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------
 **Add**    | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]… [lc/DATETIME] [u/DATETIME]` <br> e.g. `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague`
 **Clear**  | `clear`
 **Delete** | `delete INDEX`<br> e.g. `delete 3`
@@ -315,9 +412,12 @@ Action     | Format, Examples
 **Find**   | `find KEYWORD [MORE_KEYWORDS]`<br> e.g. `find James Jake`
 **FindTagsOr**| `findtagsor TAG [MORE_TAGS]…​` <br> e.g. `findtagsor car health`
 **FindTagsAnd**| `findtagsand TAG [MORE_TAGS]…​` <br> e.g. `findtagsand car housing`
-**AddTags**| `addtags INDEX t/TAG [t/MORE_TAGS]…​` <br> e.g. `addtags 1 car housing`
+**AddTags**| `addtags INDEX t/TAG [t/MORE_TAGS]…​` <br> e.g. `addtags 1 t/car t/covid`
 **Lastcontact**| `lastcontact`
 **Upcoming**| `upcoming`
 **List**   | `list`
 **Select** | `select INDEX`<br> e.g. `select 1`
 **Help**   | `help`
+**Exit**   | `exit`
+**_(Coming soon)_ image**   | `image INDEX i/PATH`<br> e.g. `image 1 i/profiles/david.png`
+**_(Coming soon)_ addnote**   | `addnote INDEX note/NOTE [note/MORE_NOTES]...`<br> e.g. `addnote 3 note/remind her to check her yearly coupon note/wants to retrieve her money from her savings plan`
