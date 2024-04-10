@@ -58,10 +58,17 @@ public class AddTagsCommand extends Command {
         Person editedPerson = new Person(personToEdit.getName(), personToEdit.getPhone(), personToEdit.getEmail(),
                 personToEdit.getAddress(), updatedTags, personToEdit.getUpcoming(), personToEdit.getLastcontact());
 
+        boolean updateProfile = false;
+        if (personToEdit.isSamePerson(model.getSelectedPerson())) {
+            model.updateSelectedPerson(editedPerson);
+            updateProfile = true;
+        }
+
         model.setPerson(personToEdit, editedPerson);
         model.setToInitialList();
 
-        return new CommandResult(String.format(MESSAGE_SUCCESS, Messages.format(editedPerson)));
+        return new CommandResult(String.format(MESSAGE_SUCCESS, Messages.format(editedPerson)),
+                false, false, updateProfile);
     }
 
     @Override
