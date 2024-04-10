@@ -317,6 +317,7 @@ View all the contacts that has last contacted date and time ordered by date (old
 Format: `lastcontact`
 
 * Displays all clients with last contacted field and sorted in oldest date first.
+* Clients are arranged by the oldest contact date to help users systematically prioritize outreach, maintaining relationships effectively.
 
 Example:
 * `lastcontact` would filter the contacts and show all contacts that has last contacted date time.
