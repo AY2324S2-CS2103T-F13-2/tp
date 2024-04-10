@@ -102,10 +102,10 @@ This is equivalent to (1) 'clicking' into the _Documents_ folder (2) then click 
   e.g. in `add n/NAME`, `NAME` is a parameter which can be used as `add n/John Doe`.
 
 * Items in square brackets are optional.<br>
-  e.g `n/NAME [t/TAG]` can be used as `n/John Doe t/friend` or as `n/John Doe`.
+  e.g `n/NAME [t/PLAN]` can be used as `n/John Doe t/friend` or as `n/John Doe`.
 
 * Items with `…`​ after them can be used multiple times including zero times.<br>
-  e.g. `[t/TAG]…​` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
+  e.g. `[t/PLAN]…​` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
 
 * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
@@ -154,17 +154,23 @@ Format: `help`
 
 Adds a client to FApro.
 
-Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​ [lc/DATETIME] [u/DATETIME]`
+Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/PLAN]…​ [lc/DATETIME] [u/DATETIME]`
 
+* Phone number should contain only numbers and be at least 3 digits long.
+* Email should have a format of username@domain.
+* Username should only contain alphanumeric characters and the characters (+\_.-) excluding the parenthesis 
+and should not start with the above-mentioned characters.
+* Domain must be at least 2 characters long and can only contain alphanumeric characters and hyphens.
+* Plans should only contain alphanumeric characters with no whitespaces.
 * Last contacted `lc/` should not have a future `DATETIME` and must be valid.
-* Upcoming  `u/` should not have a past `DATETIME` and must be valid
+* Upcoming  `u/` should not have a past `DATETIME` and must be valid.
 
 <box type="tip" seamless>
 
-**Tip:** A client can have any number of tags (including 0)
+**Tip:** A client can have any number of plans (including 0)
 </box>
 
-**Note:** t/ , lc/ and u/ : tag, last contacted and upcoming fields are optional.
+**Note:** t/ , lc/ and u/ : plan, last contacted and upcoming fields are optional.
 
 
 Examples:
@@ -182,20 +188,26 @@ Format: `list`
 
 Edits an existing client in FApro.
 
-Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]... [lc/DATETIME] [u/DATETIME]`
+Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/PLAN]... [lc/DATETIME] [u/DATETIME]`
 
 * Edits the client at the specified `INDEX`. The index refers to the index number shown in the displayed client list. The index **must be a positive integer** 1, 2, 3, …​
 * At least one of the optional fields must be provided.
 * Existing values will be updated to the input values.
-* When editing tags, the existing tags of the client will be removed i.e. adding of tags is not cumulative.
-* You can remove all the client’s tags by typing `t/` without
-    specifying any tags after it.
+* When editing plans, the existing plans of the client will be removed i.e. adding of plans is not cumulative.
+* You can remove all the client’s plans by typing `t/` without
+    specifying any plans after it.
+* Phone number should contain only numbers and be at least 3 digits long.
+* Email should have a format of username@domain.
+* Username should only contain alphanumeric characters and the characters (+\_.-) excluding the parenthesis
+  and should not start with the above-mentioned characters.
+* Domain must be at least 2 characters long and can only contain alphanumeric characters and hyphens.
+* Plans should only contain alphanumeric characters with no whitespaces.
 * Last contacted `lc/` should not have a future `DATETIME` and must be valid.
 * Upcoming `u/` should not have a past `DATETIME` and must be valid.
 
 Examples:
 *  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st client to be `91234567` and `johndoe@example.com` respectively.
-*  `edit 2 n/Betsy Crower t/` Edits the name of the 2nd client to be `Betsy Crower` and clears all existing tags.
+*  `edit 2 n/Betsy Crower t/` Edits the name of the 2nd client to be `Betsy Crower` and clears all existing plans.
 
 ### Locating clients by name : `find`
 
@@ -216,48 +228,53 @@ Examples:
 
 ![result for 'find alex david'](images/findAlexDavidResult.png)
 
-### Locating clients by tag : `findtagsor`
+### Locating clients by plan : `findtagsor`
 
-Finds clients who contain one of the specified tags.
+Finds clients who contain one of the specified plans.
 
-Format: `findtagsor TAG [MORE_TAGS]`
-
-* The search is case-insensitive. e.g. `CaR` will match `car`.
-* As long as the client has 1 tag that matches, the client will be listed.
-* Only full words will be matched e.g. `cars` will not match `car`.
-
-Examples:
-* `findtagsor car` returns all clients with a `car` tag.
-* `findtagsor HOUSING` returns all clients with a `housing` tag.
-
-### Locating clients by tag : `findtagsand`
-
-Finds clients who contain all the specified tags.
-
-Format: `findtagsand TAG [MORE_TAGS]`
+Format: `findtagsor PLAN [MORE_PLANS]`
 
 * The search is case-insensitive. e.g. `CaR` will match `car`.
-* Client must contain all tags to be listed.
+* As long as the client has 1 plan that matches, the client will be listed.
 * Only full words will be matched e.g. `cars` will not match `car`.
+* At least one plan must be provided for the search to work. Not including a plan will result in an error.
+* Plans should only contain alphanumeric characters with no whitespaces.
 
 Examples:
-* `findtagsand car covid` returns all clients with `car` and `covid` tags.
-* `findtagsand HOUSING` returns all clients with a `housing` tag.
+* `findtagsor car` returns all clients with a `car` plan.
+* `findtagsor HOUSING` returns all clients with a `housing` plan.
 
-### Adding tags to a client : `addtags`
+### Locating clients by plan : `findtagsand`
 
-Add tags to specified client.
+Finds clients who contain all the specified plans.
 
-Format: `addtags INDEX t/TAG [t/MORE_TAGS]...`
+Format: `findtagsand PLAN [MORE_PLANS]`
 
-* Add tags to the client at the specified `INDEX`. The index refers to the index number shown in the displayed client list. The index **must be a positive integer** 1, 2, 3, …​
-* At least one tag must be provided.
-* Duplicate tags will be ignored.
-* Tags are case-insensitive. e.g. `cAr` and `car` are the same tags.
+* The search is case-insensitive. e.g. `CaR` will match `car`.
+* Client must contain all plans to be listed.
+* Only full words will be matched e.g. `cars` will not match `car`.
+* At least one plan must be provided for the search to work. Not including a plan will result in an error.
+* Plans should only contain alphanumeric characters with no whitespaces.
 
 Examples:
-* `addtags 1 t/car t/covid` adds `car` and `covid` tags to the 1st client.
-* `addtags 2 t/HOUSING` adds `housing` tag to the 2nd client.
+* `findtagsand car covid` returns all clients with `car` and `covid` plans.
+* `findtagsand HOUSING` returns all clients with a `housing` plan.
+
+### Adding plans to a client : `addtags`
+
+Add plans to specified client.
+
+Format: `addtags INDEX t/PLAN [t/MORE_PLANS]...`
+
+* Add plans to the client at the specified `INDEX`. The index refers to the index number shown in the displayed client list. The index **must be a positive integer** 1, 2, 3, …​
+* At least one plan must be provided.
+* Duplicate plans will be ignored.
+* Tags are case-insensitive. e.g. `cAr` and `car` are the same plans.
+* Plans should only contain alphanumeric characters with no whitespaces.
+
+Examples:
+* `addtags 1 t/car t/covid` adds `car` and `covid` plans to the 1st client.
+* `addtags 2 t/HOUSING` adds `housing` plan to the 2nd client.
 
 ### Deleting a client : `delete`
 
@@ -290,7 +307,7 @@ Format: `select INDEX`
 * The index refers to the index number shown in the displayed client list.
 * The index **must be a positive integer** 1, 2, 3, …​
 
-**Note**: The profile panel will auto-update when changes are made to a profile using the [edit command](#editing-a-client--edit). However, the changes will not be reflected when you add tags using the [addtags command](#adding-tags-to-a-client--addtags). The remedy would be to select the client again. We will be rectifying this in the next iteration.
+**Note**: The profile panel will auto-update when changes are made to a profile using the [edit command](#editing-a-client--edit). However, the changes will not be reflected when you add plans using the [addtags command](#adding-tags-to-a-client--addtags). The remedy would be to select the client again. We will be rectifying this in the next iteration.
 
 Examples:
 * `list` followed by `select 2` shows the detailed profile of the 2nd client in FApro.
@@ -386,6 +403,20 @@ Examples:
 * `list` followed by `addnote 3 note/remind her to check her yearly coupon note/wants to retrieve her money from her savings plan` adds 2 note to the 3rd client in FApro.
 * `find david` followed by `addnote 1 note/looking for insurance plans` adds a note to the 1st client in the results of the `find` command.
 
+### (_Coming Soon_) Deleting plans of a client : `deletetags`
+
+Deletes plans of a specified client.
+
+Format: `deletetags INDEX t/PLAN [t/MORE_PLANS]...`
+
+* Delete plans of the client at the specified `INDEX`. The index refers to the index number shown in the displayed client list. The index **must be a positive integer** 1, 2, 3, …​
+* At least one tag must be provided.
+* Duplicate plans will be ignored.
+* Tags are case-insensitive. e.g. `cAr` and `car` are the same plans.
+
+Examples:
+* `deletetags 1 t/car t/covid` deletes `car` and `covid` plans of the 1st client.
+* `deletetags 2 t/HOUSING` deletes `housing` plan of the 2nd client.
 --------------------------------------------------------------------------------------------------------------------
 
 ## FAQ
@@ -398,7 +429,7 @@ Examples:
 ## Known Issues
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
-2. **When the tags are too long**, there is no length restriction on the tags. However, when you add a tag that is too long, the last few characters will be cut off and will not be able to be seen in any window size. The remedy is to shorten the tag's name. We understand that this is not optimal, and we are currently looking at ways to accommodate tags with very long names.
+2. **When the plans are too long**, there is no length restriction on the plans. However, when you add a plan that is too long, the last few characters will be cut off and will not be able to be seen in any window size. The remedy is to shorten the plan's name. We understand that this is not optimal, and we are currently looking at ways to accommodate plans with very long names.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -406,14 +437,14 @@ Examples:
 
 Action     | Format, Examples
 -----------|------------------------------------------------------------------------------------------------------------------------------------------------------------
-**Add**    | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]… [lc/DATETIME] [u/DATETIME]` <br> e.g. `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague`
+**Add**    | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/PLAN]… [lc/DATETIME] [u/DATETIME]` <br> e.g. `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague`
 **Clear**  | `clear`
 **Delete** | `delete INDEX`<br> e.g. `delete 3`
-**Edit**   | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]… [lc/DATETIME] [u/DATETIME]`<br> e.g.`edit 2 n/James Lee e/jameslee@example.com`
+**Edit**   | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/PLAN]… [lc/DATETIME] [u/DATETIME]`<br> e.g.`edit 2 n/James Lee e/jameslee@example.com`
 **Find**   | `find KEYWORD [MORE_KEYWORDS]`<br> e.g. `find James Jake`
-**FindTagsOr**| `findtagsor TAG [MORE_TAGS]…​` <br> e.g. `findtagsor car health`
-**FindTagsAnd**| `findtagsand TAG [MORE_TAGS]…​` <br> e.g. `findtagsand car housing`
-**AddTags**| `addtags INDEX t/TAG [t/MORE_TAGS]…​` <br> e.g. `addtags 1 t/car t/covid`
+**FindTagsOr**| `findtagsor PLAN [MORE_PLANS]…​` <br> e.g. `findtagsor car health`
+**FindTagsAnd**| `findtagsand PLAN [MORE_PLANS]…​` <br> e.g. `findtagsand car housing`
+**AddTags**| `addtags INDEX t/PLAN [t/MORE_PLANS]…​` <br> e.g. `addtags 1 t/car t/covid`
 **Lastcontact**| `lastcontact`
 **Upcoming**| `upcoming`
 **List**   | `list`
@@ -422,3 +453,4 @@ Action     | Format, Examples
 **Exit**   | `exit`
 **_(Coming soon)_ image**   | `image INDEX i/PATH`<br> e.g. `image 1 i/profiles/david.png`
 **_(Coming soon)_ addnote**   | `addnote INDEX note/NOTE [note/MORE_NOTES]...`<br> e.g. `addnote 3 note/remind her to check her yearly coupon note/wants to retrieve her money from her savings plan`
+**_(Coming soon)_ DeleteTags**   | `deletetags INDEX t/PLAN [t/MORE_PLANS]…​` <br> e.g. `deletetags 1 t/car t/covid`
