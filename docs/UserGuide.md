@@ -158,7 +158,7 @@ Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/PLAN]…​ [lc/DATETIME
 
 * Phone number should contain only numbers and be at least 3 digits long.
 * Email should have a format of username@domain.
-* Username should only contain alphanumeric characters and the characters (+\_.-) excluding the parenthesis 
+* Username should only contain alphanumeric characters and the characters (+\_.-) excluding the parenthesis
 and should not start with the above-mentioned characters.
 * Domain must be at least 2 characters long and can only contain alphanumeric characters and hyphens.
 * Plans should only contain alphanumeric characters with no whitespaces.
