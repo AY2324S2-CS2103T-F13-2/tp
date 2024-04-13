@@ -4,7 +4,7 @@
   pageNav: 3
 ---
 
-# Testing guide
+# Test guide
 
 <!-- * Table of Contents -->
 <page-nav-print />
