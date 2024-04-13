@@ -10,7 +10,7 @@
 
 ![Ui](images/Ui.png)
 
-**FApro is a desktop application for managing clients' contacts, optimized for use via a Line Interface.** While it has a GUI, most of the user interactions happen using a CLI (Command Line Interface).
+_FApro_ is a **desktop app for managing clients' contacts, optimized for use via a Command Line Interface** (CLI) which allows you to type commands while still having the benefits of a Graphical User Interface (GUI) which allows you to use your mouse to execute commands.
 
 * If you are interested in using FApro, head over to the [_Quick Start_ section of the **User Guide**](UserGuide.html#quick-start).
 * If you are interested about developing FApro, the [**Developer Guide**](DeveloperGuide.html) is a good place to start.
