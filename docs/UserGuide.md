@@ -41,10 +41,10 @@ then, this is the ultimate all-in-one app for you!
 
 _FApro_ can get your client management tasks done faster than traditional GUI apps enabling you to **maximize personal touch**, **maximize productivity**, and **maximize workflow efficiency**.
 
-We are able to achieve this by:
-* helping you to manage upcoming meetings
-* helping you to identify clients to contact
-* helping you to retrieve vital information
+We are able to achieve this by helping you to
+* manage upcoming meetings
+* identify clients to contact
+* to retrieve vital information
 
 with **ease** and with **just our application**, nothing more.
 
@@ -63,11 +63,13 @@ with **ease** and with **just our application**, nothing more.
 <box type="info" seamless>
 
 **Info:** `cd` stands for _current directory_.
-This step is akin to clicking into folder, but instead we do it through the terminal by only typing.
+This step is akin to clicking into folder, but instead we do it through the terminal by typing.
 
 Example: `cd Documents\fapro`
 
-This is equivalent to (1) 'clicking' into the _Documents_ folder (2) then click into the _fapro_ folder inside the _Documents_ folder.
+This is equivalent to 
+1. 'clicking' into the _Documents_ folder
+2. 'clicking' into the _fapro_ folder inside the _Documents_ folder.
 </box>
 
 5. Type in the `java -jar fapro.jar` command to run the application.<br>
@@ -75,7 +77,7 @@ This is equivalent to (1) 'clicking' into the _Documents_ folder (2) then click 
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/UiWithSampleData.png)
 
-6. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
+6. Type the command in the command box and press _Enter_ on your keyboard to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
    * `list` : Lists all clients' contacts.
@@ -93,6 +95,30 @@ This is equivalent to (1) 'clicking' into the _Documents_ folder (2) then click 
 --------------------------------------------------------------------------------------------------------------------
 
 ## How to use the User Guide
+
+If this is your **first time** using _FApro_ and wants to gain a better understanding of the product, you may
+1. Set up _FApro_ using the instructions given in the [Quick Start](#quick-start) section.
+2. Take a look at the [Command Summary](#command-summary) to see the list of commands _FApro_ has.
+3. Look through all the commands and try them out using the format and examples given (if any). Some simple commands do not have examples.
+4. Take note of the limitations of the product by taking a look at the [Known Issues](#known-issues) section.
+
+If this is your **first few time** using _FApro_ and wants to gain a better understanding of a particular command, you may
+1. Look for the command in the Table of Contents.
+2. Click on the command you are looking for, you will be directed to the command's section in the User Guide
+2. Take a look at the purpose of this command to understand its capabilities and limitations.
+3. Take note of it's command format.
+4. Take note of any additional tips or notes.
+5. Try out the command on your desktop to familiarise yourself with it.
+
+If this is your **first few time** using _FApro_ and troubleshoot an error for a command, you may
+1. Look for the command in the Table of Contents.
+2. Click on the command you are looking for, you will be directed to the command's section in the User Guide
+3. Take note of it's command format. Compare it with the command that you have entered to see if there is any difference.
+4. If you are able to spot the difference, proceed to rectify it. 
+5. Else, you may refer to the [Known Issues](#known-issues) section to check if the error is a known issue that is currently being fixed.
+
+
+## Features
 
 <box type="info" seamless>
 
@@ -117,29 +143,6 @@ This is equivalent to (1) 'clicking' into the _Documents_ folder (2) then click 
 
 * `DATETIME` format must be in `DD-MM-YYYY HHmm` format.
 </box>
-
-If this is your **first time** using _FApro_ and wants to gain a better understanding of the product, you may
-1. Set up _FApro_ using the instructions given in the [Quick Start](#quick-start) section.
-2. Take a look at the [Command Summary](#command-summary) to see the list of commands _FApro_ has.
-3. Look through all the commands and try them out using the format and examples given (if any). Some simple commands do not have examples.
-4. Take note of the limitations of the product by taking a look at the [Known Issues](#known-issues) section.
-
-If this is your **first few time** using _FApro_ and wants to gain a better understanding of a particular command, you may
-1. Look for the command in the Table of Contents.
-2. Click on the command you are looking for, you will be directed to the command section in the User Guide
-2. Take a look at the purpose of this command to understand its capabilities and limitations.
-3. Take note of it's command format.
-4. Take note of any additional tips or notes.
-5. Try out the command on your desktop to familiarise yourself with it.
-
-If this is your **first few time** using _FApro_ and troubleshoot an error for a command, you may
-1. Look for the command in the Table of Contents.
-2. Click on the command you are looking for, you will be directed to the command section in the User Guide
-3. Take note of it's command format. Compare it with the command that you have entered to see if there is any difference.
-4. If you are able to spot the difference, proceed to rectify it. Else, you may refer to the [Known Issues](#known-issues) section to check if if the error is a known issue.
-
-
-## Features
 
 ### Viewing help : `help`
 
