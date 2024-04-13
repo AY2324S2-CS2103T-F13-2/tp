@@ -59,4 +59,5 @@ Tag -[hidden]right-> Upcoming
 Upcoming -[hidden]right-> LastContact
 
 ModelManager --> "~* filtered" Person
+ModelManager --> "0..1 selected" Person
 @enduml
