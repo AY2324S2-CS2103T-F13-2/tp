@@ -142,6 +142,7 @@ If this is your **first few time** using _FApro_ and troubleshoot an error for a
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 
 * `DATETIME` format must be in `DD-MM-YYYY HHmm` format.
+
 </box>
 
 ### Viewing help : `help`
@@ -171,10 +172,15 @@ and should not start with the above-mentioned characters.
 <box type="tip" seamless>
 
 **Tip:** A client can have any number of plans (including 0)
+
+</box>
+<box type="warning" seamless>
+
+**Caution:** Though there is no length restriction in terms of number of characters for each plan. Plans that are too long may have the last few characters cut off by the UI. We are currently fixing this issue and updates will be coming in the next iteration.
+
 </box>
 
 **Note:** t/ , lc/ and u/ : plan, last contacted and upcoming fields are optional.
-
 
 Examples:
 * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 lc/16-03-2024 0800`
@@ -310,7 +316,11 @@ Format: `select INDEX`
 * The index refers to the index number shown in the displayed client list.
 * The index **must be a positive integer** 1, 2, 3, …​
 
-**Note**: The profile panel will auto-update when changes are made to a profile using the [edit command](#editing-a-client--edit). However, the changes will not be reflected when you add plans using the [addtags command](#adding-tags-to-a-client--addtags). The remedy would be to select the client again. We will be rectifying this in the next iteration.
+<box type="info" seamless>
+
+**Info:** The profile panel will auto-update when changes are made to a client using the [edit command](#editing-a-client--edit) and the [addtags command](#adding-tags-to-a-client--addtags). However, there is currently no way to 'unselect' a client, clear the profile panel. Even when the client is deleted using the [delete command](#deleting-a-client--delete) or all the clients are cleared using the [clear command](#clearing-all-entries--clear), the selected client's profile will still be displayed on the profile panel. We are currently fixing this issue and updates will be coming in the next iteration.
+
+</box>
 
 Examples:
 * `list` followed by `select 2` shows the detailed profile of the 2nd client in FApro.
@@ -403,7 +413,7 @@ Format: `addnote INDEX note/NOTE [note/MORE_NOTES]...`
 * The `NOTE` can only be viewed in the [detailed profile](#viewing-the-detailed-profile-a-client--select).
 
 Examples:
-* `list` followed by `addnote 3 note/remind her to check her yearly coupon note/wants to retrieve her money from her savings plan` adds 2 note to the 3rd client in FApro.
+* `list` followed by `addnote 3 note/remind her to check her yearly coupon note/wants to retrieve her money from her savings plan` adds 2 notes to the 3rd client in FApro.
 * `find david` followed by `addnote 1 note/looking for insurance plans` adds a note to the 1st client in the results of the `find` command.
 
 ### (_Coming Soon_) Deleting plans of a client : `deletetags`
@@ -432,7 +442,8 @@ Examples:
 ## Known Issues
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
-2. **When the plans are too long**, there is no length restriction on the plans. However, when you add a plan that is too long, the last few characters will be cut off and will not be able to be seen in any window size. The remedy is to shorten the plan's name. We understand that this is not optimal, and we are currently looking at ways to accommodate plans with very long names.
+2. **When the plans are too long**, the last few characters will be cut off and will not be able to be seen in any window size. The remedy is to shorten the plan's name. We understand that this is not optimal, and we are currently looking at ways to accommodate plans with very long names.
+3. **When the client is deleted or all the clients are cleared from FApro**, the selected client's profile will still be displayed on the profile panel. We currently have no remedy for this but are currently fixing this issue.
 
 --------------------------------------------------------------------------------------------------------------------
 
