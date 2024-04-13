@@ -14,7 +14,7 @@ We are a team based in the [School of Computing, National University of Singapor
 <img src="images/simhankiong.png" width="200px">
 
 [[github](https://github.com/SimHanKiong)]
-[[portfolio](team/simhankiong.md)]
+[[portfolio](team/SimHanKiong.md)]
 [[email](e0957654@u.nus.edu)]
 
 * Role: Team Lead
