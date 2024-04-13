@@ -61,8 +61,10 @@
         "glossary": "Glossary",
         "appendix-instructions-for-manual-testing": "Appendix: Instructions for manual testing",
         "launch-and-shutdown": "Launch and shutdown",
-        "deleting-a-person": "Deleting a person",
+        "deleting-a-client": "Deleting a client",
         "saving-data": "Saving data",
+        "adding-plans": "Adding plans",
+        "finding-clients-by-their-plans": "Finding clients by their plans",
         "appendix-planned-enhancement": "Appendix: Planned Enhancement"
       },
       "headingKeywords": {}
