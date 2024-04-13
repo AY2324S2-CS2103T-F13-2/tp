@@ -39,7 +39,7 @@
       "src": "DeveloperGuide.md",
       "title": "Developer Guide",
       "headings": {
-        "fapro-developer-guide": "FAPro Developer Guide",
+        "fapro-developer-guide": "FApro Developer Guide",
         "acknowledgements": "Acknowledgements",
         "setting-up-getting-started": "Setting up, getting started",
         "design": "Design",
@@ -50,9 +50,8 @@
         "storage-component": "Storage component",
         "common-classes": "Common classes",
         "implementation": "Implementation",
-        "proposed-undo-redo-feature": "[Proposed] Undo/redo feature",
-        "proposed-data-archiving": "[Proposed] Data archiving",
         "select-feature": "Select feature",
+        "proposed-undo-redo-feature": "[Proposed] Undo/redo feature",
         "documentation-logging-testing-configuration-dev-ops": "Documentation, logging, testing, configuration, dev-ops",
         "appendix-requirements": "Appendix: Requirements",
         "product-scope": "Product scope",
@@ -63,7 +62,8 @@
         "appendix-instructions-for-manual-testing": "Appendix: Instructions for manual testing",
         "launch-and-shutdown": "Launch and shutdown",
         "deleting-a-person": "Deleting a person",
-        "saving-data": "Saving data"
+        "saving-data": "Saving data",
+        "appendix-planned-enhancement": "Appendix: Planned Enhancement"
       },
       "headingKeywords": {}
     },
@@ -148,42 +148,34 @@
       "headingKeywords": {}
     },
     {
+      "src": "team/SimHanKiong.md",
+      "title": "Han Kiong's Project Portfolio Page",
+      "headings": {
+        "project-fapro": "Project: FApro"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "team/colex2000.md",
-      "title": "John Doe's Project Portfolio Page",
+      "title": "Chuan Yao's Project Portfolio Page",
       "headings": {
-        "project-addressbook-level-3": "Project: AddressBook Level 3"
-      },
-      "headingKeywords": {}
-    },
-    {
-      "src": "team/johndoe.md",
-      "title": "John Doe's Project Portfolio Page",
-      "headings": {
-        "project-addressbook-level-3": "Project: AddressBook Level 3"
-      },
-      "headingKeywords": {}
-    },
-    {
-      "src": "team/simhankiong.md",
-      "title": "John Doe's Project Portfolio Page",
-      "headings": {
-        "project-addressbook-level-3": "Project: AddressBook Level 3"
+        "project-fapro": "Project: FApro"
       },
       "headingKeywords": {}
     },
     {
       "src": "team/tanyunchao.md",
-      "title": "John Doe's Project Portfolio Page",
+      "title": "Yun Chao's Project Portfolio Page",
       "headings": {
-        "project-addressbook-level-3": "Project: AddressBook Level 3"
+        "project-fapro": "Project: FApro"
       },
       "headingKeywords": {}
     },
     {
-      "src": "team/tanziyang.md",
-      "title": "John Doe's Project Portfolio Page",
+      "src": "team/ziyang27.md",
+      "title": "Zi Yang's Project Portfolio Page",
       "headings": {
-        "project-addressbook-level-3": "Project: AddressBook Level 3"
+        "project-fapro": "Project: FApro"
       },
       "headingKeywords": {}
     },
