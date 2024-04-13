@@ -613,4 +613,8 @@ testers are expected to do more *exploratory* testing.
 ## **Appendix: Planned Enhancement**
 
 Team size: 4
-1. 
+
+1. **Enable tags (plans) with very long name to wrap**: Currently, when the tags are too long, the characters that is beyond the max width of the person card or the profile panel will be cut off and there is no way for the financial advisors to view the full tag. Thus, we intend to make the tags wrap around the max width of their container (person card or profile panel).
+2. **Clear the profile panel if the selected person is deleted**: Currently, when the selected person is deleted from FApro, the profile panel will still display his/her information. This, we plan to fix this by clearing the profile panel is the selected person is deleted.
+3. **Clear the profile panel if the entries in FApro are cleared**: This is similar to the enhancement above, only difference is that the `ClearCommand` is used to delete all clients/persons in FApro. Thus, our plan to fix is also similar, which is to clear the profile panel.
+4. 
