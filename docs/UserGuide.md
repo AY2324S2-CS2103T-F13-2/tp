@@ -41,10 +41,10 @@ then, this is the ultimate all-in-one app for you!
 
 _FApro_ can get your client management tasks done faster than traditional GUI apps enabling you to **maximize personal touch**, **maximize productivity**, and **maximize workflow efficiency**.
 
-We are able to achieve this by:
-* helping you to manage upcoming meetings
-* helping you to identify clients to contact
-* helping you to retrieve vital information
+We are able to achieve this by helping you to
+* manage upcoming meetings
+* identify clients to contact
+* to retrieve vital information
 
 with **ease** and with **just our application**, nothing more.
 
@@ -63,11 +63,13 @@ with **ease** and with **just our application**, nothing more.
 <box type="info" seamless>
 
 **Info:** `cd` stands for _current directory_.
-This step is akin to clicking into folder, but instead we do it through the terminal by only typing.
+This step is akin to clicking into folder, but instead we do it through the terminal by typing.
 
 Example: `cd Documents\fapro`
 
-This is equivalent to (1) 'clicking' into the _Documents_ folder (2) then click into the _fapro_ folder inside the _Documents_ folder.
+This is equivalent to 
+1. 'clicking' into the _Documents_ folder
+2. 'clicking' into the _fapro_ folder inside the _Documents_ folder.
 </box>
 
 5. Type in the `java -jar fapro.jar` command to run the application.<br>
@@ -75,7 +77,7 @@ This is equivalent to (1) 'clicking' into the _Documents_ folder (2) then click 
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/UiWithSampleData.png)
 
-6. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
+6. Type the command in the command box and press _Enter_ on your keyboard to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
    * `list` : Lists all clients' contacts.
@@ -93,6 +95,30 @@ This is equivalent to (1) 'clicking' into the _Documents_ folder (2) then click 
 --------------------------------------------------------------------------------------------------------------------
 
 ## How to use the User Guide
+
+If this is your **first time** using _FApro_ and wants to gain a better understanding of the product, you may
+1. Set up _FApro_ using the instructions given in the [Quick Start](#quick-start) section.
+2. Take a look at the [Command Summary](#command-summary) to see the list of commands _FApro_ has.
+3. Look through all the commands and try them out using the format and examples given (if any). Some simple commands do not have examples.
+4. Take note of the limitations of the product by taking a look at the [Known Issues](#known-issues) section.
+
+If this is your **first few time** using _FApro_ and wants to gain a better understanding of a particular command, you may
+1. Look for the command in the Table of Contents.
+2. Click on the command you are looking for, you will be directed to the command's section in the User Guide
+2. Take a look at the purpose of this command to understand its capabilities and limitations.
+3. Take note of it's command format.
+4. Take note of any additional tips or notes.
+5. Try out the command on your desktop to familiarise yourself with it.
+
+If this is your **first few time** using _FApro_ and troubleshoot an error for a command, you may
+1. Look for the command in the Table of Contents.
+2. Click on the command you are looking for, you will be directed to the command's section in the User Guide
+3. Take note of it's command format. Compare it with the command that you have entered to see if there is any difference.
+4. If you are able to spot the difference, proceed to rectify it. 
+5. Else, you may refer to the [Known Issues](#known-issues) section to check if the error is a known issue that is currently being fixed.
+
+
+## Features
 
 <box type="info" seamless>
 
@@ -116,30 +142,8 @@ This is equivalent to (1) 'clicking' into the _Documents_ folder (2) then click 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 
 * `DATETIME` format must be in `DD-MM-YYYY HHmm` format.
+
 </box>
-
-If this is your **first time** using _FApro_ and wants to gain a better understanding of the product, you may
-1. Set up _FApro_ using the instructions given in the [Quick Start](#quick-start) section.
-2. Take a look at the [Command Summary](#command-summary) to see the list of commands _FApro_ has.
-3. Look through all the commands and try them out using the format and examples given (if any). Some simple commands do not have examples.
-4. Take note of the limitations of the product by taking a look at the [Known Issues](#known-issues) section.
-
-If this is your **first few time** using _FApro_ and wants to gain a better understanding of a particular command, you may
-1. Look for the command in the Table of Contents.
-2. Click on the command you are looking for, you will be directed to the command section in the User Guide
-2. Take a look at the purpose of this command to understand its capabilities and limitations.
-3. Take note of it's command format.
-4. Take note of any additional tips or notes.
-5. Try out the command on your desktop to familiarise yourself with it.
-
-If this is your **first few time** using _FApro_ and troubleshoot an error for a command, you may
-1. Look for the command in the Table of Contents.
-2. Click on the command you are looking for, you will be directed to the command section in the User Guide
-3. Take note of it's command format. Compare it with the command that you have entered to see if there is any difference.
-4. If you are able to spot the difference, proceed to rectify it. Else, you may refer to the [Known Issues](#known-issues) section to check if if the error is a known issue.
-
-
-## Features
 
 ### Viewing help : `help`
 
@@ -168,15 +172,24 @@ and should not start with the above-mentioned characters.
 <box type="tip" seamless>
 
 **Tip:** A client can have any number of plans (including 0)
+
+</box>
+<box type="warning" seamless>
+
+**Caution:** Though there is no length restriction in terms of number of characters for each plan. Plans that are too long may have the last few characters cut off by the UI. We are currently fixing this issue and updates will be coming in the next iteration.
+
 </box>
 
 **Note:** t/ , lc/ and u/ : plan, last contacted and upcoming fields are optional.
 
-
 Examples:
 * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 lc/16-03-2024 0800`
 * `add n/Betsy Crowe e/betsycrowe@example.com a/Newgate Prison p/1234567 t/health`
-* `add n/Bobby Tan t/investment e/amk@gmail.com a/ang mo kio ave 3 u/01-01-2025 1300 p/88392302`
+* `add n/Bobby Tan t/investment e/amk@gmail.com a/ang mo kio ave 3 u/01-01-2025 1300 p/88392302 lc/16-03-2024 0800`
+
+![person card of Bobby Tan](images/personCard.png)
+
+Once added, a client card consisting of the **name, existing plans, upcoming meeting date and last-contacted date** will be shown in the client list. The rest of the information will only be shown when the client is [selected](#viewing-the-detailed-profile-a-client--select). This is to prevent the main list from being too cluttered. 
 
 ### Listing all clients : `list`
 
@@ -307,13 +320,19 @@ Format: `select INDEX`
 * The index refers to the index number shown in the displayed client list.
 * The index **must be a positive integer** 1, 2, 3, …​
 
-**Note**: The profile panel will auto-update when changes are made to a profile using the [edit command](#editing-a-client--edit). However, the changes will not be reflected when you add plans using the [addtags command](#adding-tags-to-a-client--addtags). The remedy would be to select the client again. We will be rectifying this in the next iteration.
+<box type="info" seamless>
+
+**Info:** The profile panel will auto-update when changes are made to a client using the [edit command](#editing-a-client--edit) and the [addtags command](#adding-tags-to-a-client--addtags). However, there is currently no way to 'unselect' a client, clear the profile panel. Even when the client is deleted using the [delete command](#deleting-a-client--delete) or all the clients are cleared using the [clear command](#clearing-all-entries--clear), the selected client's profile will still be displayed on the profile panel. We are currently fixing this issue and updates will be coming in the next iteration.
+
+</box>
 
 Examples:
 * `list` followed by `select 2` shows the detailed profile of the 2nd client in FApro.
 * `find bernice` followed by `select 1` shows the detailed profile of the 1st client in the results of the `find` command.
 
-![result for 'select 2'](images/select1Result.png)
+<img src="images/select1Result.png" width="40%" height="40%">
+
+Once selected, a client profile consisting of the **all the details** will be shown in the profile panel.
 
 ### Viewing contacts of all upcoming appointments : `upcoming`
 
@@ -400,7 +419,7 @@ Format: `addnote INDEX note/NOTE [note/MORE_NOTES]...`
 * The `NOTE` can only be viewed in the [detailed profile](#viewing-the-detailed-profile-a-client--select).
 
 Examples:
-* `list` followed by `addnote 3 note/remind her to check her yearly coupon note/wants to retrieve her money from her savings plan` adds 2 note to the 3rd client in FApro.
+* `list` followed by `addnote 3 note/remind her to check her yearly coupon note/wants to retrieve her money from her savings plan` adds 2 notes to the 3rd client in FApro.
 * `find david` followed by `addnote 1 note/looking for insurance plans` adds a note to the 1st client in the results of the `find` command.
 
 ### (_Coming Soon_) Deleting plans of a client : `deletetags`
@@ -429,7 +448,8 @@ Examples:
 ## Known Issues
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
-2. **When the plans are too long**, there is no length restriction on the plans. However, when you add a plan that is too long, the last few characters will be cut off and will not be able to be seen in any window size. The remedy is to shorten the plan's name. We understand that this is not optimal, and we are currently looking at ways to accommodate plans with very long names.
+2. **When the plans are too long**, the last few characters will be cut off and will not be able to be seen in any window size. The remedy is to shorten the plan's name. We understand that this is not optimal, and we are currently looking at ways to accommodate plans with very long names.
+3. **When the client is deleted or all the clients are cleared from FApro**, the selected client's profile will still be displayed on the profile panel. We currently have no remedy for this but are currently fixing this issue.
 
 --------------------------------------------------------------------------------------------------------------------
 

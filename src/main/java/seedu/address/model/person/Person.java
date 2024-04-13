@@ -84,6 +84,10 @@ public class Person {
         return lastcontact.hasLastContacted();
     }
 
+    public Person copy() {
+        return new Person(name, phone, email, address, tags, upcoming, lastcontact);
+    }
+
     /**
      * Returns true if both persons have the same name.
      * This defines a weaker notion of equality between two persons.

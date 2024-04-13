@@ -139,7 +139,12 @@ public class ModelManager implements Model {
 
     @Override
     public Person getSelectedPerson() {
-        return selectedPerson;
+        if (selectedPerson == null) {
+            return null;
+        }
+        //Returns a copy of the selectedPerson so that even if the returned `Person` object is
+        //modified, it will not affect the selectedPerson inside the Model object.
+        return selectedPerson.copy();
     }
 
     @Override

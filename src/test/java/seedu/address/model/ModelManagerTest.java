@@ -2,6 +2,7 @@ package seedu.address.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 import static seedu.address.testutil.Assert.assertThrows;
@@ -91,6 +92,20 @@ public class ModelManagerTest {
     @Test
     public void getFilteredPersonList_modifyList_throwsUnsupportedOperationException() {
         assertThrows(UnsupportedOperationException.class, () -> modelManager.getFilteredPersonList().remove(0));
+    }
+
+    @Test
+    public void getSelectPerson_samePerson_notSameObject() {
+        // No selected person -> returns null
+        assertNull(modelManager.getSelectedPerson());
+
+        modelManager.updateSelectedPerson(ALICE);
+
+        // Same person -> returns true
+        assertTrue(modelManager.getSelectedPerson().isSamePerson(ALICE));
+
+        // Not same object -> returns false
+        assertFalse(modelManager.getSelectedPerson() == ALICE);
     }
 
     @Test
