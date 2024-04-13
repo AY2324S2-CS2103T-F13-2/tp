@@ -185,7 +185,11 @@ and should not start with the above-mentioned characters.
 Examples:
 * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 lc/16-03-2024 0800`
 * `add n/Betsy Crowe e/betsycrowe@example.com a/Newgate Prison p/1234567 t/health`
-* `add n/Bobby Tan t/investment e/amk@gmail.com a/ang mo kio ave 3 u/01-01-2025 1300 p/88392302`
+* `add n/Bobby Tan t/investment e/amk@gmail.com a/ang mo kio ave 3 u/01-01-2025 1300 p/88392302 lc/16-03-2024 0800`
+
+![person card of Bobby Tan](images/personCard.png)
+
+Once added, a client card consisting of the **name, existing plans, upcoming meeting date and last-contacted date** will be shown in the client list. The rest of the information will only be shown when the client is [selected](#viewing-the-detailed-profile-a-client--select). This is to prevent the main list from being too cluttered. 
 
 ### Listing all clients : `list`
 
@@ -327,6 +331,8 @@ Examples:
 * `find bernice` followed by `select 1` shows the detailed profile of the 1st client in the results of the `find` command.
 
 <img src="images/select1Result.png" width="40%" height="40%">
+
+Once selected, a client profile consisting of the **all the details** will be shown in the profile panel.
 
 ### Viewing contacts of all upcoming appointments : `upcoming`
 
