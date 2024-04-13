@@ -581,32 +581,33 @@ testers are expected to do more *exploratory* testing.
    1. Re-launch the app by double-clicking the jar file.<br>
        Expected: The most recent window size and location is retained.
 
-1. _{ more test cases …​ }_
+### Selecting a client
 
-### Deleting a person
+1. Selecting a client while all clients are being shown
 
-1. Deleting a person while all people are being shown
+    1. Prerequisites: List all clients using the `list` command. Multiple clients in the list.
 
-   1. Prerequisites: List all people using the `list` command. Multiple people in the list.
+    1. Test case: `select 1`<br>
+       Expected: First client's details are displayed in the profile panel. Details of the selected client shown in the status message.
 
-   1. Test case: `delete 1`<br>
-      Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
+    1. Test case: `select 0`<br>
+       Expected: No client is selected. Error details shown in the status message.
 
-   1. Test case: `delete 0`<br>
-      Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.
+    1. Other incorrect select commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
+       Expected: Similar to previous.
 
-   1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
-      Expected: Similar to previous.
+1. Selecting a client after finding for a specific client by name
 
-1. _{ more test cases …​ }_
+    1. Prerequisites: Find clients with 'alex' in their name using the `find alex` command. One client in the list (if using sample data).
 
-### Saving data
+    1. Test case: `select 1`<br>
+       Expected: Similar to select while all clients are being shown.
 
-1. Dealing with missing/corrupted data files
+    1. Test case: `select 0`<br>
+       Expected: Similar to select while all clients are being shown.
 
-   1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
-
-1. _{ more test cases …​ }_
+    1. Other incorrect select commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
+       Expected: Similar to select while all clients are being shown.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -614,7 +615,11 @@ testers are expected to do more *exploratory* testing.
 
 Team size: 4
 
-1. **Enable tags (plans) with very long name to wrap**: Currently, when the tags are too long, the characters that is beyond the max width of the person card or the profile panel will be cut off and there is no way for the financial advisors to view the full tag. Thus, we intend to make the tags wrap around the max width of their container (person card or profile panel).
-2. **Clear the profile panel if the selected person is deleted**: Currently, when the selected person is deleted from FApro, the profile panel will still display his/her information. This, we plan to fix this by clearing the profile panel is the selected person is deleted.
-3. **Clear the profile panel if the entries in FApro are cleared**: This is similar to the enhancement above, only difference is that the `ClearCommand` is used to delete all clients/persons in FApro. Thus, our plan to fix is also similar, which is to clear the profile panel.
-4. 
+1. **Change `tag` to `plan`**: Currently, the error messages and commands use the wording `tag` instead of `plan`. However, our tags are specifically meant for financial plans and such ambiguous naming may confuse the users. Thus, we plan to change all the 'tag' to 'plan' to give the user a clearer picture.
+2. **Change and standardize all the `person` to `client`**: Currently, some error messages and success messages refer to the person in FApro as `person` while others refer to them as `client`. This may lead to confusion of the users, thinking that we are referring to two different things when we are indeed referring to the same thing. Thus, we intend to change all to `client` as it is more specific and suit our context better.
+3. **Enable tags (plans) with very long name to wrap**: Currently, when the tags are too long, the characters that is beyond the max width of the person card or the profile panel will be cut off and there is no way for the financial advisors to view the full tag. Thus, we intend to make the tags wrap around the max width of their container (person card or profile panel).
+4. **Clear the profile panel if the selected person is deleted**: Currently, when the selected person is deleted from FApro, the profile panel will still display his/her information. Thus, we plan to fix this by clearing the profile panel when the selected person is deleted.
+5. **Clear the profile panel if the entries in FApro are cleared**: This is similar to the enhancement above, only difference is that the `ClearCommand` is used to delete all clients/persons in FApro. Thus, our plan to fix this issue is also similar, which is to clear the profile panel.
+6. **Remove upcoming date**: There is currently no way for the financial advisors to remove the upcoming dates even after the appointments have passed. We plan to implement a command to remove  the upcoming dates after the appointments have passed or when the clients cancel the appointment.
+7. **Enable tags (plans) to be more than one word**: Our tags currently can only accommodate a single word. However, financial plans may consist of multiple words to differentiate one from the other. Thus, we plan to relax on the restriction of the plan parameters and allow multiple words.
+8. **Add notes to the Profile Panel**: The profile panel currently only shows the default profile image, contact details, and existing plans. It is not adding much value to the financial advisors. Thus, we intend to implement a command which can add notes for a specific client that can be seen only on the profile panel. This will come in handy for the financial advisors when they want to take down reminders for themselves when preparing for the appointment, take down important details of the client during the appointment itself or even take down things to do after the appointment.
