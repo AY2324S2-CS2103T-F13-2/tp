@@ -128,6 +128,9 @@ class JsonAdaptedPerson {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
                     LastContact.class.getSimpleName()));
         }
+        if (!LastContact.isValidDateTime(lastcontact)) {
+            throw new IllegalValueException(LastContact.MESSAGE_CONSTRAINTS);
+        }
         final LastContact modelLastContact = new LastContact(lastcontact);
 
         return new Person(modelName, modelPhone, modelEmail, modelAddress, modelTags, modelUpcoming, modelLastContact);
