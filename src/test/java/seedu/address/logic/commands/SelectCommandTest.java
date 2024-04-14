@@ -49,6 +49,7 @@ public class SelectCommandTest {
 
     @Test
     public void execute_invalidIndexUnfilteredList_throwsCommandException() {
+
         Index outOfBoundIndex = Index.fromOneBased(model.getFilteredPersonList().size() + 1);
         SelectCommand selectCommand = new SelectCommand(outOfBoundIndex);
 
