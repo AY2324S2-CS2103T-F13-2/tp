@@ -360,18 +360,17 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 1.  User requests to add a new client with the relevant information.
 2.  FApro adds the client.
-3.  FApro shows the client information in the list.
+3.  FApro shows the client information in the list. <br/>
     Use case ends.
 
 **Extensions**
 
 * 1a. The information provided is invalid or incomplete.
-  * 1a1. FApro shows the error message and the correct format.
-    Use case resumes at step 1.
-
+  * 1a1. FApro shows the error message and the correct format. <br/>
+  Use case resumes at step 1. 
 * 1b. The client already exists in FApro.
-    * 1b1. FApro shows a message to let the user know about the duplicated entry.
-      Use case resumes at step 1.
+    * 1b1. FApro shows a message to let the user know about the duplicated entry. <br/>
+    Use case resumes at step 1.
 
 **Use case: Delete a client**
 
@@ -380,46 +379,44 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 1.  User requests to list clients.
 2.  FApro shows a list of clients.
 3.  User requests to delete a specific client in the list.
-4.  FApro deletes the client.
+4.  FApro deletes the client. <br/>
     Use case ends.
 
 **Extensions**
 
-* 2a. The list is empty.
-  Use case ends.
-
+* 2a. The list is empty. <br/>
+    Use case ends. 
 * 3a. The given index is invalid.
-    * 3a1. FApro shows an error message.
-      Use case resumes at step 2.
+    * 3a1. FApro shows an error message. <br/>
+    Use case resumes at step 2.
 
 **Use case: Edit a client's info**
 
 **MSS**
 
 1.  User requests to edit a specific client's information.
-2.  FApro edits the client's information and shows the updated client information in the list.
+2.  FApro edits the client's information and shows the updated client information in the list. <br/>
     Use case ends.
 
 **Extensions**
 
-* 1a. The given index is invalid.
-    * 1a1. FApro shows an error message.
-      Use case resumes at step 1.
-
+* 1a. The given index is invalid. 
+  * 1a1. FApro shows an error message. <br/>
+  Use case resumes at step 1. 
 * 1b. The information provided is invalid or incomplete.
-    * 1b1. FApro shows the error message and the correct format.
-      Use case resumes at step 1.
-
+    * 1b1. FApro shows the error message and the correct format. <br/>
+    Use case resumes at step 1.
 * 1c. The updated client's name already exists in FApro.
-    * 1c1. FApro shows a message to let the user know about the duplicated entry.
-      Use case resumes at step 1.
+    * 1c1. FApro shows a message to let the user know about the duplicated entry. <br/>
+    Use case resumes at step 1.
 
 **Use case: Find a client by name**
 
 **MSS**
 
 1.  User requests to find clients with one or more keywords by name.
-2.  FApro shows the filtered list of clients.
+2.  FApro shows the filtered list of clients. <br/>
+    Use case ends.
 
 **Use case: Viewing a client's profile**
 
@@ -428,55 +425,52 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 1.  User requests to list clients.
 2.  FApro shows a list of clients.
 3.  User requests to view the profile of the client in the list.
-4.  FApro shows the detailed profile of the client.
+4.  FApro shows the detailed profile of the client. <br/>
     Use case ends.
 
 **Extensions**
 
-* 2a. The list is empty.
+* 2a. The list is empty. <br/>
   Use case ends.
-
 * 3a. The given index is invalid.
-    * 3a1. FApro shows an error message.
-      Use case resumes at step 2.
+    * 3a1. FApro shows an error message. <br/>
+    Use case resumes at step 2.
 
 **Use case: Adding a plan to a client**
 
 **MSS**
 
-1.  User requests to list clients
-2.  FApro shows a list of clients
-3.  User requests to add a specified plan to a specific client in the list
-4.  FApro adds the plan to the client
+1.  User requests to list clients.
+2.  FApro shows a list of clients.
+3.  User requests to add a specified plan to a specific client in the list.
+4.  AddressBook adds the plan to the client. <br/>
     Use case ends.
 
 **Extensions**
 
-* 2a. The list is empty.
+* 2a. The list is empty. <br/>
   Use case ends.
-
 * 3a. The given index is invalid.
-    * 3a1. FApro shows an error message.
+    * 3a1. FApro shows an error message. <br/>
       Use case resumes at step 2.
 
 **Use case: Removing plans from a client**
 
 **MSS**
 
-1.  User requests to list clients
-2.  FApro shows a list of clients
-3.  User requests to remove plans from a specific client in the list
-4.  FApro removes the plans of the client
+1.  User requests to list clients.
+2.  FApro shows a list of clients.
+3.  User requests to remove plans from a specific client in the list.
+4.  FApro removes the plans of the client. <br/>
     Use case ends.
 
 **Extensions**
 
-* 2a. The list is empty.
+* 2a. The list is empty. <br/>
   Use case ends.
-
 * 3a. The given index is invalid.
-    * 3a1. FApro shows an error message.
-      Use case resumes at step 2.
+    * 3a1. FApro shows an error message. <br/>
+    Use case resumes at step 2.
 
 **Use case: Finding all clients that contain any of the plans**
 
@@ -495,11 +489,12 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1.  User requests to find clients containing all the specified plans
-2.  FApro shows a list of clients
+2.  FApro shows a list of clients <br/>
+    Use case ends.
 
 **Extensions**
 * 1a. One of the plans is not alphanumeric.
-    * 1a1. FApro shows an error message.
+    * 1a1. FApro shows an error message. <br/>
       Use case resumes at step 1.
 
 **Use case: Identify clients who have not been contacted for the longest period to prioritize outreach**
@@ -524,12 +519,14 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 1.  User requests to clear all contacts.
 2.  FApro clears all contacts.
 
+
 **Use case: Exiting FApro**
 
 **MSS**
 
 1.  User requests to exit the application.
 2.  FApro closes the window and its system.
+
 
 ### Non-Functional Requirements
 
@@ -559,7 +556,6 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 ## **Appendix: Instructions for manual testing**
 
 Given below are instructions to test the app manually.
-
 <box type="info" seamless>
 
 **Note:** These instructions only provide a starting point for testers to work on;
@@ -582,32 +578,27 @@ testers are expected to do more *exploratory* testing.
    1. Re-launch the app by double-clicking the jar file.<br>
        Expected: The most recent window size and location is retained.
 
-1. _{ more test cases …​ }_
+### Selecting a client
 
-### Deleting a client
+1. Selecting a client while all clients are being shown
 
-1. Deleting a client while all clients are being shown
+    1. Prerequisites: List all clients using the `list` command. Multiple clients in the list.
+    1. Test case: `select 1`<br>
+       Expected: First client's details are displayed in the profile panel. Details of the selected client shown in the status message.
+    1. Test case: `select 0`<br>
+       Expected: No client is selected. Error details shown in the status message.
+    1. Other incorrect select commands to try: `select`, `select x`, `...` (where x is larger than the list size)<br>
+       Expected: Similar to previous.
 
-   1. Prerequisites: List all clients using the `list` command. Multiple clients in the list.
+1. Selecting a client after finding for a specific client by name
 
-   1. Test case: `delete 1`<br>
-      Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
-
-   1. Test case: `delete 0`<br>
-      Expected: No client is deleted. Error details shown in the status message. Status bar remains the same.
-
-   1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
-      Expected: Similar to previous.
-
-1. _{ more test cases …​ }_
-
-### Saving data
-
-1. Dealing with missing/corrupted data files
-
-   1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
-
-1. _{ more test cases …​ }_
+    1. Prerequisites: Find clients with 'alex' in their name using the `find alex` command. One client in the list (if using sample data).
+    1. Test case: `select 1`<br>
+       Expected: Similar to select while all clients are being shown.
+    1. Test case: `select 0`<br>
+       Expected: Similar to select while all clients are being shown.
+    1. Other incorrect select commands to try: `select`, `select x`, `...` (where x is larger than the list size)<br>
+       Expected: Similar to select while all clients are being shown.
 
 ### Adding plans
 
@@ -656,7 +647,12 @@ testers are expected to do more *exploratory* testing.
 
 Team size: 4
 
-1. **Enable plans (plans) with very long name to wrap**: Currently, when the plans are too long, the characters that is beyond the max width of the person card or the profile panel will be cut off and there is no way for the financial advisors to view the full plan. Thus, we intend to make the plans wrap around the max width of their container (person card or profile panel).
-2. **Clear the profile panel if the selected client is deleted**: Currently, when the selected client is deleted from FApro, the profile panel will still display his/her information. This, we plan to fix this by clearing the profile panel is the selected client is deleted.
-3. **Clear the profile panel if the entries in FApro are cleared**: This is similar to the enhancement above, only difference is that the `ClearCommand` is used to delete all clients in FApro. Thus, our plan to fix is also similar, which is to clear the profile panel.
-4. 
+1. **Change `tag` to `plan`**: Currently, the error messages and commands use the wording `tag` instead of `plan`. However, our tags are specifically meant for financial plans and such ambiguous naming may confuse the users. Thus, we plan to change all the 'tag' to 'plan' to give the user a clearer picture.
+2. **Change and standardize all the `person` to `client`**: Currently, some error messages and success messages refer to the person in FApro as `person` while others refer to them as `client`. This may lead to confusion of the users, thinking that we are referring to two different things when we are indeed referring to the same thing. Thus, we intend to change all to `client` as it is more specific and suit our context better.
+3. **Enable tags (plans) with very long name to wrap**: Currently, when the tags are too long, the characters that is beyond the max width of the person card or the profile panel will be cut off and there is no way for the financial advisors to view the full tag. Thus, we intend to make the tags wrap around the max width of their container (person card or profile panel).
+4. **Clear the profile panel if the selected person is deleted**: Currently, when the selected person is deleted from FApro, the profile panel will still display his/her information. Thus, we plan to fix this by clearing the profile panel when the selected person is deleted.
+5. **Clear the profile panel if the entries in FApro are cleared**: This is similar to the enhancement above, only difference is that the `ClearCommand` is used to delete all clients/persons in FApro. Thus, our plan to fix this issue is also similar, which is to clear the profile panel.
+6. **Remove upcoming date**: There is currently no way for the financial advisors to remove the upcoming dates even after the appointments have passed. We plan to implement a command to remove  the upcoming dates after the appointments have passed or when the clients cancel the appointment.
+7. **Enable tags (plans) to be more than one word**: Our tags currently can only accommodate a single word. However, financial plans may consist of multiple words to differentiate one from the other. Thus, we plan to relax on the restriction of the plan parameters and allow multiple words.
+8. **Add notes to the Profile Panel**: The profile panel currently only shows the default profile image, contact details, and existing plans. It is not adding much value to the financial advisors. Thus, we intend to implement a command which can add notes for a specific client that can be seen only on the profile panel. This will come in handy for the financial advisors when they want to take down reminders for themselves when preparing for the appointment, take down important details of the client during the appointment itself or even take down things to do after the appointment.
+
