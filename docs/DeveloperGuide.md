@@ -359,18 +359,17 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 1.  User requests to add a new client with the relevant information.
 2.  FApro adds the client.
-3.  FApro shows the client information in the list.
+3.  FApro shows the client information in the list. <br/>
     Use case ends.
 
 **Extensions**
 
 * 1a. The information provided is invalid or incomplete.
-  * 1a1. FApro shows the error message and the correct format.
-    Use case resumes at step 1.
-
+  * 1a1. FApro shows the error message and the correct format. <br/>
+  Use case resumes at step 1. 
 * 1b. The client already exists in FApro.
-    * 1b1. FApro shows a message to let the user know about the duplicated entry.
-      Use case resumes at step 1.
+    * 1b1. FApro shows a message to let the user know about the duplicated entry. <br/>
+    Use case resumes at step 1.
 
 **Use case: Delete a client**
 
@@ -379,46 +378,44 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 1.  User requests to list clients.
 2.  FApro shows a list of clients.
 3.  User requests to delete a specific client in the list.
-4.  FApro deletes the client.
+4.  FApro deletes the client. <br/>
     Use case ends.
 
 **Extensions**
 
-* 2a. The list is empty.
-  Use case ends.
-
+* 2a. The list is empty. <br/>
+    Use case ends. 
 * 3a. The given index is invalid.
-    * 3a1. FApro shows an error message.
-      Use case resumes at step 2.
+    * 3a1. FApro shows an error message. <br/>
+    Use case resumes at step 2.
 
 **Use case: Edit a client's info**
 
 **MSS**
 
 1.  User requests to edit a specific client's information.
-2.  FApro edits the client's information and shows the updated client information in the list.
+2.  FApro edits the client's information and shows the updated client information in the list. <br/>
     Use case ends.
 
 **Extensions**
 
-* 1a. The given index is invalid.
-    * 1a1. FApro shows an error message.
-      Use case resumes at step 1.
-
+* 1a. The given index is invalid. 
+  * 1a1. FApro shows an error message. <br/>
+  Use case resumes at step 1. 
 * 1b. The information provided is invalid or incomplete.
-    * 1b1. FApro shows the error message and the correct format.
-      Use case resumes at step 1.
-
+    * 1b1. FApro shows the error message and the correct format. <br/>
+    Use case resumes at step 1.
 * 1c. The updated client's name already exists in FApro.
-    * 1c1. FApro shows a message to let the user know about the duplicated entry.
-      Use case resumes at step 1.
+    * 1c1. FApro shows a message to let the user know about the duplicated entry. <br/>
+    Use case resumes at step 1.
 
 **Use case: Find a client by name**
 
 **MSS**
 
 1.  User requests to find clients with one or more keywords by name.
-2.  FApro shows the filtered list of clients.
+2.  FApro shows the filtered list of clients. <br/>
+    Use case ends.
 
 **Use case: Viewing a client's profile**
 
@@ -427,55 +424,52 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 1.  User requests to list clients.
 2.  FApro shows a list of clients.
 3.  User requests to view the profile of the client in the list.
-4.  FApro shows the detailed profile of the client.
+4.  FApro shows the detailed profile of the client. <br/>
     Use case ends.
 
 **Extensions**
 
-* 2a. The list is empty.
+* 2a. The list is empty. <br/>
   Use case ends.
-
 * 3a. The given index is invalid.
-    * 3a1. AddressBook shows an error message.
-      Use case resumes at step 2.
+    * 3a1. AddressBook shows an error message. <br/>
+    Use case resumes at step 2.
 
 **Use case: Adding a plan to a client**
 
 **MSS**
 
-1.  User requests to list clients
-2.  AddressBook shows a list of clients
-3.  User requests to add a specified plan to a specific client in the list
-4.  AddressBook adds the plan to the client
+1.  User requests to list clients.
+2.  AddressBook shows a list of clients.
+3.  User requests to add a specified plan to a specific client in the list.
+4.  AddressBook adds the plan to the client. <br/>
     Use case ends.
 
 **Extensions**
 
-* 2a. The list is empty.
+* 2a. The list is empty. <br/>
   Use case ends.
-
 * 3a. The given index is invalid.
-    * 3a1. AddressBook shows an error message.
+    * 3a1. AddressBook shows an error message. <br/>
       Use case resumes at step 2.
 
 **Use case: Removing plans from a client**
 
 **MSS**
 
-1.  User requests to list clients
-2.  AddressBook shows a list of clients
-3.  User requests to remove plans from a specific client in the list
-4.  AddressBook removes the plans of the client
+1.  User requests to list clients.
+2.  AddressBook shows a list of clients.
+3.  User requests to remove plans from a specific client in the list.
+4.  AddressBook removes the plans of the client. <br/>
     Use case ends.
 
 **Extensions**
 
-* 2a. The list is empty.
+* 2a. The list is empty. <br/>
   Use case ends.
-
 * 3a. The given index is invalid.
-    * 3a1. AddressBook shows an error message.
-      Use case resumes at step 2.
+    * 3a1. AddressBook shows an error message. <br/>
+    Use case resumes at step 2.
 
 **Use case: Finding all clients that contain any of the plans**
 
@@ -494,11 +488,12 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1.  User requests to find clients containing all the specified plans
-2.  AddressBook shows a list of clients
+2.  AddressBook shows a list of clients <br/>
+    Use case ends.
 
 **Extensions**
 * 1a. One of the plans is not alphanumeric.
-    * 1a1. AddressBook shows an error message.
+    * 1a1. AddressBook shows an error message. <br/>
       Use case resumes at step 1.
 
 **Use case: Clearing all contacts in FApro**
@@ -506,28 +501,32 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1.  User requests to clear all contacts.
-2.  FApro clears all contacts.
+2.  FApro clears all contacts. <br/>
+    Use case ends.
 
 **Use case: Exiting FApro**
 
 **MSS**
 
 1.  User requests to exit the application.
-2.  FApro closes the window and its system.
+2.  FApro closes the window and its system. <br/>
+    Use case ends.
 
 **Use case: Finding all contacts who were last contacted**
 
 **MSS**
 
 1.  User requests to see all contacts who were last contacted.
-2.  AddressBook shows a list of contacts who were last contacted sorted by least to most recent.
+2.  AddressBook shows a list of contacts who were last contacted sorted by least to most recent. <br/>
+    Use case ends.
 
 **Use case: Finding all upcoming contacts with appointments**
 
 **MSS**
 
 1.  User requests to find clients containing an upcoming appointment.
-2.  AddressBook shows the list of clients, ordering them from the nearest to the farthest upcoming appointment based on date.
+2.  AddressBook shows the list of clients, ordering them from the nearest to the farthest upcoming appointment based on date. <br/>
+    Use case ends.
 
 ### Non-Functional Requirements
 
@@ -584,26 +583,20 @@ testers are expected to do more *exploratory* testing.
 1. Selecting a client while all clients are being shown
 
     1. Prerequisites: List all clients using the `list` command. Multiple clients in the list.
-
     1. Test case: `select 1`<br>
        Expected: First client's details are displayed in the profile panel. Details of the selected client shown in the status message.
-
     1. Test case: `select 0`<br>
        Expected: No client is selected. Error details shown in the status message.
-
     1. Other incorrect select commands to try: `select`, `select x`, `...` (where x is larger than the list size)<br>
        Expected: Similar to previous.
 
 1. Selecting a client after finding for a specific client by name
 
     1. Prerequisites: Find clients with 'alex' in their name using the `find alex` command. One client in the list (if using sample data).
-
     1. Test case: `select 1`<br>
        Expected: Similar to select while all clients are being shown.
-
     1. Test case: `select 0`<br>
        Expected: Similar to select while all clients are being shown.
-
     1. Other incorrect select commands to try: `select`, `select x`, `...` (where x is larger than the list size)<br>
        Expected: Similar to select while all clients are being shown.
 
