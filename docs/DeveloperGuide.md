@@ -35,7 +35,7 @@ Given below is a quick overview of main components and how they interact with ea
 
 **Main components of the architecture**
 
-**`Main`** (consisting of classes [`Main`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/Main.java) and [`MainApp`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/MainApp.java)) is in charge of the app launch and shut down.
+**`Main`** (consisting of classes [`Main`](https://github.com/AY2324S2-CS2103T-F13-2/tp/tree/master/src/main/java/seedu/address/Main.java) and [`MainApp`](https://github.com/AY2324S2-CS2103T-F13-2/tp/tree/master/src/main/java/seedu/address/MainApp.java)) is in charge of the app launch and shut down.
 * At app launch, it initializes the other components in the correct sequence, and connects them up with each other.
 * At shut down, it shuts down the other components and invokes cleanup methods where necessary.
 
@@ -67,13 +67,13 @@ The sections below give more details of each component.
 
 ### UI component
 
-The **API** of this component is specified in [`Ui.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/Ui.java)
+The **API** of this component is specified in [`Ui.java`](https://github.com/AY2324S2-CS2103T-F13-2/tp/tree/master/src/main/java/seedu/address/ui/Ui.java)
 
 <puml src="diagrams/UiClassDiagram.puml" alt="Structure of the UI Component"/>
 
 The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `PersonListPanel`, `StatusBarFooter` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class which captures the commonalities between classes that represent parts of the visible GUI.
 
-The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the [`MainWindow`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/MainWindow.java) is specified in [`MainWindow.fxml`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/resources/view/MainWindow.fxml)
+The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the [`MainWindow`](https://github.com/AY2324S2-CS2103T-F13-2/tp/tree/master/src/main/java/seedu/address/ui/MainWindow.java) is specified in [`MainWindow.fxml`](https://github.com/AY2324S2-CS2103T-F13-2/tp/tree/master/src/main/resources/view/MainWindow.fxml)
 
 The `UI` component,
 
@@ -84,7 +84,7 @@ The `UI` component,
 
 ### Logic component
 
-**API** : [`Logic.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/logic/Logic.java)
+**API** : [`Logic.java`](https://github.com/AY2324S2-CS2103T-F13-2/tp/tree/master/src/main/java/seedu/address/logic/Logic.java)
 
 Here's a (partial) class diagram of the `Logic` component:
 
@@ -116,16 +116,17 @@ How the parsing works:
 * All `XYZCommandParser` classes (e.g., `AddCommandParser`, `DeleteCommandParser`, ...) inherit from the `Parser` interface so that they can be treated similarly where possible e.g, during testing.
 
 ### Model component
-**API** : [`Model.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/model/Model.java)
+**API** : [`Model.java`](https://github.com/AY2324S2-CS2103T-F13-2/tp/tree/master/src/main/java/seedu/address/model/Model.java)
 
 <puml src="diagrams/ModelClassDiagram.puml" width="450" />
 
 
 The `Model` component,
 
-* stores the address book data i.e., all `Person` objects (which are contained in a `UniquePersonList` object).
-* stores the currently 'filtered' `Person` objects (e.g., results of a search query) as a separate _filtered_ list which is exposed to outsiders as an unmodifiable `ObservableList<Person>` that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.
+* stores the FApro data i.e., all `Person` objects (which are contained in a `UniquePersonList` object).
+* stores the currently 'filtered' `Person` objects (e.g., results of a search query) as a separate _filtered_ list which is exposed to outsiders as an `ObservableList<Person>` that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.
 * stores the currently 'selected' `Person` object, only the copy of the `Person` object is exposed to the outsiders and the UI will be updated whenever a different `Person` object is 'selected'.
+* stores the currently 'sorted and filtered' `Person` objects (e.g., result of `upcoming` and `lastcontact` query) as a separate _sortedFiltered_ list which is exposed to outsiders as an unmodifiable `ObservableList<Person>` that can be 'observed'.
 * stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as a `ReadOnlyUserPref` objects.
 * does not depend on any of the other three components (as the `Model` represents data entities of the domain, they should make sense on their own without depending on other components)
 
@@ -139,7 +140,7 @@ The `Model` component,
 
 ### Storage component
 
-**API** : [`Storage.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/storage/Storage.java)
+**API** : [`Storage.java`](https://github.com/AY2324S2-CS2103T-F13-2/tp/tree/master/src/main/java/seedu/address/storage/Storage.java)
 
 <puml src="diagrams/StorageClassDiagram.puml" width="550" />
 
@@ -245,7 +246,7 @@ Step 4. The user now decides that adding the client was a mistake, and decides t
 
 <box type="info" seamless>
 
-**Note:** If the `currentStatePointer` is at index 0, pointing to the initial AddressBook state, then there are no previous AddressBook states to restore. The `undo` command uses `Model#canUndoAddressBook()` to check if this is the case. If so, it will return an error to the user rather
+**Note:** If the `currentStatePointer` is at index 0, pointing to the initial FApro state, then there are no previous AddressBook states to restore. The `undo` command uses `Model#canUndoAddressBook()` to check if this is the case. If so, it will return an error to the user rather
 than attempting to perform the undo.
 
 </box>
@@ -432,7 +433,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * 2a. The list is empty. <br/>
   Use case ends.
 * 3a. The given index is invalid.
-    * 3a1. AddressBook shows an error message. <br/>
+    * 3a1. FApro shows an error message. <br/>
     Use case resumes at step 2.
 
 **Use case: Adding a plan to a client**
@@ -440,7 +441,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1.  User requests to list clients.
-2.  AddressBook shows a list of clients.
+2.  FApro shows a list of clients.
 3.  User requests to add a specified plan to a specific client in the list.
 4.  AddressBook adds the plan to the client. <br/>
     Use case ends.
@@ -450,7 +451,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * 2a. The list is empty. <br/>
   Use case ends.
 * 3a. The given index is invalid.
-    * 3a1. AddressBook shows an error message. <br/>
+    * 3a1. FApro shows an error message. <br/>
       Use case resumes at step 2.
 
 **Use case: Removing plans from a client**
@@ -458,9 +459,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1.  User requests to list clients.
-2.  AddressBook shows a list of clients.
+2.  FApro shows a list of clients.
 3.  User requests to remove plans from a specific client in the list.
-4.  AddressBook removes the plans of the client. <br/>
+4.  FApro removes the plans of the client. <br/>
     Use case ends.
 
 **Extensions**
@@ -468,7 +469,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * 2a. The list is empty. <br/>
   Use case ends.
 * 3a. The given index is invalid.
-    * 3a1. AddressBook shows an error message. <br/>
+    * 3a1. FApro shows an error message. <br/>
     Use case resumes at step 2.
 
 **Use case: Finding all clients that contain any of the plans**
@@ -476,11 +477,11 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1.  User requests to find clients containing any of the specified plans
-2.  AddressBook shows a list of clients
+2.  FApro shows a list of clients
 
 **Extensions**
 * 1a. One of the plans is not alphanumeric.
-    * 1a1. AddressBook shows an error message.
+    * 1a1. FApro shows an error message.
       Use case resumes at step 1.
   
 **Use case: Finding all clients that contain all the plans**
@@ -488,45 +489,44 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1.  User requests to find clients containing all the specified plans
-2.  AddressBook shows a list of clients <br/>
+2.  FApro shows a list of clients <br/>
     Use case ends.
 
 **Extensions**
 * 1a. One of the plans is not alphanumeric.
-    * 1a1. AddressBook shows an error message. <br/>
+    * 1a1. FApro shows an error message. <br/>
       Use case resumes at step 1.
 
-**Use case: Clearing all contacts in FApro**
+**Use case: Identify clients who have not been contacted for the longest period to prioritize outreach**
 
 **MSS**
 
-1.  User requests to clear all contacts.
-2.  FApro clears all contacts. <br/>
-    Use case ends.
-
-**Use case: Exiting FApro**
-
-**MSS**
-
-1.  User requests to exit the application.
-2.  FApro closes the window and its system. <br/>
-    Use case ends.
-
-**Use case: Finding all contacts who were last contacted**
-
-**MSS**
-
-1.  User requests to see all contacts who were last contacted.
-2.  AddressBook shows a list of contacts who were last contacted sorted by least to most recent. <br/>
-    Use case ends.
+1.  User requests a list of clients sorted by how long ago they were last contacted.
+2.  FApro shows the list of clients who were last contacted, sorted by least to most recent date.
 
 **Use case: Finding all upcoming contacts with appointments**
 
 **MSS**
 
 1.  User requests to find clients containing an upcoming appointment.
-2.  AddressBook shows the list of clients, ordering them from the nearest to the farthest upcoming appointment based on date. <br/>
-    Use case ends.
+2.  FApro shows the list of clients, ordering them from the nearest to the farthest upcoming appointment based on date.
+
+
+**Use case: Clearing all contacts in FApro**
+
+**MSS**
+
+1.  User requests to clear all contacts.
+2.  FApro clears all contacts.
+
+
+**Use case: Exiting FApro**
+
+**MSS**
+
+1.  User requests to exit the application.
+2.  FApro closes the window and its system.
+
 
 ### Non-Functional Requirements
 
@@ -621,7 +621,7 @@ testers are expected to do more *exploratory* testing.
 
 1. Finding clients using the `findtagsor` command
    1. Test case: `findtagsor car housing`<br>
-       Expected: All clients with either `car` or `housing` plans are listed
+       Expected: All clients with either `car` or `housing` plans are listed.
    2. Test case: `findtagsor`<br>
        Expected: Command not executed. Error details shown in the status message.
    3. Other incorrect commands to try: `findtagsor`, `findtagsor $#@`<br>
@@ -633,6 +633,14 @@ testers are expected to do more *exploratory* testing.
        Expected: Command not executed. Error details shown in the status message.
     3. Other incorrect commands to try: `findtagsand`, `findtagsand $#@`<br>
        Expected: Similar to previous.
+
+### Identifying clients who have not been in contact with for long period of time
+
+1. Identifying clients using the `lastcontact` command
+   1. Test case: `lastcontact`<br>
+      Expected: All clients with last contacted field will be shown, sorted by least to most recent date.
+
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Appendix: Planned Enhancement**
