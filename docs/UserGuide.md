@@ -11,12 +11,12 @@
 
 ## Welcome Note
 
-Greetings financial advisors, hope you are doing well! We would like to thank you for your services all these years. Your hard work has not gone unnoticed! Particularly, we have observed that you may be facing issues in the following aspects:
+Greetings financial advisors, hope you are doing well! Thank you for trying out our product and we look forward to supercharging your client management workflow. Particularly, we have observed that you may be facing issues in the following aspects:
 * **Client Engagement Tracking**: Difficulty in monitoring the service history of a large, diverse client base to ensure satisfaction.
 * **Appointment Management**: Significant time and effort spent on scheduling and remembering appointments.
 * **Document Accessibility**: Challenges in promptly recalling or locating specific customer portfolio documents.
 
-Thus, we have specially developed _FApro_ to aid you in your everyday tasks so that you are able to spend more time fostering **meaningful relationships** and providing **personalized service**.
+_FApro_ is specially developed  to aid you in your everyday tasks so that you are able to spend more time fostering **meaningful relationships** and providing **personalized service**.
 
 You may refer to the [Product Information](#product-information) section to find out more about _FApro_. If you are keen to use our product, we have a [Quick Start](#quick-start) dedicated to help you get started with ease. We hope you enjoy using _FApro_!
 
@@ -24,7 +24,7 @@ You may refer to the [Product Information](#product-information) section to find
 
 ## Purpose of this User Guide
 
-This User Guide will aid you in your journey when navigating _FApro_. We have included beginner-friendly instructions to help you get started, familiarise yourself with our various features. Additionally, we've included examples and tips to enhance your experience with our product. We hope you enjoy using it to its fullest potential!
+This User Guide will aid you in your journey when navigating _FApro_. We have included beginner-friendly instructions to help you get started and familiarise yourself with our various features. Additionally, we've included examples and tips to enhance your experience with our product. We hope you enjoy using it to its fullest potential!
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -52,13 +52,18 @@ with **ease** and with **just our application**, nothing more.
 
 ## Quick Start
 
-1. Ensure you have Java `11` or above installed in your Computer.
+1. Ensure you have Java 11 or above installed in your Computer. If you already have it installed, follow this [guide](https://stackoverflow.com/questions/57363446/how-to-know-the-jdk-version-on-my-machine) to check your Java version.<br>
+If you do not have it installed yet or your Java version is not Java 11, you can refer to the following guides based on your operating system:
 
-2. Download the latest `fapro.jar` from [here](https://github.com/AY2324S2-CS2103T-F13-2/tp/releases).
+    - [Windows](https://www.java.com/download/ie_manual.jsp)
+    - [macOS](https://www.java.com/en/download/apple.jsp)
+    - [Linux](https://www.java.com/download/)
 
-3. Copy the file to the folder you want to use as the _home folder_ for your FApro.
+1. Download the latest `fapro.jar` from [here](https://github.com/AY2324S2-CS2103T-F13-2/tp/releases).
 
-4. Open a command terminal, type in `cd` followed by the folder you put the jar file in.<br>
+2. Copy the file to the folder you want to use as the _home folder_ for your FApro.
+
+3. Open a command terminal, type in `cd` followed by the folder you put the jar file in.<br>
 
 <box type="info" seamless>
 
@@ -96,13 +101,13 @@ This is equivalent to
 
 ## How to use the User Guide
 
-If this is your **first time** using _FApro_ and wants to gain a better understanding of the product, you may
+If this is your **first time** using _FApro_ and want to gain a better understanding of the product, you may
 1. Set up _FApro_ using the instructions given in the [Quick Start](#quick-start) section.
 2. Take a look at the [Command Summary](#command-summary) to see the list of commands _FApro_ has.
 3. Look through all the commands and try them out using the format and examples given (if any). Some simple commands do not have examples.
 4. Take note of the limitations of the product by taking a look at the [Known Issues](#known-issues) section.
 
-If this is your **first few time** using _FApro_ and wants to gain a better understanding of a particular command, you may
+If you wish to gain a better understanding of a particular command, you may
 1. Look for the command in the Table of Contents.
 2. Click on the command you are looking for, you will be directed to the command's section in the User Guide
 2. Take a look at the purpose of this command to understand its capabilities and limitations.
@@ -110,7 +115,7 @@ If this is your **first few time** using _FApro_ and wants to gain a better unde
 4. Take note of any additional tips or notes.
 5. Try out the command on your desktop to familiarise yourself with it.
 
-If this is your **first few time** using _FApro_ and troubleshoot an error for a command, you may
+If you wish to troubleshoot an error for a command, you may
 1. Look for the command in the Table of Contents.
 2. Click on the command you are looking for, you will be directed to the command's section in the User Guide
 3. Take note of it's command format. Compare it with the command that you have entered to see if there is any difference.
@@ -136,7 +141,7 @@ If this is your **first few time** using _FApro_ and troubleshoot an error for a
 * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 
-* Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
+* Extraneous parameters for commands that do not take in parameters (such as `lastcontact`, `upcoming`, `help`, `list`, `exit` and `clear`) will be ignored.<br>
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
