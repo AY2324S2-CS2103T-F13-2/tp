@@ -394,8 +394,10 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1.  User requests to edit a specific client's information.
-2.  FApro edits the client's information and shows the updated client information in the list. <br/>
+1.  User requests to list clients.
+2.  FApro shows a list of clients.
+3.  User requests to edit a specific client's information.
+4.  FApro edits the client's information and shows the updated client information in the list. <br/>
     Use case ends.
 
 **Extensions**
