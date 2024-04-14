@@ -50,10 +50,12 @@ public class PersonCard extends UiPart<Region> {
         id.setText(displayedIndex + ". ");
         name.setText(person.getName().fullName);
         phone.setText(person.getPhone().value);
-        person.getTags().stream()
-                .sorted(Comparator.comparing(tag -> tag.tagName))
-                .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
+        setUpcomingField();
+        setLastcontactField();
+        setTagsField();
+    }
 
+    private void setUpcomingField() {
         if (person.hasUpcoming()) {
             upcoming.setVisible(true);
             upcoming.setManaged(true);
@@ -62,7 +64,9 @@ public class PersonCard extends UiPart<Region> {
             upcoming.setVisible(false);
             upcoming.setManaged(false);
         }
+    }
 
+    private void setLastcontactField() {
         if (person.hasLastcontact()) {
             lastcontact.setVisible(true);
             lastcontact.setManaged(true);
@@ -71,5 +75,11 @@ public class PersonCard extends UiPart<Region> {
             lastcontact.setVisible(false);
             lastcontact.setManaged(false);
         }
+    }
+
+    private void setTagsField() {
+        person.getTags().stream()
+                .sorted(Comparator.comparing(tag -> tag.tagName))
+                .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
     }
 }
