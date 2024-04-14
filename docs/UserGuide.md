@@ -28,6 +28,8 @@ This User Guide will aid you in your journey when navigating _FApro_. We have in
 
 --------------------------------------------------------------------------------------------------------------------
 
+<div style="page-break-after: always;"></div>
+
 ## Product Information
 _FApro_ is a **desktop app for managing clients' contacts, optimized for use via a Command Line Interface** (CLI) which allows you to type commands while still having the benefits of a Graphical User Interface (GUI) which allows you to use your mouse to execute commands.
 
@@ -65,7 +67,7 @@ If you do not have it installed yet or your Java version is not Java 11, you can
 
 3. Open a command terminal, type in `cd` followed by the folder you put the jar file in.<br>
 
-<box type="info" seamless>
+<box type="info">
 
 **Info:** `cd` stands for _current directory_.
 This step is akin to clicking into folder, but instead we do it through the terminal by typing.
@@ -80,7 +82,7 @@ This is equivalent to
 5. Type in the `java -jar fapro.jar` command to run the application.<br>
 
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
-   ![Ui](images/UiWithSampleData.png)
+   <img src="images/UiWithSampleData.png" width="70%" height="70%">
 
 6. Type the command in the command box and press _Enter_ on your keyboard to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
@@ -125,7 +127,7 @@ If you wish to troubleshoot an error for a command, you may
 
 ## Features
 
-<box type="info" seamless>
+<box type="info">
 
 **Notes about the command format:**<br>
 
@@ -149,6 +151,8 @@ If you wish to troubleshoot an error for a command, you may
 * `DATETIME` format must be in `DD-MM-YYYY HHmm` format.
 
 </box>
+
+<div style="page-break-after: always;"></div>
 
 ### Viewing help : `help`
 
@@ -174,12 +178,12 @@ and should not start with the above-mentioned characters.
 * Last contacted `lc/` should not have a future `DATETIME` and must be valid.
 * Upcoming  `u/` should not have a past `DATETIME` and must be valid.
 
-<box type="tip" seamless>
+<box type="tip">
 
 **Tip:** A client can have any number of plans (including 0)
 
 </box>
-<box type="warning" seamless>
+<box type="warning">
 
 **Caution:** Though there is no length restriction in terms of number of characters for each plan. Plans that are too long may have the last few characters cut off by the UI. We are currently fixing this issue and updates will be coming in the next iteration.
 
@@ -194,13 +198,15 @@ Examples:
 
 ![person card of Bobby Tan](images/personCard.png)
 
-Once added, a client card consisting of the **name, existing plans, upcoming meeting date and last-contacted date** will be shown in the client list. The rest of the information will only be shown when the client is [selected](#viewing-the-detailed-profile-a-client--select). This is to prevent the main list from being too cluttered. 
+Once added, a client card consisting of the **name, existing plans, upcoming meeting date and last-contacted date** will be shown in the client list. The rest of the information will only be shown when the client is selected. This is to prevent the main list from being too cluttered. 
 
 ### Listing all clients : `list`
 
 Shows a list of all clients in FApro.
 
 Format: `list`
+
+<div style="page-break-after: always;"></div>
 
 ### Editing a client : `edit`
 
@@ -245,6 +251,8 @@ Examples:
 * `find alex david` returns `Alex Yeoh`, `David Li`<br>
 
 ![result for 'find alex david'](images/findAlexDavidResult.png)
+
+<div style="page-break-after: always;"></div>
 
 ### Locating clients by plan : `findtagsor`
 
@@ -308,11 +316,13 @@ Examples:
 * `list` followed by `delete 2` deletes the 2nd client in FApro.
 * `find Betsy` followed by `delete 1` deletes the 1st client in the results of the `find` command.
 
+<div style="page-break-after: always;"></div>
+
 ### Viewing the detailed profile a client : `select`
 
 View a more detailed profile of the specified client from FApro. The detailed profile currently includes the **contact information** and **existing plans**. In addition, we are also planning to include the following:
-* Profile image of the client: [Uploading a profile photo for a client](#coming-soon-uploading-photo-for-a-client--image)
-* Notes regarding the client: [Adding notes for a client](#coming-soon-adding-notes-for-a-client--addnote)
+* Profile image of the client: Uploading a profile photo for a client
+* Notes regarding the client: Adding notes for a client
 
 This profile aims to aid financial advisors in the following ways:
 * retrieve vital information (existing financial plans, current financial status) during the preparation for an appointment
@@ -325,19 +335,19 @@ Format: `select INDEX`
 * The index refers to the index number shown in the displayed client list.
 * The index **must be a positive integer** 1, 2, 3, …​
 
-<box type="info" seamless>
+<box type="info">
 
-**Info:** The profile panel will auto-update when changes are made to a client using the [edit command](#editing-a-client--edit) and the [addtags command](#adding-tags-to-a-client--addtags). However, there is currently no way to 'unselect' a client, clear the profile panel. Even when the client is deleted using the [delete command](#deleting-a-client--delete) or all the clients are cleared using the [clear command](#clearing-all-entries--clear), the selected client's profile will still be displayed on the profile panel. We are currently fixing this issue and updates will be coming in the next iteration.
+**Info:** The profile panel will auto-update when changes are made to a client using the edit command and the addtags command. However, there is currently no way to 'unselect' a client, clear the profile panel. Even when the client is deleted using the delete command or all the clients are cleared using the clear command, the selected client's profile will still be displayed on the profile panel. We are currently fixing this issue and updates will be coming in the next iteration.
 
 </box>
 
 Examples:
 * `list` followed by `select 2` shows the detailed profile of the 2nd client in FApro.
 * `find bernice` followed by `select 1` shows the detailed profile of the 1st client in the results of the `find` command.
-
 <img src="images/select1Result.png" width="40%" height="40%">
 
 Once selected, a client profile consisting of the **all the details** will be shown in the profile panel.
+<div style="page-break-after: always;"></div>
 
 ### Viewing contacts of all upcoming appointments : `upcoming`
 
@@ -349,7 +359,7 @@ Format: `upcoming`
 
 Examples:
 * `upcoming` would show the 3 contacts if there are 3 contacts with upcoming appointments.
-![result for `upcoming`](images/upcomingResult.png)
+<img src="images/upcomingResult.png" width="70%" height="70%">
 
 ### Viewing contacts of all last contacted clients : `lastcontact`
 
@@ -362,7 +372,7 @@ Format: `lastcontact`
 
 Example:
 * `lastcontact` would filter the contacts and show all contacts that has last contacted date time.
-![result for `lastcontact`](images/lastcontactResult.png)
+<img src="images/lastcontactResult.png" width="70%" height="70%">
 
 ### Clearing all entries : `clear`
 
@@ -421,11 +431,13 @@ Format: `addnote INDEX note/NOTE [note/MORE_NOTES]...`
 * The index **must be a positive integer** 1, 2, 3, …​
 * At least one `NOTE` must be provided.
 * There is no restriction to the length and format of the `NOTE`.
-* The `NOTE` can only be viewed in the [detailed profile](#viewing-the-detailed-profile-a-client--select).
+* The `NOTE` can only be viewed in the detailed profile.
 
 Examples:
 * `list` followed by `addnote 3 note/remind her to check her yearly coupon note/wants to retrieve her money from her savings plan` adds 2 notes to the 3rd client in FApro.
 * `find david` followed by `addnote 1 note/looking for insurance plans` adds a note to the 1st client in the results of the `find` command.
+
+<div style="page-break-after: always;"></div>
 
 ### (_Coming Soon_) Deleting plans of a client : `deletetags`
 
@@ -457,6 +469,8 @@ Examples:
 3. **When the client is deleted or all the clients are cleared from FApro**, the selected client's profile will still be displayed on the profile panel. We currently have no remedy for this but are currently fixing this issue.
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 
 ## Command Summary
 
