@@ -81,7 +81,7 @@ public class PersonTest {
         Person copiedAlice = ALICE.copy();
 
         // is the same person -> returns true
-        assertTrue(copiedAlice.isSamePerson(ALICE));
+        assertTrue(copiedAlice.equals(ALICE));
 
         // not the same object -> returns false
         assertFalse(copiedAlice == ALICE);

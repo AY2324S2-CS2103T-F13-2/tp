@@ -15,7 +15,7 @@ public class FindTagsAndCommand extends Command {
 
     public static final String COMMAND_WORD = "findtagsand";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Finds all persons who contains all of the tags "
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Finds all clients who contains all of the tags "
             + "and displays them as a list with index numbers.\n"
             + "Parameters: TAG [MORE_TAGS]...\n"
             + "Example: " + COMMAND_WORD + " car health death";

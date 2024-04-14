@@ -95,14 +95,14 @@ public class ModelManagerTest {
     }
 
     @Test
-    public void getSelectPerson_samePerson_notSameObject() {
+    public void getSelectPerson_samePersonnotSameObject() {
         // No selected person -> returns null
         assertNull(modelManager.getSelectedPerson());
 
         modelManager.updateSelectedPerson(ALICE);
 
         // Same person -> returns true
-        assertTrue(modelManager.getSelectedPerson().isSamePerson(ALICE));
+        assertTrue(modelManager.getSelectedPerson().equals(ALICE));
 
         // Not same object -> returns false
         assertFalse(modelManager.getSelectedPerson() == ALICE);

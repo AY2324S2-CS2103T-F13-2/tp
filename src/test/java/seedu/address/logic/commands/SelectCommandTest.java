@@ -21,7 +21,6 @@ import seedu.address.logic.Messages;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
-import seedu.address.model.person.IsSamePersonPredicate;
 import seedu.address.model.person.Person;
 
 /**
@@ -50,6 +49,7 @@ public class SelectCommandTest {
 
     @Test
     public void execute_invalidIndexUnfilteredList_throwsCommandException() {
+
         Index outOfBoundIndex = Index.fromOneBased(model.getFilteredPersonList().size() + 1);
         SelectCommand selectCommand = new SelectCommand(outOfBoundIndex);
 
@@ -66,8 +66,6 @@ public class SelectCommandTest {
         String expectedMessage = String.format(MESSAGE_SELECT_PERSON_SUCCESS,
                 Messages.format(personToSelect));
 
-
-        IsSamePersonPredicate predicate = preparePredicate(personToSelect);
         Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
         showPersonAtIndex(expectedModel, INDEX_FIRST_PERSON);
         expectedModel.updateSelectedPerson(personToSelect);
@@ -118,12 +116,5 @@ public class SelectCommandTest {
         SelectCommand selectCommand = new SelectCommand(targetIndex);
         String expected = SelectCommand.class.getCanonicalName() + "{targetIndex=" + targetIndex + "}";
         assertEquals(expected, selectCommand.toString());
-    }
-
-    /**
-     * Parses {@code selectedPerson} into a {@code IsSamePersonPredicate}.
-     */
-    private IsSamePersonPredicate preparePredicate(Person selectedPerson) {
-        return new IsSamePersonPredicate(selectedPerson);
     }
 }
