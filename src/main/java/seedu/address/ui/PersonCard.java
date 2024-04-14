@@ -56,25 +56,25 @@ public class PersonCard extends UiPart<Region> {
     }
 
     private void setUpcomingField() {
-        if (person.hasUpcoming()) {
-            upcoming.setVisible(true);
-            upcoming.setManaged(true);
-            upcoming.setText("Upcoming: " + person.getUpcoming().toString());
-        } else {
+        if (!person.hasUpcoming()) {
             upcoming.setVisible(false);
             upcoming.setManaged(false);
+            return;
         }
+        upcoming.setVisible(true);
+        upcoming.setManaged(true);
+        upcoming.setText("Upcoming: " + person.getUpcoming().toString());
     }
 
     private void setLastcontactField() {
-        if (person.hasLastcontact()) {
-            lastcontact.setVisible(true);
-            lastcontact.setManaged(true);
-            lastcontact.setText("Last contacted: " + person.getLastcontact().toString());
-        } else {
+        if (!person.hasLastcontact()) {
             lastcontact.setVisible(false);
             lastcontact.setManaged(false);
+            return;
         }
+        lastcontact.setVisible(true);
+        lastcontact.setManaged(true);
+        lastcontact.setText("Last contacted: " + person.getLastcontact().toString());
     }
 
     private void setTagsField() {
