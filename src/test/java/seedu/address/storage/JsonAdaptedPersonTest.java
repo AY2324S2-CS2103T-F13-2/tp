@@ -139,7 +139,7 @@ public class JsonAdaptedPersonTest {
         JsonAdaptedPerson person = new JsonAdaptedPerson(VALID_NAME, VALID_PHONE, VALID_EMAIL, VALID_ADDRESS,
                 VALID_TAGS, VALID_UPCOMING, INVALID_LASTCONTACT);
         String expectedMessage = String.format(LastContact.MESSAGE_CONSTRAINTS, INVALID_LASTCONTACT);
-        assertThrows(IllegalArgumentException.class, expectedMessage, person::toModelType);
+        assertThrows(IllegalValueException.class, expectedMessage, person::toModelType);
     }
 
     @Test
