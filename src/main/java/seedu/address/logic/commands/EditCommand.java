@@ -90,7 +90,7 @@ public class EditCommand extends Command {
 
         boolean updateProfile = false;
         Person selectedPerson = model.getSelectedPerson();
-        if (personToEdit.isSamePerson(model.getSelectedPerson())) {
+        if (personToEdit.isSamePerson(selectedPerson)) {
             model.updateSelectedPerson(editedPerson);
             updateProfile = true;
         }
