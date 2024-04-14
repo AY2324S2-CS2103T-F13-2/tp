@@ -325,7 +325,7 @@ _{more aspects and alternatives to be added}_
 * prefers typing to mouse interactions
 * is reasonably comfortable using CLI apps
 
-**Value proposition**: manage contacts faster than a typical mouse/GUI driven app and revolutionizes client engagement
+**Value proposition**: manage clients faster than a typical mouse/GUI driven app and revolutionizes client engagement
 for financial advisors by facilitating strategic communication and personalised service.
 
 
@@ -335,12 +335,12 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 | Priority | As a …​                                                          | I want to …​                                                      | So that I can…​                                                                                             |
 |---------|------------------------------------------------------------------|-------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
-| `* * *` | new financial advisor user                                       | see usage instructions                                            | refer to instructions when I forget how to use the App                                                      |
+| `* * *` | new financial advisor                                       | see usage instructions                                            | refer to instructions when I forget how to use the App                                                      |
 | `* * *` | financial advisor                                                | add a new client                                                  | store their contacts and other relevant information                                                         |
-| `* * *` | financial advisor                                                | delete a client                                                   | remove informtion of the clients that I am no longer serving                                                |
+| `* * *` | financial advisor                                                | delete a client                                                   | remove information of the clients that I am no longer serving                                                |
 | `* * *` | financial advisor with more than 50 clients                      | find a client by name                                             | locate details of clients without having to go through the entire list                                       |
 | `* * *` | financial advisor with more than 50 clients                      | easily identity those that I haven't reach out to for a long time | contact them and check on their progress as well as well-being                                              |
-| `* * *` | financial advisor with many upcoming meeting                     | easily view my schedule                                           | plan and prepare the respective information for the respective meetings, serving the client more effectively |
+| `* * *` | financial advisor with many upcoming meeting                     | easily see all my upcoming appointments at a glance                                           | plan and prepare the respective information for the respective meetings, serving the client more effectively |
 | `* * *` | financial advisor who provides multiple plans for my clients     | add plans to clients based on their existing plans                | keep track of which clients hold which policies                                                             |
 | `* * *` | financial advisor who provides multiple plans for my clients     | find clients based on their existing plans                        | provide personalised service to each type of policy holder                                                  |
 | `* * *` | financial advisor with more than 50 clients                      | view a client's profile with a few simple commands                | have the relevant information at hand when planning and during the consultations                            |
@@ -348,7 +348,6 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `*`     | user with many clients in the address book                        | sort clients by name                                              | locate a client easily                                                                                      |
 | `*`     | financial advisor who wants to help my clients reach their goals | keep track of their goals and financial progress                  | provide a more curated and clientalized service                                                             |
 
-*{More to be added}*
 
 ### Use cases
 
@@ -358,7 +357,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1.  User requests to add a new client with the relevant information.
+1.  User requests to add a new client with the required information.
 2.  FApro adds the client.
 3.  FApro shows the client information in the list. <br/>
     Use case ends.
@@ -390,25 +389,31 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 3a1. FApro shows an error message. <br/>
     Use case resumes at step 2.
 
-**Use case: Edit a client's info**
+**Use case: Edit a client's information**
 
 **MSS**
 
-1.  User requests to edit a specific client's information.
-2.  FApro edits the client's information and shows the updated client information in the list. <br/>
+1.  User requests to list clients.
+2.  FApro shows a list of clients.
+3.  User requests to edit a specific client's information.
+<<<<<<< Updated upstream
+4.  FApro edits the client's information and shows the updated client information in the list. <br/>
+=======
+4.  FApro edits the client's information and shows the updated client information in the list.
+>>>>>>> Stashed changes
     Use case ends.
 
 **Extensions**
 
 * 1a. The given index is invalid. 
   * 1a1. FApro shows an error message. <br/>
-  Use case resumes at step 1. 
+  Use case resumes at step 3. 
 * 1b. The information provided is invalid or incomplete.
     * 1b1. FApro shows the error message and the correct format. <br/>
-    Use case resumes at step 1.
+    Use case resumes at step 3.
 * 1c. The updated client's name already exists in FApro.
     * 1c1. FApro shows a message to let the user know about the duplicated entry. <br/>
-    Use case resumes at step 1.
+    Use case resumes at step 3.
 
 **Use case: Find a client by name**
 
@@ -443,7 +448,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 1.  User requests to list clients.
 2.  FApro shows a list of clients.
 3.  User requests to add a specified plan to a specific client in the list.
-4.  AddressBook adds the plan to the client. <br/>
+4.  FApro adds the plan to the client. <br/>
     Use case ends.
 
 **Extensions**
@@ -476,8 +481,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1.  User requests to find clients containing any of the specified plans
-2.  FApro shows a list of clients
+1.  User requests to find clients containing any of the specified plans.
+2.  FApro shows a list of clients. <br/>
+    Use case ends.
 
 **Extensions**
 * 1a. One of the plans is not alphanumeric.
@@ -488,8 +494,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1.  User requests to find clients containing all the specified plans
-2.  FApro shows a list of clients <br/>
+1.  User requests to find clients containing all the specified plans.
+2.  FApro shows a list of clients. <br/>
     Use case ends.
 
 **Extensions**
@@ -502,22 +508,32 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1.  User requests a list of clients sorted by how long ago they were last contacted.
-2.  FApro shows the list of clients who were last contacted, sorted by least to most recent date.
+2.  FApro shows a filtered list of clients with last contacted field, sorted by least to most recent date. <br/>
+  Use case ends.
 
-**Use case: Finding all upcoming contacts with appointments**
+**Extensions**
+* 2a. No clients with last contacted field. <br />
+  Use case ends.
+
+**Use case: Identify all clients with upcoming appointments**
 
 **MSS**
 
 1.  User requests to find clients containing an upcoming appointment.
-2.  FApro shows the list of clients, ordering them from the nearest to the farthest upcoming appointment based on date.
+2.  FApro shows a filtered list of clients with upcoming field, ordering them from the nearest to the farthest upcoming appointment based on date. <br/>
+    Use case ends.
 
+**Extensions**
+* 2a. No clients with upcoming field. <br />
+  Use case ends.
 
-**Use case: Clearing all contacts in FApro**
+**Use case: Clearing all clients in FApro**
 
 **MSS**
 
-1.  User requests to clear all contacts.
-2.  FApro clears all contacts.
+1.  User requests to clear all clients.
+2.  FApro clears all clients. <br/>
+    Use case ends.
 
 
 **Use case: Exiting FApro**
@@ -525,7 +541,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1.  User requests to exit the application.
-2.  FApro closes the window and its system.
+2.  FApro closes the window and its system. <br/>
+    Use case ends.
 
 
 ### Non-Functional Requirements
@@ -541,12 +558,10 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 9.  The size of the documents should not exceed 15MB/file.
 10. The size of the final FApro product should not exceed 100MB.
 
-*{More to be added}*
 
 ### Glossary
 
 * **Mainstream OS**: Windows, Linux, Unix, MacOS
-* **Private contact detail**: A contact detail that is not meant to be shared with others
 * **DBMS**: Database Management System, a software suite that facilitates the creation, management, and manipulation of databases.
 * **Remote server**: A computer system or software application that provides services or resources to other computers or clients over a network, typically the internet.
 * **GUI**: Graphic User Interface, a visual interface that allows users to interact with electronic devices or software using graphical icons, menus, and other graphical elements, rather than text-based commands
@@ -568,13 +583,11 @@ testers are expected to do more *exploratory* testing.
 1. Initial launch
 
    1. Download the jar file and copy into an empty folder
-
-   1. Double-click the jar file Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
+   1. Double-click the jar file Expected: Shows the GUI with a set of sample clients. The window size may not be optimum.
 
 1. Saving window preferences
 
    1. Resize the window to an optimum size. Move the window to a different location. Close the window.
-
    1. Re-launch the app by double-clicking the jar file.<br>
        Expected: The most recent window size and location is retained.
 
@@ -582,31 +595,26 @@ testers are expected to do more *exploratory* testing.
 
 1. Selecting a client while all clients are being shown
 
-    1. Prerequisites: List all clients using the `list` command. Multiple clients in the list.
-    1. Test case: `select 1`<br>
+    1. Prerequisites: List all clients using the `list` command. 
+    2. Test case: `select 1`<br>
        Expected: First client's details are displayed in the profile panel. Details of the selected client shown in the status message.
-    1. Test case: `select 0`<br>
+    3. Test case: `select 0`<br>
        Expected: No client is selected. Error details shown in the status message.
-    1. Other incorrect select commands to try: `select`, `select x`, `...` (where x is larger than the list size)<br>
+    4. Other incorrect select commands to try: `select`, `select x`, `...` (where x is larger than the list size)<br>
        Expected: Similar to previous.
 
-1. Selecting a client after finding for a specific client by name
+2. Selecting a client after finding for a specific client by name
 
-    1. Prerequisites: Find clients with 'alex' in their name using the `find alex` command. One client in the list (if using sample data).
-    1. Test case: `select 1`<br>
-       Expected: Similar to select while all clients are being shown.
-    1. Test case: `select 0`<br>
-       Expected: Similar to select while all clients are being shown.
-    1. Other incorrect select commands to try: `select`, `select x`, `...` (where x is larger than the list size)<br>
-       Expected: Similar to select while all clients are being shown.
+    1. Prerequisites: Find clients with 'alex' in their name using the `find alex` command.
+    2. Other test cases similar to above.
 
 ### Adding plans
 
 1. Adding plans to a client while all clients are being shown
    1. Prerequisites: List all clients using the `list` command. Multiple clients in the list.
    2. Test case: `addtags 1 t/car `<br>
-       Expected: First contact has `car` plan added to him.
-   3. Test case: `addtags -1 t/housing`<br>
+       Expected: First client has 'car' plan added to him.
+   3. Test case: `addtags -1 t/car`<br>
        Expected: No plans are added. Error details shown in the status message.
    4. Other incorrect commands to try: `addtags`, `addtags 2 t/`, `addtags 1`, `addtags x`, `...` (where x is larger than the list size)<br>
       Expected: Similar to previous.
@@ -614,32 +622,45 @@ testers are expected to do more *exploratory* testing.
 2. Adding plans to a selected client
    1. Prerequisites: Select first client using `select 1` command.
    2. Test case: `addtags 1 t/car `<br>
-      Expected: First contact has `car` plan added to him. Panel at the side is updated to include the `car` plan.
+      Expected: First client has 'car' plan added to him. Panel at the side is updated to include the 'car' plan.
    3. Other test cases similar to above.
 
 ### Finding clients by their plans
 
 1. Finding clients using the `findtagsor` command
    1. Test case: `findtagsor car housing`<br>
-       Expected: All clients with either `car` or `housing` plans are listed.
+       Expected: All clients with either 'car' or 'housing' plans are listed.
    2. Test case: `findtagsor`<br>
        Expected: Command not executed. Error details shown in the status message.
    3. Other incorrect commands to try: `findtagsor`, `findtagsor $#@`<br>
       Expected: Similar to previous.
 2. Finding clients using the `findtagsand` command
     1. Test case: `findtagsand car housing`<br>
-       Expected: All clients with both `car` or `housing` plans are listed
+       Expected: All clients with both 'car' or 'housing' plans are listed.
     2. Test case: `findtagsand`<br>
        Expected: Command not executed. Error details shown in the status message.
     3. Other incorrect commands to try: `findtagsand`, `findtagsand $#@`<br>
        Expected: Similar to previous.
 
-### Identifying clients who have not been in contact with for long period of time
+### Editing clients 
+1. Edit clients using the `edit` command
+     1. Prerequisites: List all clients using the `list` command. Multiple clients in the list.
+     2. Test case: `edit 1 n/Bobby Tan`<br>
+        Expected: First client should be name field should change to 'Bobby Tan'.
+     3. Other test cases similar to above but with other fields
+
+### Identifying clients who have not been in contact with for a long period of time
 
 1. Identifying clients using the `lastcontact` command
-   1. Test case: `lastcontact`<br>
+   1. Prerequisites: At least one client in the list with last contact field
+   2. Test case: `lastcontact`<br>
       Expected: All clients with last contacted field will be shown, sorted by least to most recent date.
 
+### Identifying clients with upcoming appointments
+1. Identifying clients using the `upcoming` command
+   1. Prerequisites: At least one client in the list with upcoming field
+   2. Test case: `upcoming`<br>
+      Expected: All clients with upcoming field will be shown, sorted by earliest to latest.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -647,12 +668,11 @@ testers are expected to do more *exploratory* testing.
 
 Team size: 4
 
-1. **Change `tag` to `plan`**: Currently, the error messages and commands use the wording `tag` instead of `plan`. However, our tags are specifically meant for financial plans and such ambiguous naming may confuse the users. Thus, we plan to change all the 'tag' to 'plan' to give the user a clearer picture.
-2. **Change and standardize all the `person` to `client`**: Currently, some error messages and success messages refer to the person in FApro as `person` while others refer to them as `client`. This may lead to confusion of the users, thinking that we are referring to two different things when we are indeed referring to the same thing. Thus, we intend to change all to `client` as it is more specific and suit our context better.
-3. **Enable tags (plans) with very long name to wrap**: Currently, when the tags are too long, the characters that is beyond the max width of the person card or the profile panel will be cut off and there is no way for the financial advisors to view the full tag. Thus, we intend to make the tags wrap around the max width of their container (person card or profile panel).
-4. **Clear the profile panel if the selected person is deleted**: Currently, when the selected person is deleted from FApro, the profile panel will still display his/her information. Thus, we plan to fix this by clearing the profile panel when the selected person is deleted.
-5. **Clear the profile panel if the entries in FApro are cleared**: This is similar to the enhancement above, only difference is that the `ClearCommand` is used to delete all clients/persons in FApro. Thus, our plan to fix this issue is also similar, which is to clear the profile panel.
-6. **Remove upcoming date**: There is currently no way for the financial advisors to remove the upcoming dates even after the appointments have passed. We plan to implement a command to remove  the upcoming dates after the appointments have passed or when the clients cancel the appointment.
-7. **Enable tags (plans) to be more than one word**: Our tags currently can only accommodate a single word. However, financial plans may consist of multiple words to differentiate one from the other. Thus, we plan to relax on the restriction of the plan parameters and allow multiple words.
-8. **Add notes to the Profile Panel**: The profile panel currently only shows the default profile image, contact details, and existing plans. It is not adding much value to the financial advisors. Thus, we intend to implement a command which can add notes for a specific client that can be seen only on the profile panel. This will come in handy for the financial advisors when they want to take down reminders for themselves when preparing for the appointment, take down important details of the client during the appointment itself or even take down things to do after the appointment.
+1. **Change 'tag' to 'plan'**: Currently, the error messages and commands use the wording 'tag' instead of 'plan'. However, our tags are specifically meant for financial plans and such ambiguous naming may confuse the users. Thus, we plan to change all the 'tag' to 'plan' to give the user a clearer picture.
+2. **Enable tags (plans) with very long name to wrap**: Currently, when the tags are too long, the characters that is beyond the max width of the person card or the profile panel will be cut off and there is no way for the financial advisors to view the full tag. Thus, we intend to make the tags wrap around the max width of their container (person card or profile panel).
+3. **Clear the profile panel if the selected person is deleted**: Currently, when the selected person is deleted from FApro, the profile panel will still display his/her information. Thus, we plan to fix this by clearing the profile panel when the selected person is deleted.
+4. **Clear the profile panel if the entries in FApro are cleared**: This is similar to the enhancement above, only difference is that the `ClearCommand` is used to delete all clients/persons in FApro. Thus, our plan to fix this issue is also similar, which is to clear the profile panel.
+5. **Remove upcoming date**: There is currently no way for the financial advisors to remove the upcoming dates even after the appointments have passed. We plan to implement a command to remove  the upcoming dates after the appointments have passed or when the clients cancel the appointment.
+6. **Enable tags (plans) to be more than one word**: Our tags currently can only accommodate a single word. However, financial plans may consist of multiple words to differentiate one from the other. Thus, we plan to relax on the restriction of the plan parameters and allow multiple words.
+7. **Add notes to the Profile Panel**: The profile panel currently only shows the default profile image, client details, and existing plans. It is not adding much value to the financial advisors. Thus, we intend to implement a command which can add notes for a specific client that can be seen only on the profile panel. This will come in handy for the financial advisors when they want to take down reminders for themselves when preparing for the appointment, take down important details of the client during the appointment itself or even take down things to do after the appointment.
 
