@@ -1,12 +1,14 @@
 package seedu.address.ui;
 
 import java.util.Comparator;
+import java.util.logging.Logger;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import seedu.address.commons.core.LogsCenter;
 import seedu.address.model.person.Person;
 
 /**
@@ -15,6 +17,7 @@ import seedu.address.model.person.Person;
 public class PersonProfile extends UiPart<Region> {
 
     private static final String FXML = "PersonProfile.fxml";
+    private static final Logger logger = LogsCenter.getLogger(PersonProfile.class);
 
     private Person person;
 
@@ -44,19 +47,10 @@ public class PersonProfile extends UiPart<Region> {
     }
 
     /**
-     * Creates a {@code PersonProfile} with the given {@code Person}.
-     */
-    public PersonProfile(Person person) {
-        super(FXML);
-        this.person = person;
-        setFields();
-        profilePane.setVisible(true);
-    }
-
-    /**
      * Updates the {@code PersonProfile} with the given {@code Person}.
      */
     public void setPerson(Person person) {
+        logger.fine("Showing the profile of the selected person in the profile panel.");
         this.person = person;
         setFields();
         profilePane.setVisible(true);
