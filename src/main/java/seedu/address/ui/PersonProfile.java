@@ -10,19 +10,11 @@ import javafx.scene.layout.VBox;
 import seedu.address.model.person.Person;
 
 /**
- * An UI component that displays profile of a {@code Person}.
+ * A UI component that displays the detailed profile of a {@code Person}.
  */
 public class PersonProfile extends UiPart<Region> {
 
     private static final String FXML = "PersonProfile.fxml";
-
-    /**
-     * Note: Certain keywords such as "location" and "resources" are reserved keywords in JavaFX.
-     * As a consequence, UI elements' variable names cannot be set to such keywords
-     * or an exception will be thrown by JavaFX during runtime.
-     *
-     * @see <a href="https://github.com/se-edu/addressbook-level4/issues/336">The issue on AddressBook level 4</a>
-     */
 
     private Person person;
 
@@ -57,14 +49,7 @@ public class PersonProfile extends UiPart<Region> {
     public PersonProfile(Person person) {
         super(FXML);
         this.person = person;
-        name.setText(person.getName().fullName);
-        phone.setText("Phone number: " + person.getPhone().value);
-        address.setText("Address: " + person.getAddress().value);
-        email.setText("Email: " + person.getEmail().value);
-        setOptionalFields();
-        person.getTags().stream()
-                .sorted(Comparator.comparing(tag -> tag.tagName))
-                .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
+        setFields();
         profilePane.setVisible(true);
     }
 
@@ -73,19 +58,21 @@ public class PersonProfile extends UiPart<Region> {
      */
     public void setPerson(Person person) {
         this.person = person;
+        setFields();
+        profilePane.setVisible(true);
+    }
+
+    private void setFields() {
         name.setText(person.getName().fullName);
         phone.setText("Phone number: " + person.getPhone().value);
         address.setText("Address: " + person.getAddress().value);
         email.setText("Email: " + person.getEmail().value);
-        setOptionalFields();
-        tags.getChildren().clear();
-        person.getTags().stream()
-                .sorted(Comparator.comparing(tag -> tag.tagName))
-                .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
-        profilePane.setVisible(true);
+        setUpcomingField();
+        setLastcontactField();
+        setTagsField();
     }
 
-    private void setOptionalFields() {
+    private void setUpcomingField() {
         if (person.hasUpcoming()) {
             upcoming.setVisible(true);
             upcoming.setManaged(true);
@@ -94,7 +81,9 @@ public class PersonProfile extends UiPart<Region> {
             upcoming.setVisible(false);
             upcoming.setManaged(false);
         }
+    }
 
+    private void setLastcontactField() {
         if (person.hasLastcontact()) {
             lastcontact.setVisible(true);
             lastcontact.setManaged(true);
@@ -104,4 +93,12 @@ public class PersonProfile extends UiPart<Region> {
             lastcontact.setManaged(false);
         }
     }
+
+    private void setTagsField() {
+        tags.getChildren().clear();
+        person.getTags().stream()
+                .sorted(Comparator.comparing(tag -> tag.tagName))
+                .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
+    }
+
 }
