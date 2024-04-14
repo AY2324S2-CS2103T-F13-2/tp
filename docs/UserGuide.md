@@ -282,7 +282,7 @@ Format: `addtags INDEX t/PLAN [t/MORE_PLANS]...`
 * Add plans to the client at the specified `INDEX`. The index refers to the index number shown in the displayed client list. The index **must be a positive integer** 1, 2, 3, …​
 * At least one plan must be provided.
 * Duplicate plans will be ignored.
-* Tags are case-insensitive. e.g. `cAr` and `car` are the same plans.
+* Plans are case-insensitive. e.g. `cAr` and `car` are the same plans.
 * Plans should only contain alphanumeric characters with no whitespaces.
 
 Examples:
@@ -431,7 +431,7 @@ Format: `deletetags INDEX t/PLAN [t/MORE_PLANS]...`
 * Delete plans of the client at the specified `INDEX`. The index refers to the index number shown in the displayed client list. The index **must be a positive integer** 1, 2, 3, …​
 * At least one tag must be provided.
 * Duplicate plans will be ignored.
-* Tags are case-insensitive. e.g. `cAr` and `car` are the same plans.
+* Plans are case-insensitive. e.g. `cAr` and `car` are the same plans.
 
 Examples:
 * `deletetags 1 t/car t/covid` deletes `car` and `covid` plans of the 1st client.

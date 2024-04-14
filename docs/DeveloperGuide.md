@@ -103,7 +103,7 @@ How the `Logic` component works:
 
 1. When `Logic` is called upon to execute a command, it is passed to an `AddressBookParser` object which in turn creates a parser that matches the command (e.g., `DeleteCommandParser`) and uses it to parse the command.
 1. This results in a `Command` object (more precisely, an object of one of its subclasses e.g., `DeleteCommand`) which is executed by the `LogicManager`.
-1. The command can communicate with the `Model` when it is executed (e.g. to delete a person).<br>
+1. The command can communicate with the `Model` when it is executed (e.g. to delete a client).<br>
    Note that although this is shown as a single step in the diagram above (for simplicity), in the code it can take several interactions (between the command object and the `Model`) to achieve.
 1. The result of the command execution is encapsulated as a `CommandResult` object which is returned back from `Logic`.
 
@@ -131,7 +131,7 @@ The `Model` component,
 
 <box type="info" seamless>
 
-**Note:** An alternative (arguably, a more OOP) model is given below. It has a `Tag` list in the `AddressBook`, which `Person` references. This allows `AddressBook` to only require one `Tag` object per unique tag, instead of each `Person` needing their own `Tag` objects.<br>
+**Note:** An alternative (arguably, a more OOP) model is given below. It has a `Tag` list in the `AddressBook`, which `Person` references. This allows `AddressBook` to only require one `Tag` object per unique plan, instead of each `Person` needing their own `Tag` objects.<br>
 
 <puml src="diagrams/BetterModelClassDiagram.puml" width="450" />
 
@@ -163,16 +163,16 @@ This section describes some noteworthy details on how certain features are imple
 #### Implementation
 
 The feature enables us to select a particular client using an index and displays the profile. The mechanism is then facilitated by `SelectCommand` and `PersonProfile` UI component which inherits from the abstract `UiPart`. Additionally, the `PersonProfile` will auto-update if changes to the client is made using the following commands:
-* `EditCommand`  —  The `EditCommand#execute()` method will return a `CommandResult` with a `true` for `updateProfile` if the person-to-edit is currently selected.
+* `EditCommand`  —  The `EditCommand#execute()` method will return a `CommandResult` with a `true` for `updateProfile` if the client-to-edit is currently selected.
 * `AddTagsCommand`  —  The `AddTagsCommand#execute()` method will also do the same as `EditCommand#execute()`.
 
 The `updateProfile` mentioned above is a field in a `CommandResult` object. Within the object, there is also a `CommandResult#isUpdateProfile()` method to flag to the `MainWindow` if there is a need to update the details in the aforementioned `PersonProfile`.
 
 Given below is an example usage scenario of the select command
 
-Step 1. The user executes `select 1` command to select the 1st person in the address book. The `select` command calls `Model#updateSelectedPerson()`, resulting in the selected person to be stored in the `Model`.
+Step 1. The user executes `select 1` command to select the 1st client in the address book. The `select` command calls `Model#updateSelectedPerson()`, resulting in the selected client to be stored in the `Model`.
 
-Step 2. The `select` command returns a `CommandResult` object with the `feedbackToUser` as the successfully-selected-person message, `showHelp` as false, `isExit` as false, `updateProfile` as true.
+Step 2. The `select` command returns a `CommandResult` object with the `feedbackToUser` as the successfully-selected-client message, `showHelp` as false, `isExit` as false, `updateProfile` as true.
 
 <box type="info" seamless>
 
@@ -194,11 +194,11 @@ The following sequence diagram shows how a select operation goes through the `Ui
 
 #### Design considerations:
 
-**Aspect: How to select a person:**
+**Aspect: How to select a client:**
 
 * **Alternative 1 (current choice):** Select using index.
     * Pros: Easy to implement.
-    * Cons: Not very intuitive, have to look up the name, reference the index before selecting the person.
+    * Cons: Not very intuitive, have to look up the name, reference the index before selecting the client.
 
 * **Alternative 2:** Select using name.
     * Pros: More intuitive and easy to select.
@@ -224,11 +224,11 @@ Step 1. The user launches the application for the first time. The `VersionedAddr
 
 <puml src="diagrams/UndoRedoState0.puml" alt="UndoRedoState0" />
 
-Step 2. The user executes `delete 5` command to delete the 5th person in the address book. The `delete` command calls `Model#commitAddressBook()`, causing the modified state of the address book after the `delete 5` command executes to be saved in the `addressBookStateList`, and the `currentStatePointer` is shifted to the newly inserted address book state.
+Step 2. The user executes `delete 5` command to delete the 5th client in the address book. The `delete` command calls `Model#commitAddressBook()`, causing the modified state of the address book after the `delete 5` command executes to be saved in the `addressBookStateList`, and the `currentStatePointer` is shifted to the newly inserted address book state.
 
 <puml src="diagrams/UndoRedoState1.puml" alt="UndoRedoState1" />
 
-Step 3. The user executes `add n/David …​` to add a new person. The `add` command also calls `Model#commitAddressBook()`, causing another modified address book state to be saved into the `addressBookStateList`.
+Step 3. The user executes `add n/David …​` to add a new client. The `add` command also calls `Model#commitAddressBook()`, causing another modified address book state to be saved into the `addressBookStateList`.
 
 <puml src="diagrams/UndoRedoState2.puml" alt="UndoRedoState2" />
 
@@ -238,7 +238,7 @@ Step 3. The user executes `add n/David …​` to add a new person. The `add` co
 
 </box>
 
-Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the `undo` command. The `undo` command will call `Model#undoAddressBook()`, which will shift the `currentStatePointer` once to the left, pointing it to the previous address book state, and restores the address book to that state.
+Step 4. The user now decides that adding the client was a mistake, and decides to undo that action by executing the `undo` command. The `undo` command will call `Model#undoAddressBook()`, which will shift the `currentStatePointer` once to the left, pointing it to the previous address book state, and restores the address book to that state.
 
 <puml src="diagrams/UndoRedoState3.puml" alt="UndoRedoState3" />
 
@@ -294,7 +294,7 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 * **Alternative 2:** Individual command knows how to undo/redo by
   itself.
-  * Pros: Will use less memory (e.g. for `delete`, just save the person being deleted).
+  * Pros: Will use less memory (e.g. for `delete`, just save the client being deleted).
   * Cons: We must ensure that the implementation of each individual command are correct.
 
 _{more aspects and alternatives to be added}_
@@ -325,27 +325,27 @@ _{more aspects and alternatives to be added}_
 * is reasonably comfortable using CLI apps
 
 **Value proposition**: manage contacts faster than a typical mouse/GUI driven app and revolutionizes client engagement
-for financial advisors by facilitating strategic communication and personalized service.
+for financial advisors by facilitating strategic communication and personalised service.
 
 
 ### User stories
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​                                                          | I want to …​                                                      | So that I can…​                                                                                              |
-|---------|------------------------------------------------------------------|-------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-| `* * *` | new financial advisor user                                       | see usage instructions                                            | refer to instructions when I forget how to use the App                                                       |
-| `* * *` | financial advisor                                                | add a new client                                                  | store their contacts and other relevant information                                                          |
-| `* * *` | financial advisor                                                | delete a client                                                   | remove informtion of the clients that I am no longer serving                                                 |
-| `* * *` | financial advisor with more than 50 clients                      | find a person by name                                             | locate details of people without having to go through the entire list                                        |
-| `* * *` | financial advisor with more than 50 clients                      | easily identity those that I haven't reach out to for a long time | contact them and check on their progress as well as well-being                                               |
+| Priority | As a …​                                                          | I want to …​                                                      | So that I can…​                                                                                             |
+|---------|------------------------------------------------------------------|-------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
+| `* * *` | new financial advisor user                                       | see usage instructions                                            | refer to instructions when I forget how to use the App                                                      |
+| `* * *` | financial advisor                                                | add a new client                                                  | store their contacts and other relevant information                                                         |
+| `* * *` | financial advisor                                                | delete a client                                                   | remove informtion of the clients that I am no longer serving                                                |
+| `* * *` | financial advisor with more than 50 clients                      | find a client by name                                             | locate details of clients without having to go through the entire list                                       |
+| `* * *` | financial advisor with more than 50 clients                      | easily identity those that I haven't reach out to for a long time | contact them and check on their progress as well as well-being                                              |
 | `* * *` | financial advisor with many upcoming meeting                     | easily view my schedule                                           | plan and prepare the respective information for the respective meetings, serving the client more effectively |
-| `* * *` | financial advisor who provides multiple plans for my clients     | tag clients based on their existing plans                         | keep track of which clients hold which policies                                                              |
-| `* * *` | financial advisor who provides multiple plans for my clients     | find clients based on their existing plans                        | provide personalised service to each type of policy holder                                                   |
-| `* * *` | financial advisor with more than 50 clients                      | view a client's profile with a few simple commands                | have the relevant information at hand when planning and during the consultations                             |
-| `* * `  | financial advisor with more than 50 clients                      | set reminders for all the clients' birthday                       | build personal connection through timely greetings                                                           |
-| `*`     | user with many people in the address book                        | sort people by name                                               | locate a person easily                                                                                       |
-| `*`     | financial advisor who wants to help my clients reach their goals | keep track of their goals and financial progress                  | provide a more curated and personalized service                                                              |
+| `* * *` | financial advisor who provides multiple plans for my clients     | add plans to clients based on their existing plans                | keep track of which clients hold which policies                                                             |
+| `* * *` | financial advisor who provides multiple plans for my clients     | find clients based on their existing plans                        | provide personalised service to each type of policy holder                                                  |
+| `* * *` | financial advisor with more than 50 clients                      | view a client's profile with a few simple commands                | have the relevant information at hand when planning and during the consultations                            |
+| `* * `  | financial advisor with more than 50 clients                      | set reminders for all the clients' birthday                       | build personal connection through timely greetings                                                          |
+| `*`     | user with many clients in the address book                        | sort clients by name                                              | locate a client easily                                                                                      |
+| `*`     | financial advisor who wants to help my clients reach their goals | keep track of their goals and financial progress                  | provide a more curated and clientalized service                                                             |
 
 *{More to be added}*
 
@@ -396,8 +396,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1.  User requests to edit a specific client's information.
-2.  FApro edits the client's client.
-3.  FApro shows the updated client information in the list.
+2.  FApro edits the client's information and shows the updated client information in the list.
     Use case ends.
 
 **Extensions**
@@ -418,15 +417,15 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1.  User requests find clients with one or more keywords by name.
+1.  User requests to find clients with one or more keywords by name.
 2.  FApro shows the filtered list of clients.
 
 **Use case: Viewing a client's profile**
 
 **MSS**
 
-1.  User requests to list people.
-2.  FApro shows a list of people.
+1.  User requests to list clients.
+2.  FApro shows a list of clients.
 3.  User requests to view the profile of the client in the list.
 4.  FApro shows the detailed profile of the client.
     Use case ends.
@@ -440,14 +439,14 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 3a1. AddressBook shows an error message.
       Use case resumes at step 2.
 
-**Use case: Tagging a client**
+**Use case: Adding a plan to a client**
 
 **MSS**
 
-1.  User requests to list people
-2.  AddressBook shows a list of people
-3.  User requests to tag a specific person in the list with a specified tag
-4.  AddressBook tags the person
+1.  User requests to list clients
+2.  AddressBook shows a list of clients
+3.  User requests to add a specified plan to a specific client in the list
+4.  AddressBook adds the plan to the client
     Use case ends.
 
 **Extensions**
@@ -459,14 +458,14 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 3a1. AddressBook shows an error message.
       Use case resumes at step 2.
 
-**Use case: Removing tags from a client**
+**Use case: Removing plans from a client**
 
 **MSS**
 
-1.  User requests to list people
-2.  AddressBook shows a list of people
-3.  User requests to remove tags from a specific person in the list
-4.  AddressBook removes the tags of the person
+1.  User requests to list clients
+2.  AddressBook shows a list of clients
+3.  User requests to remove plans from a specific client in the list
+4.  AddressBook removes the plans of the client
     Use case ends.
 
 **Extensions**
@@ -478,27 +477,27 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 3a1. AddressBook shows an error message.
       Use case resumes at step 2.
 
-**Use case: Finding all clients that contain any of the tags**
+**Use case: Finding all clients that contain any of the plans**
 
 **MSS**
 
-1.  User requests to find people containing any of the specified tags
-2.  AddressBook shows a list of people
+1.  User requests to find clients containing any of the specified plans
+2.  AddressBook shows a list of clients
 
 **Extensions**
-* 1a. One of the tags do not exist.
+* 1a. One of the plans is not alphanumeric.
     * 1a1. AddressBook shows an error message.
       Use case resumes at step 1.
-
-**Use case: Finding all clients that contain all the tags**
+  
+**Use case: Finding all clients that contain all the plans**
 
 **MSS**
 
-1.  User requests to find people containing all the specified tags
-2.  AddressBook shows a list of people
+1.  User requests to find clients containing all the specified plans
+2.  AddressBook shows a list of clients
 
 **Extensions**
-* 1a. One of the tags do not exist.
+* 1a. One of the plans is not alphanumeric.
     * 1a1. AddressBook shows an error message.
       Use case resumes at step 1.
 
@@ -527,13 +526,13 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1.  User requests to find people containing an upcoming appointment.
-2.  AddressBook shows the list of people, ordering them from the nearest to the farthest upcoming appointment based on date.
+1.  User requests to find clients containing an upcoming appointment.
+2.  AddressBook shows the list of clients, ordering them from the nearest to the farthest upcoming appointment based on date.
 
 ### Non-Functional Requirements
 
 1.  Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
-2.  Should be able to hold up to 1000 people without a noticeable sluggishness in performance for typical usage.
+2.  Should be able to hold up to 1000 clients without a noticeable sluggishness in performance for typical usage.
 3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
 4.  The data in FApro should be stored locally and should be in a human editable text file.
 5.  Should not use a _DBMS_ to store data.
@@ -558,7 +557,6 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 ## **Appendix: Instructions for manual testing**
 
 Given below are instructions to test the app manually.
-
 <box type="info" seamless>
 
 **Note:** These instructions only provide a starting point for testers to work on;
@@ -593,7 +591,7 @@ testers are expected to do more *exploratory* testing.
     1. Test case: `select 0`<br>
        Expected: No client is selected. Error details shown in the status message.
 
-    1. Other incorrect select commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
+    1. Other incorrect select commands to try: `select`, `select x`, `...` (where x is larger than the list size)<br>
        Expected: Similar to previous.
 
 1. Selecting a client after finding for a specific client by name
@@ -606,9 +604,42 @@ testers are expected to do more *exploratory* testing.
     1. Test case: `select 0`<br>
        Expected: Similar to select while all clients are being shown.
 
-    1. Other incorrect select commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
+    1. Other incorrect select commands to try: `select`, `select x`, `...` (where x is larger than the list size)<br>
        Expected: Similar to select while all clients are being shown.
 
+### Adding plans
+
+1. Adding plans to a client while all clients are being shown
+   1. Prerequisites: List all clients using the `list` command. Multiple clients in the list.
+   2. Test case: `addtags 1 t/car `<br>
+       Expected: First contact has `car` plan added to him.
+   3. Test case: `addtags -1 t/housing`<br>
+       Expected: No plans are added. Error details shown in the status message.
+   4. Other incorrect commands to try: `addtags`, `addtags 2 t/`, `addtags 1`, `addtags x`, `...` (where x is larger than the list size)<br>
+      Expected: Similar to previous.
+   
+2. Adding plans to a selected client
+   1. Prerequisites: Select first client using `select 1` command.
+   2. Test case: `addtags 1 t/car `<br>
+      Expected: First contact has `car` plan added to him. Panel at the side is updated to include the `car` plan.
+   3. Other test cases similar to above.
+
+### Finding clients by their plans
+
+1. Finding clients using the `findtagsor` command
+   1. Test case: `findtagsor car housing`<br>
+       Expected: All clients with either `car` or `housing` plans are listed
+   2. Test case: `findtagsor`<br>
+       Expected: Command not executed. Error details shown in the status message.
+   3. Other incorrect commands to try: `findtagsor`, `findtagsor $#@`<br>
+      Expected: Similar to previous.
+2. Finding clients using the `findtagsand` command
+    1. Test case: `findtagsand car housing`<br>
+       Expected: All clients with both `car` or `housing` plans are listed
+    2. Test case: `findtagsand`<br>
+       Expected: Command not executed. Error details shown in the status message.
+    3. Other incorrect commands to try: `findtagsand`, `findtagsand $#@`<br>
+       Expected: Similar to previous.
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Appendix: Planned Enhancement**
@@ -623,3 +654,4 @@ Team size: 4
 6. **Remove upcoming date**: There is currently no way for the financial advisors to remove the upcoming dates even after the appointments have passed. We plan to implement a command to remove  the upcoming dates after the appointments have passed or when the clients cancel the appointment.
 7. **Enable tags (plans) to be more than one word**: Our tags currently can only accommodate a single word. However, financial plans may consist of multiple words to differentiate one from the other. Thus, we plan to relax on the restriction of the plan parameters and allow multiple words.
 8. **Add notes to the Profile Panel**: The profile panel currently only shows the default profile image, contact details, and existing plans. It is not adding much value to the financial advisors. Thus, we intend to implement a command which can add notes for a specific client that can be seen only on the profile panel. This will come in handy for the financial advisors when they want to take down reminders for themselves when preparing for the appointment, take down important details of the client during the appointment itself or even take down things to do after the appointment.
+
