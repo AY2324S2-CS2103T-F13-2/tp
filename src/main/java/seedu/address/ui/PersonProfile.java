@@ -1,28 +1,23 @@
 package seedu.address.ui;
 
 import java.util.Comparator;
+import java.util.logging.Logger;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import seedu.address.commons.core.LogsCenter;
 import seedu.address.model.person.Person;
 
 /**
- * An UI component that displays profile of a {@code Person}.
+ * A UI component that displays the detailed profile of a {@code Person}.
  */
 public class PersonProfile extends UiPart<Region> {
 
     private static final String FXML = "PersonProfile.fxml";
-
-    /**
-     * Note: Certain keywords such as "location" and "resources" are reserved keywords in JavaFX.
-     * As a consequence, UI elements' variable names cannot be set to such keywords
-     * or an exception will be thrown by JavaFX during runtime.
-     *
-     * @see <a href="https://github.com/se-edu/addressbook-level4/issues/336">The issue on AddressBook level 4</a>
-     */
+    private static final Logger logger = LogsCenter.getLogger(PersonProfile.class);
 
     private Person person;
 
@@ -52,56 +47,53 @@ public class PersonProfile extends UiPart<Region> {
     }
 
     /**
-     * Creates a {@code PersonProfile} with the given {@code Person}.
-     */
-    public PersonProfile(Person person) {
-        super(FXML);
-        this.person = person;
-        name.setText(person.getName().fullName);
-        phone.setText("Phone number: " + person.getPhone().value);
-        address.setText("Address: " + person.getAddress().value);
-        email.setText("Email: " + person.getEmail().value);
-        setOptionalFields();
-        person.getTags().stream()
-                .sorted(Comparator.comparing(tag -> tag.tagName))
-                .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
-        profilePane.setVisible(true);
-    }
-
-    /**
      * Updates the {@code PersonProfile} with the given {@code Person}.
      */
     public void setPerson(Person person) {
+        assert person != null : "Person should not be null";
+        logger.fine("Showing the profile of the selected person in the profile panel.");
         this.person = person;
+        setFields();
+        profilePane.setVisible(true);
+    }
+
+    private void setFields() {
         name.setText(person.getName().fullName);
         phone.setText("Phone number: " + person.getPhone().value);
         address.setText("Address: " + person.getAddress().value);
         email.setText("Email: " + person.getEmail().value);
-        setOptionalFields();
+        setUpcomingField();
+        setLastcontactField();
+        setTagsField();
+    }
+
+    private void setUpcomingField() {
+        if (!person.hasUpcoming()) {
+            upcoming.setVisible(false);
+            upcoming.setManaged(false);
+            return;
+        }
+        upcoming.setVisible(true);
+        upcoming.setManaged(true);
+        upcoming.setText("Upcoming: " + person.getUpcoming().toString());
+    }
+
+    private void setLastcontactField() {
+        if (!person.hasLastcontact()) {
+            lastcontact.setVisible(false);
+            lastcontact.setManaged(false);
+            return;
+        }
+        lastcontact.setVisible(true);
+        lastcontact.setManaged(true);
+        lastcontact.setText("Last contacted: " + person.getLastcontact().toString());
+    }
+
+    private void setTagsField() {
         tags.getChildren().clear();
         person.getTags().stream()
                 .sorted(Comparator.comparing(tag -> tag.tagName))
                 .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
-        profilePane.setVisible(true);
     }
 
-    private void setOptionalFields() {
-        if (person.hasUpcoming()) {
-            upcoming.setVisible(true);
-            upcoming.setManaged(true);
-            upcoming.setText("Upcoming: " + person.getUpcoming().toString());
-        } else {
-            upcoming.setVisible(false);
-            upcoming.setManaged(false);
-        }
-
-        if (person.hasLastcontact()) {
-            lastcontact.setVisible(true);
-            lastcontact.setManaged(true);
-            lastcontact.setText("Last contacted: " + person.getLastcontact().toString());
-        } else {
-            lastcontact.setVisible(false);
-            lastcontact.setManaged(false);
-        }
-    }
 }

@@ -23,12 +23,12 @@ public class AddTagsCommand extends Command {
     public static final String COMMAND_WORD = "addtags";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
-            + ": Adds tags to the person identified by the index number used in the displayed person list.\n"
+            + ": Adds tags to the client identified by the index number used in the displayed person list.\n"
             + "Parameters: INDEX (must be a positive integer) "
             + "[" + PREFIX_TAG + "TAG]... \n"
             + "Example: " + COMMAND_WORD + " 1 t/car t/health";
 
-    public static final String MESSAGE_SUCCESS = "Added tags to Person: %1$s";
+    public static final String MESSAGE_SUCCESS = "Added tags to Client: %1$s";
     public static final String MESSAGE_NOT_ADDED = "At least one tag must be provided";
 
     private final Index index;
