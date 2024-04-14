@@ -50,6 +50,7 @@ public class PersonProfile extends UiPart<Region> {
      * Updates the {@code PersonProfile} with the given {@code Person}.
      */
     public void setPerson(Person person) {
+        assert person != null : "Person should not be null";
         logger.fine("Showing the profile of the selected person in the profile panel.");
         this.person = person;
         setFields();
