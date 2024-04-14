@@ -22,6 +22,7 @@ This project is based on the AddressBook-Level3 project created by the [SE-EDU i
 Refer to the guide [_Setting up and getting started_](SettingUp.md).
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
 
 ## **Design**
 
@@ -54,6 +55,8 @@ The *Sequence Diagram* below shows how the components interact with each other f
 
 <puml src="diagrams/ArchitectureSequenceDiagram.puml" width="574" />
 
+<div style="page-break-after: always;"></div>
+
 Each of the four main components (also shown in the diagram above),
 
 * defines its *API* in an `interface` with the same name as the Component.
@@ -75,6 +78,8 @@ The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `Re
 
 The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the [`MainWindow`](https://github.com/AY2324S2-CS2103T-F13-2/tp/tree/master/src/main/java/seedu/address/ui/MainWindow.java) is specified in [`MainWindow.fxml`](https://github.com/AY2324S2-CS2103T-F13-2/tp/tree/master/src/main/resources/view/MainWindow.fxml)
 
+<div style="page-break-after: always;"></div>
+
 The `UI` component,
 
 * executes user commands using the `Logic` component.
@@ -90,11 +95,13 @@ Here's a (partial) class diagram of the `Logic` component:
 
 <puml src="diagrams/LogicClassDiagram.puml" width="550"/>
 
+<div style="page-break-after: always;"></div>
+
 The sequence diagram below illustrates the interactions within the `Logic` component, taking `execute("delete 1")` API call as an example.
 
 <puml src="diagrams/DeleteSequenceDiagram.puml" alt="Interactions Inside the Logic Component for the `delete 1` Command" />
 
-<box type="info" seamless>
+<box type="info">
 
 **Note:** The lifeline for `DeleteCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline continues till the end of diagram.
 </box>
@@ -110,6 +117,8 @@ How the `Logic` component works:
 Here are the other classes in `Logic` (omitted from the class diagram above) that are used for parsing a user command:
 
 <puml src="diagrams/ParserClasses.puml" width="600"/>
+
+<div style="page-break-after: always;"></div>
 
 How the parsing works:
 * When called upon to parse a user command, the `AddressBookParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `AddressBookParser` returns back as a `Command` object.
@@ -130,13 +139,15 @@ The `Model` component,
 * stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as a `ReadOnlyUserPref` objects.
 * does not depend on any of the other three components (as the `Model` represents data entities of the domain, they should make sense on their own without depending on other components)
 
-<box type="info" seamless>
+<box type="info">
 
 **Note:** An alternative (arguably, a more OOP) model is given below. It has a `Tag` list in the `AddressBook`, which `Person` references. This allows `AddressBook` to only require one `Tag` object per unique plan, instead of each `Person` needing their own `Tag` objects.<br>
 
 <puml src="diagrams/BetterModelClassDiagram.puml" width="450" />
 
 </box>
+
+<div style="page-break-after: always;"></div>
 
 ### Storage component
 
@@ -187,7 +198,7 @@ The following sequence diagram shows how a select operation goes through the `Ui
 
 <puml src="diagrams/SelectSequenceDiagram.puml" alt="SelectSequenceDiagram" />
 
-<box type="info" seamless>
+<box type="info">
 
 **Note:** The lifeline for `SelectCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
@@ -203,9 +214,7 @@ The following sequence diagram shows how a select operation goes through the `Ui
 
 * **Alternative 2:** Select using name.
     * Pros: More intuitive and easy to select.
-    * Cons: May result in bugs due to the issue of duplicate names.
-
-_{more aspects and alternatives to be added}_
+    * Cons: The search for the selected client may be longer due to the need to traverse the whole client list for the client.
 
 ### \[Proposed\] Undo/redo feature
 
@@ -221,6 +230,8 @@ These operations are exposed in the `Model` interface as `Model#commitAddressBoo
 
 Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.
 
+<div style="page-break-after: always;"></div>
+
 Step 1. The user launches the application for the first time. The `VersionedAddressBook` will be initialized with the initial address book state, and the `currentStatePointer` pointing to that single address book state.
 
 <puml src="diagrams/UndoRedoState0.puml" alt="UndoRedoState0" />
@@ -233,7 +244,7 @@ Step 3. The user executes `add n/David …​` to add a new client. The `add` co
 
 <puml src="diagrams/UndoRedoState2.puml" alt="UndoRedoState2" />
 
-<box type="info" seamless>
+<box type="info">
 
 **Note:** If a command fails its execution, it will not call `Model#commitAddressBook()`, so the address book state will not be saved into the `addressBookStateList`.
 
@@ -244,18 +255,20 @@ Step 4. The user now decides that adding the client was a mistake, and decides t
 <puml src="diagrams/UndoRedoState3.puml" alt="UndoRedoState3" />
 
 
-<box type="info" seamless>
+<box type="info">
 
 **Note:** If the `currentStatePointer` is at index 0, pointing to the initial FApro state, then there are no previous AddressBook states to restore. The `undo` command uses `Model#canUndoAddressBook()` to check if this is the case. If so, it will return an error to the user rather
 than attempting to perform the undo.
 
 </box>
 
+<div style="page-break-after: always;"></div>
+
 The following sequence diagram shows how an undo operation goes through the `Logic` component:
 
 <puml src="diagrams/UndoSequenceDiagram-Logic.puml" alt="UndoSequenceDiagram-Logic" />
 
-<box type="info" seamless>
+<box type="info">
 
 **Note:** The lifeline for `UndoCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
@@ -267,7 +280,7 @@ Similarly, how an undo operation goes through the `Model` component is shown bel
 
 The `redo` command does the opposite — it calls `Model#redoAddressBook()`, which shifts the `currentStatePointer` once to the right, pointing to the previously undone state, and restores the address book to that state.
 
-<box type="info" seamless>
+<box type="info" >
 
 **Note:** If the `currentStatePointer` is at index `addressBookStateList.size() - 1`, pointing to the latest address book state, then there are no undone AddressBook states to restore. The `redo` command uses `Model#canRedoAddressBook()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
 
@@ -276,6 +289,8 @@ The `redo` command does the opposite — it calls `Model#redoAddressBook()`,
 Step 5. The user then decides to execute the command `list`. Commands that do not modify the address book, such as `list`, will usually not call `Model#commitAddressBook()`, `Model#undoAddressBook()` or `Model#redoAddressBook()`. Thus, the `addressBookStateList` remains unchanged.
 
 <puml src="diagrams/UndoRedoState4.puml" alt="UndoRedoState4" />
+
+<div style="page-break-after: always;"></div>
 
 Step 6. The user executes `clear`, which calls `Model#commitAddressBook()`. Since the `currentStatePointer` is not pointing at the end of the `addressBookStateList`, all address book states after the `currentStatePointer` will be purged. Reason: It no longer makes sense to redo the `add n/David …​` command. This is the behavior that most modern desktop applications follow.
 
@@ -298,8 +313,6 @@ The following activity diagram summarizes what happens when a user executes a ne
   * Pros: Will use less memory (e.g. for `delete`, just save the client being deleted).
   * Cons: We must ensure that the implementation of each individual command are correct.
 
-_{more aspects and alternatives to be added}_
-
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Documentation, logging, testing, configuration, dev-ops**
@@ -311,6 +324,8 @@ _{more aspects and alternatives to be added}_
 * [DevOps guide](DevOps.md)
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 
 ## **Appendix: Requirements**
 
@@ -348,10 +363,11 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `*`     | user with many clients in the address book                        | sort clients by name                                              | locate a client easily                                                                                      |
 | `*`     | financial advisor who wants to help my clients reach their goals | keep track of their goals and financial progress                  | provide a more curated and clientalized service                                                             |
 
+<div style="page-break-after: always;"></div>
 
 ### Use cases
 
-(For all use cases below, the **System** is `FApro` and the **Actor** is the `financial advisor`, unless specified otherwise)
+(For all use cases below, the **System** is FApro and the **Actor** is the financial advisor, unless specified otherwise)
 
 **Use case: Adding a client**
 
@@ -396,11 +412,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 1.  User requests to list clients.
 2.  FApro shows a list of clients.
 3.  User requests to edit a specific client's information.
-<<<<<<< Updated upstream
 4.  FApro edits the client's information and shows the updated client information in the list. <br/>
-=======
-4.  FApro edits the client's information and shows the updated client information in the list.
->>>>>>> Stashed changes
     Use case ends.
 
 **Extensions**
@@ -414,6 +426,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * 1c. The updated client's name already exists in FApro.
     * 1c1. FApro shows a message to let the user know about the duplicated entry. <br/>
     Use case resumes at step 3.
+
+<div style="page-break-after: always;"></div>
 
 **Use case: Find a client by name**
 
@@ -477,6 +491,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 3a1. FApro shows an error message. <br/>
     Use case resumes at step 2.
 
+<div style="page-break-after: always;"></div>
+
+
 **Use case: Finding all clients that contain any of the plans**
 
 **MSS**
@@ -487,7 +504,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Extensions**
 * 1a. One of the plans is not alphanumeric.
-    * 1a1. FApro shows an error message.
+    * 1a1. FApro shows an error message. <br/>
       Use case resumes at step 1.
   
 **Use case: Finding all clients that contain all the plans**
@@ -544,6 +561,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 2.  FApro closes the window and its system. <br/>
     Use case ends.
 
+<div style="page-break-after: always;"></div>
 
 ### Non-Functional Requirements
 
@@ -571,7 +589,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 ## **Appendix: Instructions for manual testing**
 
 Given below are instructions to test the app manually.
-<box type="info" seamless>
+<box type="info">
 
 **Note:** These instructions only provide a starting point for testers to work on;
 testers are expected to do more *exploratory* testing.
@@ -581,12 +599,9 @@ testers are expected to do more *exploratory* testing.
 ### Launch and shutdown
 
 1. Initial launch
-
    1. Download the jar file and copy into an empty folder
    1. Double-click the jar file Expected: Shows the GUI with a set of sample clients. The window size may not be optimum.
-
 1. Saving window preferences
-
    1. Resize the window to an optimum size. Move the window to a different location. Close the window.
    1. Re-launch the app by double-clicking the jar file.<br>
        Expected: The most recent window size and location is retained.
@@ -594,7 +609,6 @@ testers are expected to do more *exploratory* testing.
 ### Selecting a client
 
 1. Selecting a client while all clients are being shown
-
     1. Prerequisites: List all clients using the `list` command. 
     2. Test case: `select 1`<br>
        Expected: First client's details are displayed in the profile panel. Details of the selected client shown in the status message.
@@ -602,9 +616,7 @@ testers are expected to do more *exploratory* testing.
        Expected: No client is selected. Error details shown in the status message.
     4. Other incorrect select commands to try: `select`, `select x`, `...` (where x is larger than the list size)<br>
        Expected: Similar to previous.
-
 2. Selecting a client after finding for a specific client by name
-
     1. Prerequisites: Find clients with 'alex' in their name using the `find alex` command.
     2. Other test cases similar to above.
 
@@ -618,12 +630,14 @@ testers are expected to do more *exploratory* testing.
        Expected: No plans are added. Error details shown in the status message.
    4. Other incorrect commands to try: `addtags`, `addtags 2 t/`, `addtags 1`, `addtags x`, `...` (where x is larger than the list size)<br>
       Expected: Similar to previous.
-   
 2. Adding plans to a selected client
    1. Prerequisites: Select first client using `select 1` command.
    2. Test case: `addtags 1 t/car `<br>
       Expected: First client has 'car' plan added to him. Panel at the side is updated to include the 'car' plan.
    3. Other test cases similar to above.
+
+<div style="page-break-after: always;"></div>
+
 
 ### Finding clients by their plans
 
@@ -674,5 +688,6 @@ Team size: 4
 4. **Clear the profile panel if the entries in FApro are cleared**: This is similar to the enhancement above, only difference is that the `ClearCommand` is used to delete all clients/persons in FApro. Thus, our plan to fix this issue is also similar, which is to clear the profile panel.
 5. **Remove upcoming date**: There is currently no way for the financial advisors to remove the upcoming dates even after the appointments have passed. We plan to implement a command to remove  the upcoming dates after the appointments have passed or when the clients cancel the appointment.
 6. **Enable tags (plans) to be more than one word**: Our tags currently can only accommodate a single word. However, financial plans may consist of multiple words to differentiate one from the other. Thus, we plan to relax on the restriction of the plan parameters and allow multiple words.
-7. **Add notes to the Profile Panel**: The profile panel currently only shows the default profile image, client details, and existing plans. It is not adding much value to the financial advisors. Thus, we intend to implement a command which can add notes for a specific client that can be seen only on the profile panel. This will come in handy for the financial advisors when they want to take down reminders for themselves when preparing for the appointment, take down important details of the client during the appointment itself or even take down things to do after the appointment.
+7. **Add notes to the profile panel**: The profile panel currently only shows the default profile image, client details, and existing plans. It is not adding much value to the financial advisors. Thus, we intend to implement a command which can add notes for a specific client that can be seen only on the profile panel. This will come in handy for the financial advisors when they want to take down reminders for themselves when preparing for the appointment, take down important details of the client during the appointment itself or even take down things to do after the appointment.
+8. **Add profile photo to the profile panel**: The profile panel is currently showing the default profile image. This is not adding any value to the financial advisors. Thus, we intend to implement a command which can add photo for a specific client. 
 
